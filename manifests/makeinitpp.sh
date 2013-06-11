@@ -3,6 +3,8 @@
 # script to re-make init.pp to include all other pp files in this directory
 #
 
+pushd `dirname $0` > /dev/null
+
 (
 cat <<EOF
 # Class: puppet-archlinux-macbookretina
@@ -32,3 +34,4 @@ do
 done
 echo "}" >> init.pp
 
+popd > /dev/null
