@@ -49,7 +49,6 @@ These are the steps I took after I had a bootable system:
 * `vim /etc/ssh/sshd_config`, enable password auth, root login, RSA auth, PubKey auth (for now)
 * `systemctl enable sshd; systemctl start sshd`
 * ssh and login as root, complete the rest that way (I work a lot quicker from my keyboard and environment than on the laptop)
-
 * `pacman -S base-devel`
 * `vim /etc/makepkg.conf`, set "march=native" in CFLAGS and CXXFLAGS, set MAKEFLAGS -j8 (`nproc`)
 * `useradd -m -g users -G audio,floppy,locate,lp,network,optical,power,storage,uucp,video,wheel -s /bin/bash USERNAME`
