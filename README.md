@@ -16,7 +16,7 @@ What follows are NOT complete instructions, they are meant to be followed in par
 * in Mac OS X, shrink the single 250GB partition to 60GB, then install rEFInd
 * boot the arch installer from USB flash drive
 * `cgdisk`
-** create partitions - I setup a 1G HFS+ partition after MacOS, then separate ext4 partitions for root (/), home, var, and a spare ("mirror")
+  * create partitions - I setup a 1G HFS+ partition after MacOS, then separate ext4 partitions for root (/), home, var, and a spare ("mirror")
 * `mkfs` on the partitions
 * `mount` the partitions under /mnt
 * this roughly follows the instructions at https://wiki.archlinux.org/index.php/Installation_Guide and https://wiki.archlinux.org/index.php/MacBook 
@@ -43,8 +43,8 @@ These are the steps I took after I had a bootable system:
 
 * login as root
 * wired (USB adapter) ethernet with DHCP:
-** `systemctl enable dhcpcd@enp0s20u1`
-** `systemctl start dhcpcd@enp0s20u1`
+  * `systemctl enable dhcpcd@enp0s20u1`
+  * `systemctl start dhcpcd@enp0s20u1`
 * `pacman -S openssh`
 * `vim /etc/ssh/sshd_config`, enable password auth, root login, RSA auth, PubKey auth (for now)
 * `systemctl enable sshd; systemctl start sshd`
@@ -69,7 +69,7 @@ At this point, I build my first Arch package from [AUR](https://aur.archlinux.or
 Running macfanctld is relatively important, as out-of-the-box the macbook fans won't be turned on no matter the temperature. Once we've got that done, proceed with the rest of the installation (*NOTE* some of this is specific to KDE/KDM):
 
 * `pacman -S xorg-server xorg-apps`
-** go with mesa-libgl for now
+  * go with mesa-libgl for now
 * `pacman -S xorg-server xorg-server-utils xorg-xinit mesa`
 * `systemctl enable dhcpcd`
 * `pacman -S xf86-video-nouveau`
@@ -80,7 +80,7 @@ Running macfanctld is relatively important, as out-of-the-box the macbook fans w
 * `cd ~/`
 * build xf86-input-mtrack-git from AUR: https://aur.archlinux.org/packages/xf/xf86-input-mtrack-git/xf86-input-mtrack-git.tar.gz
 * `curl -o retina.html https://wiki.archlinux.org/index.php/MacBookPro_Retina`
-** `vim retina.html`, strip out everything but the <pre> blocks around the touchpad X config (search for 'MatchIsTouchpad')
+  * `vim retina.html`, strip out everything but the <pre> blocks around the touchpad X config (search for 'MatchIsTouchpad')
 * `vim /etc/X11/xorg.conf`, paste in the snippet from above
 * install from AUR: ruby-facter ruby-hiera ruby-hiera-json ruby-shadow ruby-rgen ruby-json_pure puppet
 * from now on, the rest is handled with our Puppet configuration
