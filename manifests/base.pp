@@ -14,4 +14,16 @@
 class puppet-archlinux-macbookretina::base {
   package {'lynx': ensure => present, }
   package {'lsb-release': ensure => present, }
+  package {'dmidecode': ensure => present, }
+  package {'macfanctld-git': ensure => present, }
+
+  # base config files
+  file {'/etc/makepkg.conf':
+    ensure => present,
+    owner  => 'root',
+    group  => 'root',
+    mode   => '0644',
+    source => 'puppet:///modules/puppet-archlinux-macbookretina/makepkg.conf',
+  }
+
 }
