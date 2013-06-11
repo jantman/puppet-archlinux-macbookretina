@@ -7,7 +7,16 @@ This is the puppet module I use to manage my shiny new MacBook Pro Retina (10,1)
 
 I use Puppet to manage everything on my laptop after the initial configuration - packages, config files, etc.. For the intial configuration, I've documented my steps here.
 
-If some of this seems overly verbose to experienced Arch users, this install is my first experience with Arch. I've jumped ship from Fedora (which I've always run, because I've always worked at RedHat/CentOS server shops, so it seemed logical), so it's taking me a while to adjust back to a desktop Linux that doesn't expect the user to be an idiot.
+If some of this seems overly verbose to experienced Arch users, this install is my first experience with Arch. I've jumped ship from Fedora (which I've always run, because I've always worked at RedHat/CentOS server shops, so it seemed logical), so it's taking me a while to adjust back to a desktop Linux that doesn't expect the user to be an idiot. This is also my first real foray into the new hotness in Puppet 3, so I'm playing around with that a bit too.
+
+What Works
+==========
+* suspend works fine
+* USB ethernet adapter A1277
+
+What Doesnt
+===========
+See under "To Do" below.
 
 Arch Installation
 =================
@@ -91,15 +100,80 @@ Puppet Configuration
 
 To Do
 =====
+* [Solid State Drives - ArchWiki](https://wiki.archlinux.org/index.php/Solid_State_Drives) tweaks
 * try proprietary nvidia driver? (UseDPLibs Off, no brightness control currently)
 * fnmode - options hid_apple fnmode=2 in modprobe.conf.d
 * dpi - add -dpi 156   to ServerArgLocal in /usr/share/config/kdm/kdmrc
-* wireless - wireless-broadcom-bcm43142 in arch, anything based on broadcom 6.20.155.1-8 driver instead of 5.xx (fwcutter with 6.x may work with b43, did not try)
+* wireless - wireless-broadcom-bcm43142 in arch, anything based on broadcom 6.20.155.1-8 driver instead of 5.xx (or b43-fwcutter) or see https://wiki.archlinux.org/index.php/MacBook#Wi-Fi
 * look into replacing macfanctld with mbpfan / fan-control-daemon are two options that are less abrupt
+* test external monitor hot plug
+* sound - snd_hda_intel driver with 'model=mbp101' or 'model=intel-mac-auto' in modprobe config
+* pommed from AUR for keyboard mapping/function keys, with /etc/pommed.conf built from /etc/pommed.conf.mac
+* keyboard backlight - /sys/class/leds/smc::kbd_backlight/brightness
+* backlight adjustment - nvidia-bl, https://wiki.archlinux.org/index.php/MacBook#NVIDIA_note_2
+* general power management, suspend to RAM and disk: https://wiki.archlinux.org/index.php/MacBook#Power_management
+* light sensor: https://wiki.archlinux.org/index.php/MacBook#Light_sensor
+* test iSight: https://wiki.archlinux.org/index.php/MacBook#iSight
+* check lm_sensors temp sensors, check fan operation
+* setup color profiles: https://wiki.archlinux.org/index.php/MacBook#Color_Profile
+* setup LiRC and an apple remote: https://wiki.archlinux.org/index.php/MacBook#Apple_Remote
+* on Mac OS X side, mute the startup chime if you want: `/usr/bin/nvram SystemAudioVolume=%01`
+* figure out a nice, simple way to handle backups of a laptop that's often suspended on nights/weekends
+* [Granola](https://wiki.archlinux.org/index.php/Laptop#Granola) or https://wiki.archlinux.org/index.php/CPU_Frequency_Scaling#Laptop_Mode_Tools for cpu frequency scaling?
+* modprobe.conf: options usbcore autosuspend=1
+* sysctl: vm.dirty_writeback_centisecs=1500; vm.laptop_mode=5
+* [Laptop Mode Tools - ArchWiki](https://wiki.archlinux.org/index.php/Laptop_Mode_Tools) and/or  [TLP - ArchWiki](https://wiki.archlinux.org/index.php/TLP)
+* hard drive spindown: https://wiki.archlinux.org/index.php/Laptop#Hard_drive_spin_down_problem
+* [Chrony - ArchWiki](https://wiki.archlinux.org/index.php/Chrony) instead of NTP
+* [CUPS - ArchWiki](https://wiki.archlinux.org/index.php/CUPS)
+* [Postfix - ArchWiki](https://wiki.archlinux.org/index.php/Local_Mail_Delivery_with_Postfix) for local delivery and relaying
+* [iptables - ArchWiki](https://wiki.archlinux.org/index.php/Iptables)
+* [Pdnsd - ArchWiki](https://wiki.archlinux.org/index.php/Pdnsd) for local DNS caching
+* further [KDE - ArchWiki](https://wiki.archlinux.org/index.php/Kde) configuration
+* the stuff in [Maximizing Performance - ArchWiki](https://wiki.archlinux.org/index.php/Maximizing_Performance)
+* implement the stuff in [Enhancing Arch Linux Stability - ArchWiki](https://wiki.archlinux.org/index.php/Enhancing_Arch_Linux_Stability)
+* Administration tasks - figure out how to automate
+   * pacman update reminders, reminder to check output (log it somewhere? mail the log?)
+   * `pacman -Qdt` to find orphaned packages
+   * find `*.pacnew` and `*.pacsave` config files
+   * check for out-of-date/unmaintained AUR packages
+   * SMART/other SSD health check, with warnings if things go south
+* [NetworkManager - ArchWiki](https://wiki.archlinux.org/index.php/NetworkManager)
+* application installation - somewhat specific to me, so included in its own manifest
+   * irssi
+   * firefox
+   * thunderbird
+   * pidgin
+   * skype
+   * chromium
+   * opera
+   * kdegraphics-gwenview
+   * gimp
+   * imagemagick
+   * dia
+   * kdegraphics-ksnapshot
+   * scrot
+   * vlc
+   * kdebase-dolphin
+   * meld
+   * kdegraphics-okular
+   * libreoffice
+   * nmap
+   * wireshark-cli
+   * wireshark-gtk
+   * tcpdump
+   * kdebase-konsole
+   * emacs
+   * kdesdk-kate
+   * eclipse
+   * rsnapshot
+   * search my Fedora puppet manifests
+* IP stack hardening [sysctl - ArchWiki](https://wiki.archlinux.org/index.php/Sysctl#TCP.2FIP_stack_hardening) - see also [thias/sysctl · Puppet Forge](https://forge.puppetlabs.com/thias/sysctl)
 
 Other References
 ================
 * First, many thanks to [eli meister](https://twitter.com/elitmeister) for being the office linux-on-MBP retina guinea pig
+* [MacBookPro Retina - ArchWiki](https://wiki.archlinux.org/index.php/MacBookPro_Retina)
 * [MacBook - ArchWiki](https://wiki.archlinux.org/index.php/MacBook)
 * [Installation Guide - ArchWiki](https://wiki.archlinux.org/index.php/Installation_Guide)
 * [Beginners' Guide - ArchWiki](https://wiki.archlinux.org/index.php/Beginners%27_Guide)
@@ -107,4 +181,4 @@ Other References
 * [Laptop - ArchWiki](https://wiki.archlinux.org/index.php/Laptop)
 * [Enhancing Arch Linux Stability - ArchWiki](https://wiki.archlinux.org/index.php/Enhancing_Arch_Linux_Stability)
 * [Arch Linux System Maintenance - ArchWiki](https://wiki.archlinux.org/index.php/Arch_Linux_System_Maintenance)
-
+* journalctl, systemd's syslog replacement: [systemd - ArchWiki](https://wiki.archlinux.org/index.php/Systemd#Journal)
