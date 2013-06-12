@@ -26,18 +26,20 @@ class puppet-archlinux-macbookretina::yaourt {
   }
 
   file {'/etc/pacman.d/archlinuxfr.conf':
-    ensure => present,
-    owner  => 'root',
-    group  => 'root',
-    mode   => '0644',
-    source => 'puppet:///modules/puppet-archlinux-macbookretina/archlinuxfr.conf',
-    notify => Exec['pacman_sync_yaourt'],
+    ensure  => present,
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0644',
+    source  => 'puppet:///modules/puppet-archlinux-macbookretina/archlinuxfr.conf',
+    notify  => Exec['pacman_sync_yaourt'],
+    require => File['/etc/pacman.conf'],
   }
 
   exec {'pacman_sync_yaourt':
     refreshonly => 'true',
     user        => 'root',
-    command     => 'pacman --sync --refresh yaourt',
+    command     => '/usr/bin/pacman --noconfirm --sync --refresh yaourt',
+    require     => File['/etc/pacman.d/archlinuxfr.conf'],
   }
 
 }
