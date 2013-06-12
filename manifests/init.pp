@@ -21,6 +21,7 @@ class puppet-archlinux-macbookretina {
   include puppet-archlinux-macbookretina::locate
   include puppet-archlinux-macbookretina::mbp_retina_kde
   include puppet-archlinux-macbookretina::mbp_retina_xorg
+  include puppet-archlinux-macbookretina::mozilla_profilemanager
   include puppet-archlinux-macbookretina::nouveau
   include puppet-archlinux-macbookretina::sshd
   include puppet-archlinux-macbookretina::sudoers
