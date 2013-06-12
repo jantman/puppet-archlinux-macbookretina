@@ -6,7 +6,6 @@
 #
 # Actions:
 #   - Install kdm and kde
-#   - Setup kdmrc
 #   - Run kdm service
 #
 # Requires:
@@ -25,16 +24,6 @@ class puppet-archlinux-macbookretina::kde {
 
   package {$kde_packages:
     ensure => present,
-  }
-
-  file {'kdmrc':
-    ensure  => present,
-    path    => '/usr/share/config/kdm/kdmrc',
-    mode    => '0644',
-    owner   => 'root',
-    group   => 'root',
-    source  => 'puppet:///modules/puppet-archlinux-macbookretina/kdmrc',
-    require => Package['kdebase-workspace'],
   }
 
 }

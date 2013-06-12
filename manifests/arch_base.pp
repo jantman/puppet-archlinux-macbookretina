@@ -1,4 +1,4 @@
-# Class: puppet-archlinux-macbookretina::base
+# Class: puppet-archlinux-macbookretina::arch_base
 #
 # Install base packages we want on any (arch) system
 #
@@ -11,7 +11,7 @@
 #
 # Sample Usage:
 #
-class puppet-archlinux-macbookretina::base {
+class puppet-archlinux-macbookretina::arch_base {
   package {'links': ensure => present, }
   package {'lynx': ensure => absent, }
   package {'lsb-release': ensure => present, }
