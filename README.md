@@ -47,6 +47,7 @@ What follows are NOT complete instructions, they are meant to be followed in par
 * `reboot`
 
 Initial Configuration
+  o
 =====================
 These are the steps I took after I had a bootable system:
 
@@ -168,6 +169,7 @@ To Do
    * rsnapshot
    * search my Fedora puppet manifests
 * IP stack hardening [sysctl - ArchWiki](https://wiki.archlinux.org/index.php/Sysctl#TCP.2FIP_stack_hardening) - see also [thias/sysctl · Puppet Forge](https://forge.puppetlabs.com/thias/sysctl)
+* make mozilla-profilemanager an AUR package, not this awful exec-based stuff
 
 Other References
 ================
