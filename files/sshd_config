@@ -1,5 +1,13 @@
 #	$OpenBSD: sshd_config,v 1.89 2013/02/06 00:20:42 dtucker Exp $
 
+##############################################################
+# WARNING - WARNING - WARNING
+# This file is managed by the puppet-archlinux-macbookretina
+#  puppet module. Any local changes made here will be 
+#  overwritten on the next Puppet run. Please change the
+#  file in the puppet module for persistent changes.
+##############################################################
+
 # This is the sshd server system-wide configuration file.  See
 # sshd_config(5) for more information.
 

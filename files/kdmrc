@@ -1,3 +1,11 @@
+##############################################################
+# WARNING - WARNING - WARNING
+# This file is managed by the puppet-archlinux-macbookretina
+#  puppet module. Any local changes made here will be
+#  overwritten on the next Puppet run. Please change the
+#  file in the puppet module for persistent changes.
+##############################################################
+
 # KDM master configuration file
 #
 # Definition: the greeter is the login dialog, i.e., the part of KDM
