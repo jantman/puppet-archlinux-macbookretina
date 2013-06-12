@@ -1,0 +1,24 @@
+import 'config.pp'
+
+service { "httpd":
+  ensure  => running,
+  enable  => true,
+}
+
+file { "/var/www/html":
+  ensure => present,
+  owner  => 'jantman',
+  group  => 'wheel',
+  mode   => '0775',
+}
+
+file { '/etc/httpd/conf.d/welcome.conf':
+  ensure => absent,
+}
+
+file { '/etc/httpd/conf.d/mod_info.conf':
+  ensure => present,
+  owner => root,
+  group => root,
+  source => "${FILESOURCE}/mod_info.conf",
+}
