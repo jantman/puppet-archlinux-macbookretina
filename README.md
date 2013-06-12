@@ -47,7 +47,6 @@ What follows are NOT complete instructions, they are meant to be followed in par
 * `reboot`
 
 Initial Configuration
-  o
 =====================
 These are the steps I took after I had a bootable system:
 
