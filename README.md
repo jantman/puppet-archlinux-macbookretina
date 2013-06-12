@@ -101,6 +101,7 @@ Puppet Configuration
 
 To Do
 =====
+* [Yaourt](https://wiki.archlinux.org/index.php/Yaourt) for AUR package installations via Puppet
 * [Solid State Drives - ArchWiki](https://wiki.archlinux.org/index.php/Solid_State_Drives) tweaks
 * try proprietary nvidia driver? (UseDPLibs Off, no brightness control currently)
 * fnmode - options hid_apple fnmode=2 in modprobe.conf.d
