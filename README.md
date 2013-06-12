@@ -134,7 +134,7 @@ To Do
 * the stuff in [Maximizing Performance - ArchWiki](https://wiki.archlinux.org/index.php/Maximizing_Performance)
 * implement the stuff in [Enhancing Arch Linux Stability - ArchWiki](https://wiki.archlinux.org/index.php/Enhancing_Arch_Linux_Stability)
 * Administration tasks - figure out how to automate
-   * pacman update reminders, reminder to check output (log it somewhere? mail the log?)
+   * pacman update reminders, reminder to check output (log it somewhere? mail the log?), reminder to update AUR/yaourt packages
    * `pacman -Qdt` to find orphaned packages
    * find `*.pacnew` and `*.pacsave` config files
    * check for out-of-date/unmaintained AUR packages
