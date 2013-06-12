@@ -1,0 +1,6 @@
+import 'config.pp'
+
+file { "/etc/modprobe.d/apple.conf":
+  ensure => present,
+  source => "${FILESOURCE}/apple.conf",
+  }
