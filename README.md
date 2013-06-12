@@ -105,7 +105,6 @@ To Do
 * [Solid State Drives - ArchWiki](https://wiki.archlinux.org/index.php/Solid_State_Drives) tweaks
 * try proprietary nvidia driver? (UseDPLibs Off, no brightness control currently)
 * fnmode - options hid_apple fnmode=2 in modprobe.conf.d
-* wireless - wireless-broadcom-bcm43142 in arch, anything based on broadcom 6.20.155.1-8 driver instead of 5.xx (or b43-fwcutter) or see https://wiki.archlinux.org/index.php/MacBook#Wi-Fi
 * look into replacing macfanctld with mbpfan / fan-control-daemon are two options that are less abrupt
 * test external monitor hot plug
 * sound - snd_hda_intel driver with 'model=mbp101' or 'model=intel-mac-auto' in modprobe config
