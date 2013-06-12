@@ -16,9 +16,11 @@
 # Sample Usage:
 #
 class puppet-archlinux-macbookretina {
-  include puppet-archlinux-macbookretina::base
+  include puppet-archlinux-macbookretina::arch_base
   include puppet-archlinux-macbookretina::kde
   include puppet-archlinux-macbookretina::locate
+  include puppet-archlinux-macbookretina::mbp_retina_kde
+  include puppet-archlinux-macbookretina::mbp_retina_xorg
   include puppet-archlinux-macbookretina::nouveau
   include puppet-archlinux-macbookretina::sshd
   include puppet-archlinux-macbookretina::sudoers
