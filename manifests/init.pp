@@ -26,4 +26,5 @@ class puppet-archlinux-macbookretina {
   include puppet-archlinux-macbookretina::sshd
   include puppet-archlinux-macbookretina::sudoers
   include puppet-archlinux-macbookretina::xorg
+  include puppet-archlinux-macbookretina::yaourt
 }
