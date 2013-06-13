@@ -17,6 +17,7 @@
 #
 class puppet-archlinux-macbookretina {
   include puppet-archlinux-macbookretina::arch_base
+  include puppet-archlinux-macbookretina::googlechrome
   include puppet-archlinux-macbookretina::kde
   include puppet-archlinux-macbookretina::locate
   include puppet-archlinux-macbookretina::mbp_retina_kde
