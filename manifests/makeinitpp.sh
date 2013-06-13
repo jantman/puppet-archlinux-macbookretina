@@ -30,7 +30,10 @@ EOF
 
 for i in `ls -1 *.pp | grep -v "init.pp" | awk -F \. '{print $1}'`
 do
+	summary=`awk '{if (NR==3) print $0}' $i.pp`
+	echo "  $summary" >> init.pp
 	echo "  include puppet-archlinux-macbookretina::$i" >> init.pp
+	echo >> init.pp
 done
 echo "}" >> init.pp
 
