@@ -1,9 +1,6 @@
 # Class: puppet-archlinux-macbookretina::openvpn
 #
-# Install and setup networkmanager OpenVPN and its NetworkManager part
-#
-# Note that we're using the bcm43142 package from AUR, but that appears to have
-# the 6.20.x driver which supports BCM4331.
+# Install OpenVPN and its NetworkManager part
 #
 # Parameters:
 #

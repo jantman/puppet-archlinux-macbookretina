@@ -1,6 +1,6 @@
 # Class: puppet-archlinux-macbookretina::mbp_retina_kde
 #
-# Setup KDM/KDE specific to the MacBook Pro Retina
+# Setup KDM/KDE specific to the MacBook Pro Retina - setup kdmrc
 #
 # Parameters:
 #

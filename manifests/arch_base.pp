@@ -1,11 +1,16 @@
 # Class: puppet-archlinux-macbookretina::arch_base
 #
-# Install base packages we want on any (arch) system
+# Install base packages we want on any (arch) system and setup makepkg.conf
 #
 # Parameters:
 #
 # Actions:
-#   - Install lsb-release
+#   - Install lsb-release, dmidecode
+#   - Install macfanctld-git
+#   - Install alsa-utils, ttf-dejavu
+#   - Install links, make sure lynx isnt on the system
+#   - Install screen
+#   - Setup /etc/makepkg.conf for system-optimized compiling
 #
 # Requires:
 #

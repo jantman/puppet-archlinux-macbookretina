@@ -1,13 +1,11 @@
 # Class: puppet-archlinux-macbookretina::yaourt
 #
-# Configure pacman.conf to include files from pacman.d/*.conf
-# Then setup the Yaourt https://wiki.archlinux.org/index.php/Yaourt
-#  tool for Puppet to install packages via AUR
+# Add the archlinuxfr repo to pacman, install yaourt <https://wiki.archlinux.org/index.php/Yaourt> so we can get packages from AUR
 #
 # Parameters:
 #
 # Actions:
-#   - Setup /etc/pacman.conf to include /etc/pacman.d/*.conf
+#   - Setup /etc/pacman.conf to include /etc/pacman.d/archlinuxfr.conf
 #   - Add archlinuxfr repository so we can install yaourt via pacman
 #   - run pacman --sync --refresh yaourt when the repo file changes
 #

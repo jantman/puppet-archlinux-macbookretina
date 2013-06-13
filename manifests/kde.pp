@@ -1,6 +1,6 @@
 # Class: puppet-archlinux-macbookretina::kde
 #
-# Install KDM and KDE baics
+# Install KDM and KDE basics and run kdm
 #
 # Parameters:
 #

@@ -1,6 +1,6 @@
 # Class: puppet-archlinux-macbookretina::xorg
 #
-# Install packages required for X server
+# Install packages required for xorg X server
 #
 # Parameters:
 #

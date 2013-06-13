@@ -5,7 +5,7 @@
 # Parameters:
 #
 # Actions:
-#   - Install /etc/X11/xorg.conf
+#   - Install /etc/X11/xorg.conf with MBP Retina customizations
 #
 # Requires:
 #

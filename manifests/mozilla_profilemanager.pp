@@ -1,7 +1,6 @@
 # Class: puppet-archlinux-macbookretina::mozilla_profilemanager
 #
-# Install Mozilla ProfileManager for Firefox
-#  https://developer.mozilla.org/en-US/docs/Profile_Manager
+# Install Mozilla ProfileManager for Firefox - https://developer.mozilla.org/en-US/docs/Profile_Manager
 #
 # Parameters:
 #

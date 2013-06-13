@@ -1,6 +1,7 @@
 # Class: puppet-archlinux-macbookretina::sshd
 #
-# Install and setup OpenSSH
+# Install and setup OpenSSH, drop in sshd_config
+
 #
 # Parameters:
 #

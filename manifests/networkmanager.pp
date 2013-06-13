@@ -1,11 +1,13 @@
 # Class: puppet-archlinux-macbookretina::networkmanager
 #
-# Install and setup networkmanager its KDE components, and do initial configuration
+# Install and setup networkmanager its KDE components, and ensure dhcpcd is stopped and nm is running
 #
 # Parameters:
 #
 # Actions:
-#   - Install networkmanager and its related components
+#   - Install networkmanager and kdeplasma-applets-networkmanagement
+#   - Ensure NetworkManager service is running and enabled
+#   - Ensure dhcpcd service is stopped and disabled
 #
 # Requires:
 #
