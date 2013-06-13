@@ -21,7 +21,7 @@ class puppet-archlinux-macbookretina::googlechrome {
   }
 
   package {'ttf-google-fonts-git':
-    ensure => package,
+    ensure => present,
   }
 
 }
