@@ -13,6 +13,8 @@ What Works
 ==========
 * suspend works fine
 * USB ethernet adapter A1277
+* Wireless networking using NetworkManager
+* Wired networking using NetworkManager and the USB ethernet adapter
 
 What Doesnt
 ===========
