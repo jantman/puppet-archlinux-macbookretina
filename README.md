@@ -13,8 +13,9 @@ What Works
 ==========
 * suspend works fine
 * USB ethernet adapter A1277
-* Wireless networking using NetworkManager
+* Wireless networking using NetworkManager, including WPA
 * Wired networking using NetworkManager and the USB ethernet adapter
+* installing AUR packages via Yaourt (including in Puppet)
 
 What Doesnt
 ===========
@@ -102,7 +103,6 @@ Puppet Configuration
 
 To Do
 =====
-* [Yaourt](https://wiki.archlinux.org/index.php/Yaourt) for AUR package installations via Puppet
 * [Solid State Drives - ArchWiki](https://wiki.archlinux.org/index.php/Solid_State_Drives) tweaks
 * try proprietary nvidia driver? (UseDPLibs Off, no brightness control currently)
 * fnmode - options hid_apple fnmode=2 in modprobe.conf.d
@@ -139,7 +139,6 @@ To Do
    * find `*.pacnew` and `*.pacsave` config files
    * check for out-of-date/unmaintained AUR packages
    * SMART/other SSD health check, with warnings if things go south
-* [NetworkManager - ArchWiki](https://wiki.archlinux.org/index.php/NetworkManager)
 * application installation - somewhat specific to me, so included in its own manifest
    * irssi
    * firefox
