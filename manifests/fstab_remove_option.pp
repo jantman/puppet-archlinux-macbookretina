@@ -19,8 +19,8 @@ define puppet-archlinux-macbookretina::fstab_remove_option ($drive = $title, $op
 
   augeas {"sda_remove_${option}_${drive}":
     context => '/files/etc/fstab',
-    #incl    => '/etc/fstab',
-    #lens    => 'fstab.aug',
+    incl    => '/etc/fstab',
+    lens    => 'fstab.lns',
     changes => [
       "rm *[spec='$drive']/opt[.='$option']",
     ],
