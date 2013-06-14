@@ -102,6 +102,10 @@ Puppet Configuration
 * `mkdir /etc/puppet/modules; cd /etc/puppet/modules && git clone git://github.com/jantman/puppet-archlinux-macbookretina.git`
 * `puppet apply --verbose --execute 'include puppet-archlinux-macbookretina'` (since we're just running a local apply)
 
+External Puppet Module Dependencies
+-----------------------------------
+* [duritong/sysctl · Puppet Forge](https://forge.puppetlabs.com/duritong/sysctl)
+
 To Do
 =====
 * [Solid State Drives - ArchWiki](https://wiki.archlinux.org/index.php/Solid_State_Drives) tweaks
@@ -173,6 +177,7 @@ To Do
 * IP stack hardening [sysctl - ArchWiki](https://wiki.archlinux.org/index.php/Sysctl#TCP.2FIP_stack_hardening) - see also [thias/sysctl · Puppet Forge](https://forge.puppetlabs.com/thias/sysctl)
 * make mozilla-profilemanager an AUR package, not this awful exec-based stuff
 * figure out why `facter` is having problems getting ipaddress, macaddress, networkmask
+* add a TOC to this README.md - [aslushnikov/table-of-contents-preprocessor · GitHub](https://github.com/aslushnikov/table-of-contents-preprocessor)
 
 Other References
 ================
