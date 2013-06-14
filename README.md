@@ -11,6 +11,8 @@ If some of this seems overly verbose to experienced Arch users, this install is 
 
 What Works
 ==========
+This mainly relates to the hardware, but also includes some notes on the included puppet module:
+
 * suspend works fine
 * USB ethernet adapter A1277
 * Wireless networking using NetworkManager, including WPA
@@ -18,8 +20,8 @@ What Works
 * Wired networking using NetworkManager and the USB ethernet adapter
 * installing AUR packages via Yaourt (including in Puppet)
 
-What Doesnt
-===========
+What Doesnt (Yet)
+=================
 See under "To Do" below.
 
 Arch Installation
@@ -108,8 +110,6 @@ External Puppet Module Dependencies
 
 To Do
 =====
-* [Solid State Drives - ArchWiki](https://wiki.archlinux.org/index.php/Solid_State_Drives) tweaks
-   * sysctl: vm.dirty_writeback_centisecs=1500; vm.laptop_mode=5; vm.swappiness=1; vm.vfs_cache_pressure=50
 * general power management, suspend to RAM and disk: https://wiki.archlinux.org/index.php/MacBook#Power_management
 * [Laptop Mode Tools - ArchWiki](https://wiki.archlinux.org/index.php/Laptop_Mode_Tools) and/or  [TLP - ArchWiki](https://wiki.archlinux.org/index.php/TLP)
    * modprobe.conf: options usbcore autosuspend=1
