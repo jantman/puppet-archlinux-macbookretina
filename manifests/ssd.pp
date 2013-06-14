@@ -6,6 +6,7 @@
 #
 # Actions:
 #   - make sure /dev/sda* is mounted with noatime, not relatime
+#   - make sure /dev/sda* ext4 partitions are mounted with discard for TRIM
 #
 # Requires:
 #
@@ -30,6 +31,10 @@ class puppet-archlinux-macbookretina::ssd {
   }
 
   # since we're arch, we're going to assume you're on a recent kernel (at time of module writing)
+  fstab_add_option {$ssd_partitions:
+    option => 'discard',
+    only_fstype => 'ext4',
+  }
 
 }
 
