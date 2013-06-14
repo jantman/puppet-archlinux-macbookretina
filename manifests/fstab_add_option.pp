@@ -8,6 +8,8 @@
 #
 # $option:: string, the option to add
 #
+# $fstype:: optional, string, only apply to mounts with this filesystem
+#
 # Actions:
 #   - add a specified option for a specified filesystem in /etc/fstab
 #
@@ -15,17 +17,24 @@
 #
 # Sample Usage:
 #
-define puppet-archlinux-macbookretina::fstab_add_option ($drive = $title, $option) {
+define puppet-archlinux-macbookretina::fstab_add_option ($drive = $title, $option, $fstype = '') {
+
+  # let us constrain to one fs type
+  if $fstype == '' {
+    $spec = "spec = '${drive}'"
+  } else {
+    $spec = "spec = '${drive}' and vfstype = '${fstype}'"
+  }
 
   augeas {"sda_add_${option}_${drive}":
     context => '/files/etc/fstab',
     incl    => '/etc/fstab',
     lens    => 'fstab.lns',
     changes => [
-      "ins opt after *[spec='$drive']/opt[last()]",
-      "set *[spec='$drive']/opt[last()] $option",
+      "ins opt after *[$spec]/opt[last()]",
+      "set *[$spec]/opt[last()] $option",
     ],
-    onlyif  => "match *[spec = '$drive']/opt[.='$option'] size < 1",
+    onlyif  => "match /files/etc/fstab/*[$spec and count(opt[.='$option'])=0] size > 0",
   }
 
 }

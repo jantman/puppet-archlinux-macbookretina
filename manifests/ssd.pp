@@ -1,6 +1,6 @@
 # Class: puppet-archlinux-macbookretina::ssd
 #
-# Sets up SSD-specific tuning on the system and disks.
+# Sets up SSD-specific tuning on the system, disks and ext4 partitions
 #
 # Parameters:
 #
@@ -23,11 +23,15 @@ class puppet-archlinux-macbookretina::ssd {
   # make sure relatime isn't specified on the /dev/sda mounts
   fstab_remove_option {$ssd_partitions:
     option => 'relatime',
+    fstype => 'ext4',
   }
   # and make sure they have noatime
   fstab_add_option {$ssd_partitions:
     option => 'noatime',
+    fstype => 'ext4',
   }
+
+  # since we're arch, we're going to assume you're on a recent kernel (at time of module writing)
 
 }
 
