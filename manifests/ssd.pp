@@ -7,6 +7,7 @@
 # Actions:
 #   - make sure /dev/sda* is mounted with noatime, not relatime
 #   - make sure /dev/sda* ext4 partitions are mounted with discard for TRIM
+#   - set deadline scheduler on non-rotational disks via udev rule
 #
 # Requires:
 #
@@ -31,6 +32,15 @@ class puppet-archlinux-macbookretina::ssd {
   fstab_add_option {$ssd_partitions:
     option => 'discard',
     only_fstype => 'ext4',
+  }
+
+  # CFQ is a *bad* scheduler for SSD. let's tell udev that we want to use deadline instead
+  file {'/etc/udev/rules.d/60-schedulers.rules':
+    ensure => present,
+    owner  => 'root',
+    group  => 'root',
+    mode   => '0644',
+    source => 'puppet:///modules/puppet-archlinux-macbookretina/60-schedulers.rules',
   }
 
 }

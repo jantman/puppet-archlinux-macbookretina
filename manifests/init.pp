@@ -22,6 +22,15 @@ class puppet-archlinux-macbookretina {
   # Install augeas, required for some of the puppet classes
   include puppet-archlinux-macbookretina::augeas
 
+  # Adds a specified option from /etc/fstab entry for a specified filesystem
+  include puppet-archlinux-macbookretina::fstab_add_option
+
+  # Removes a specified option from /etc/fstab entry for a specified filesystem
+  include puppet-archlinux-macbookretina::fstab_remove_option
+
+  # Replace a specified option from /etc/fstab entry for a specified filesystem, with another option
+  include puppet-archlinux-macbookretina::fstab_replace_option
+
   # Install proprietary google-chrome package and ttf-google-fonts-git from archlinuxfr repository.
   include puppet-archlinux-macbookretina::googlechrome
 
@@ -49,7 +58,7 @@ class puppet-archlinux-macbookretina {
   # Install OpenVPN and its NetworkManager part
   include puppet-archlinux-macbookretina::openvpn
 
-  # Sets up SSD-specific tuning on the system and disks.
+  # Sets up SSD-specific tuning on the system, disks and ext4 partitions
   include puppet-archlinux-macbookretina::ssd
 
   # Install and setup OpenSSH, drop in sshd_config
