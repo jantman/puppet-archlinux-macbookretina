@@ -104,9 +104,8 @@ Puppet Configuration
 To Do
 =====
 * [Solid State Drives - ArchWiki](https://wiki.archlinux.org/index.php/Solid_State_Drives) tweaks
-   * sysctl: vm.dirty_writeback_centisecs=1500; vm.laptop_mode=5
+   * sysctl: vm.dirty_writeback_centisecs=1500; vm.laptop_mode=5; vm.swappiness=1; vm.vfs_cache_pressure=50
 * general power management, suspend to RAM and disk: https://wiki.archlinux.org/index.php/MacBook#Power_management
-   * hard drive spindown: https://wiki.archlinux.org/index.php/Laptop#Hard_drive_spin_down_problem
 * [Laptop Mode Tools - ArchWiki](https://wiki.archlinux.org/index.php/Laptop_Mode_Tools) and/or  [TLP - ArchWiki](https://wiki.archlinux.org/index.php/TLP)
    * modprobe.conf: options usbcore autosuspend=1
 * try proprietary nvidia driver? (UseDPLibs Off, no brightness control currently)
@@ -133,6 +132,8 @@ To Do
 * further [KDE - ArchWiki](https://wiki.archlinux.org/index.php/Kde) configuration
 * the stuff in [Maximizing Performance - ArchWiki](https://wiki.archlinux.org/index.php/Maximizing_Performance)
 * implement the stuff in [Enhancing Arch Linux Stability - ArchWiki](https://wiki.archlinux.org/index.php/Enhancing_Arch_Linux_Stability)
+* [AUR (en) - profile-sync-daemon](https://aur.archlinux.org/packages/profile-sync-daemon/) or [AUR (en) - anything-sync-daemon](https://aur.archlinux.org/packages/anything-sync-daemon/) to store browser profiles and other high write activity user directories in tmpfs
+* setup a /scratch tmpfs for compiling, to keep it off disk - [Compiling in tmpfs](https://wiki.archlinux.org/index.php/Solid_State_Drives#Compiling_in_tmpfs)
 * Administration tasks - figure out how to automate
    * pacman update reminders, reminder to check output (log it somewhere? mail the log?), reminder to update AUR/yaourt packages
    * `pacman -Qdt` to find orphaned packages
