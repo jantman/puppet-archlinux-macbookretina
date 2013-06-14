@@ -24,6 +24,10 @@ class puppet-archlinux-macbookretina::ssd {
   fstab_remove_option {$ssd_partitions:
     option => 'relatime',
   }
+  # and make sure they have noatime
+  fstab_add_option {$ssd_partitions:
+    option => 'noatime',
+  }
 
 }
 
