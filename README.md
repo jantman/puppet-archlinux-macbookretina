@@ -171,6 +171,7 @@ To Do
    * search my Fedora puppet manifests
 * IP stack hardening [sysctl - ArchWiki](https://wiki.archlinux.org/index.php/Sysctl#TCP.2FIP_stack_hardening) - see also [thias/sysctl · Puppet Forge](https://forge.puppetlabs.com/thias/sysctl)
 * make mozilla-profilemanager an AUR package, not this awful exec-based stuff
+* figure out why `facter` is having problems getting ipaddress, macaddress, networkmask
 
 Other References
 ================
