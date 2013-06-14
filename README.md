@@ -104,6 +104,11 @@ Puppet Configuration
 To Do
 =====
 * [Solid State Drives - ArchWiki](https://wiki.archlinux.org/index.php/Solid_State_Drives) tweaks
+   * sysctl: vm.dirty_writeback_centisecs=1500; vm.laptop_mode=5
+* general power management, suspend to RAM and disk: https://wiki.archlinux.org/index.php/MacBook#Power_management
+   * hard drive spindown: https://wiki.archlinux.org/index.php/Laptop#Hard_drive_spin_down_problem
+* [Laptop Mode Tools - ArchWiki](https://wiki.archlinux.org/index.php/Laptop_Mode_Tools) and/or  [TLP - ArchWiki](https://wiki.archlinux.org/index.php/TLP)
+   * modprobe.conf: options usbcore autosuspend=1
 * try proprietary nvidia driver? (UseDPLibs Off, no brightness control currently)
 * fnmode - options hid_apple fnmode=2 in modprobe.conf.d
 * look into replacing macfanctld with mbpfan / fan-control-daemon are two options that are less abrupt
@@ -112,7 +117,6 @@ To Do
 * pommed from AUR for keyboard mapping/function keys, with /etc/pommed.conf built from /etc/pommed.conf.mac
 * keyboard backlight - /sys/class/leds/smc::kbd_backlight/brightness
 * backlight adjustment - nvidia-bl, https://wiki.archlinux.org/index.php/MacBook#NVIDIA_note_2
-* general power management, suspend to RAM and disk: https://wiki.archlinux.org/index.php/MacBook#Power_management
 * light sensor: https://wiki.archlinux.org/index.php/MacBook#Light_sensor
 * test iSight: https://wiki.archlinux.org/index.php/MacBook#iSight
 * check lm_sensors temp sensors, check fan operation
@@ -121,10 +125,6 @@ To Do
 * on Mac OS X side, mute the startup chime if you want: `/usr/bin/nvram SystemAudioVolume=%01`
 * figure out a nice, simple way to handle backups of a laptop that's often suspended on nights/weekends
 * [Granola](https://wiki.archlinux.org/index.php/Laptop#Granola) or https://wiki.archlinux.org/index.php/CPU_Frequency_Scaling#Laptop_Mode_Tools for cpu frequency scaling?
-* modprobe.conf: options usbcore autosuspend=1
-* sysctl: vm.dirty_writeback_centisecs=1500; vm.laptop_mode=5
-* [Laptop Mode Tools - ArchWiki](https://wiki.archlinux.org/index.php/Laptop_Mode_Tools) and/or  [TLP - ArchWiki](https://wiki.archlinux.org/index.php/TLP)
-* hard drive spindown: https://wiki.archlinux.org/index.php/Laptop#Hard_drive_spin_down_problem
 * [Chrony - ArchWiki](https://wiki.archlinux.org/index.php/Chrony) instead of NTP
 * [CUPS - ArchWiki](https://wiki.archlinux.org/index.php/CUPS)
 * [Postfix - ArchWiki](https://wiki.archlinux.org/index.php/Local_Mail_Delivery_with_Postfix) for local delivery and relaying
