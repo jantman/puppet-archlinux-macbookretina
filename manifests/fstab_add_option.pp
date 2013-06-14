@@ -34,7 +34,7 @@ define puppet-archlinux-macbookretina::fstab_add_option ($drive = $title, $optio
       "ins opt after *[$spec]/opt[last()]",
       "set *[$spec]/opt[last()] $option",
     ],
-    onlyif  => "match /files/etc/fstab/*[$spec and count(opt[.='$option'])=0] size > 0",
+    onlyif  => "match *[$spec and count(opt[.='$option'])=0] size > 0",
   }
 
 }

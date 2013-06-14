@@ -8,6 +8,8 @@
 #
 # $option:: string, the option to remove
 #
+# $fstype:: optional, string, only apply to mounts with this filesystem
+#
 # Actions:
 #   - remove a specified option for a specified filesystem in /etc/fstab
 #
@@ -15,16 +17,23 @@
 #
 # Sample Usage:
 #
-define puppet-archlinux-macbookretina::fstab_remove_option ($drive = $title, $option) {
+define puppet-archlinux-macbookretina::fstab_remove_option ($drive = $title, $option, $fstype = '') {
+
+  # let us constrain to one fs type
+  if $fstype == '' {
+    $spec = "spec = '${drive}'"
+  } else {
+    $spec = "spec = '${drive}' and vfstype = '${fstype}'"
+  }
 
   augeas {"sda_remove_${option}_${drive}":
     context => '/files/etc/fstab',
     incl    => '/etc/fstab',
     lens    => 'fstab.lns',
     changes => [
-      "rm *[spec='$drive']/opt[.='$option']",
+      "rm *[$spec]/opt[.='$option']",
     ],
-    onlyif  => "match *[spec = '$drive']/opt[.='$option'] size > 0",
+    onlyif  => "match *[$spec]/opt[.='$option'] size > 0",
   }
 
 }
