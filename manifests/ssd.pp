@@ -21,13 +21,10 @@ class puppet-archlinux-macbookretina::ssd {
   # to create the define for each partition
   $ssd_partitions = split($::partitions_sda, ',')
 
-  # make sure relatime isn't specified on the /dev/sda mounts
-  fstab_remove_option {$ssd_partitions:
-    option => 'relatime',
-  }
-  # and make sure they have noatime
-  fstab_add_option {$ssd_partitions:
-    option => 'noatime',
+  # make sure relatime isn't specified on the /dev/sda mounts and noatime is
+  fstab_replace_option {$ssd_partitions:
+    old_option => 'relatime',
+    option     => 'noatime',
   }
 
   # since we're arch, we're going to assume you're on a recent kernel (at time of module writing)
