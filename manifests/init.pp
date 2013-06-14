@@ -22,15 +22,6 @@ class puppet-archlinux-macbookretina {
   # Install augeas, required for some of the puppet classes
   include puppet-archlinux-macbookretina::augeas
 
-  # Adds a specified option from /etc/fstab entry for a specified filesystem
-  include puppet-archlinux-macbookretina::fstab_add_option
-
-  # Removes a specified option from /etc/fstab entry for a specified filesystem
-  include puppet-archlinux-macbookretina::fstab_remove_option
-
-  # Replace a specified option from /etc/fstab entry for a specified filesystem, with another option
-  include puppet-archlinux-macbookretina::fstab_replace_option
-
   # Install proprietary google-chrome package and ttf-google-fonts-git from archlinuxfr repository.
   include puppet-archlinux-macbookretina::googlechrome
 
