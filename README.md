@@ -13,7 +13,7 @@ What Works
 ==========
 This mainly relates to the hardware, but also includes some notes on the included puppet module:
 
-* suspend works fine
+* suspend (to RAM) works fine
 * USB ethernet adapter A1277
 * Wireless networking using NetworkManager, including WPA
    * but getting dropped connections and `journalctl` showing `wl_cfg80211_get_station wrong mac address`
@@ -113,7 +113,7 @@ To Do
 * [Laptop Mode Tools - ArchWiki](https://wiki.archlinux.org/index.php/Laptop_Mode_Tools) and/or  [TLP - ArchWiki](https://wiki.archlinux.org/index.php/TLP)
    * modprobe.conf: options usbcore autosuspend=1
    * https://wiki.archlinux.org/index.php/CPU_Frequency_Scaling#Laptop_Mode_Tools for cpu frequency scaling?
-* general power management, suspend to RAM and disk: https://wiki.archlinux.org/index.php/MacBook#Power_management and [Suspend and Hibernate - ArchWiki](https://wiki.archlinux.org/index.php/Suspend_and_Hibernate)
+* general power management, hibernate to disk: https://wiki.archlinux.org/index.php/MacBook#Power_management and [Suspend and Hibernate - ArchWiki](https://wiki.archlinux.org/index.php/Suspend_and_Hibernate)
 * [Pdnsd - ArchWiki](https://wiki.archlinux.org/index.php/Pdnsd) for local DNS caching
 * [Chrony - ArchWiki](https://wiki.archlinux.org/index.php/Chrony) instead of NTP
 * [CUPS - ArchWiki](https://wiki.archlinux.org/index.php/CUPS)
