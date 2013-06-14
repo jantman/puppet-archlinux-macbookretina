@@ -14,6 +14,7 @@ What Works
 * suspend works fine
 * USB ethernet adapter A1277
 * Wireless networking using NetworkManager, including WPA
+   * but getting dropped connections and `journalctl` showing `wl_cfg80211_get_station wrong mac address`
 * Wired networking using NetworkManager and the USB ethernet adapter
 * installing AUR packages via Yaourt (including in Puppet)
 
