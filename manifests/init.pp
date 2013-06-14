@@ -19,6 +19,9 @@ class puppet-archlinux-macbookretina {
   # Install base packages we want on any (arch) system and setup makepkg.conf
   include puppet-archlinux-macbookretina::arch_base
 
+  # Install augeas, required for some of the puppet classes
+  include puppet-archlinux-macbookretina::augeas
+
   # Install proprietary google-chrome package and ttf-google-fonts-git from archlinuxfr repository.
   include puppet-archlinux-macbookretina::googlechrome
 
