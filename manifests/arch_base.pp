@@ -26,6 +26,7 @@ class puppet-archlinux-macbookretina::arch_base {
   package {'ttf-dejavu': ensure => present, }
   package {'screen': ensure => present, }
   package {'mosh': ensure => present, }  
+  package {'hdparm': ensure => present, }
 
   # base config files
   file {'/etc/makepkg.conf':
