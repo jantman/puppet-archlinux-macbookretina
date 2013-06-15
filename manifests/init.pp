@@ -28,9 +28,6 @@ class puppet-archlinux-macbookretina {
   # Install KDM and KDE basics and run kdm
   include puppet-archlinux-macbookretina::kde
 
-  # Install and configute laptop-mode-tools for power saving
-  include puppet-archlinux-macbookretina::laptop_mode_tools
-
   # Install the mlocate package and run updatedb
   include puppet-archlinux-macbookretina::locate
 
@@ -51,9 +48,6 @@ class puppet-archlinux-macbookretina {
 
   # Install OpenVPN and its NetworkManager part
   include puppet-archlinux-macbookretina::openvpn
-
-  # Install and configute pdnsd for persistent local dns caching.
-  include puppet-archlinux-macbookretina::pdnsd
 
   # Sets up SSD-specific tuning on the system, disks and ext4 partitions
   include puppet-archlinux-macbookretina::ssd

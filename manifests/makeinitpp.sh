@@ -3,6 +3,11 @@
 # script to re-make init.pp to include all other pp files in this directory
 #
 
+# space-separated list of classes we don't want to automatically include-
+# either partially implemented classes, or highly specific ones that most
+# people won't want.
+BLACKLIST_CLASSES="pdnsd laptop_mode_tools"
+
 pushd `dirname $0` > /dev/null
 
 (
@@ -30,11 +35,18 @@ EOF
 
 for i in `ls -1 *.pp | grep -v "init.pp" | awk -F \. '{print $1}'`
 do
+	# skip anything that isnt a class (defines, etc.)
 	if ! grep "^class puppet-archlinux-macbookretina::$i" $i.pp > /dev/null
 	then
-		# skip anything that doesn't have a class in it
 		continue
 	fi
+
+	# skip blacklisted classes
+	if [[ "$BLACKLIST_CLASSES" == *"$i"* ]]
+	then
+		continue
+	fi
+
 	summary=`awk '{if (NR==3) print $0}' $i.pp`
 	echo "  $summary" >> init.pp
 	echo "  include puppet-archlinux-macbookretina::$i" >> init.pp
