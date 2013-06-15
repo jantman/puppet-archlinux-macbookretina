@@ -19,6 +19,7 @@ This mainly relates to the hardware, but also includes some notes on the include
    * but getting dropped connections and `journalctl` showing `wl_cfg80211_get_station wrong mac address`
 * Wired networking using NetworkManager and the USB ethernet adapter
 * installing AUR packages via Yaourt (including in Puppet)
+* [Chrony - ArchWiki](https://wiki.archlinux.org/index.php/Chrony) for NTP that plays well on a laptop
 
 What Doesnt (Yet)
 =================
@@ -111,7 +112,6 @@ External Puppet Module Dependencies
 
 To Do
 =====
-* [Chrony - ArchWiki](https://wiki.archlinux.org/index.php/Chrony) instead of NTP
 * [CUPS - ArchWiki](https://wiki.archlinux.org/index.php/CUPS)
 * [Postfix - ArchWiki](https://wiki.archlinux.org/index.php/Local_Mail_Delivery_with_Postfix) for local delivery and relaying
 * [iptables - ArchWiki](https://wiki.archlinux.org/index.php/Iptables)
