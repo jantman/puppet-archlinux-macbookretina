@@ -111,7 +111,6 @@ External Puppet Module Dependencies
 
 To Do
 =====
-* [Pdnsd - ArchWiki](https://wiki.archlinux.org/index.php/Pdnsd) for local DNS caching
 * [Chrony - ArchWiki](https://wiki.archlinux.org/index.php/Chrony) instead of NTP
 * [CUPS - ArchWiki](https://wiki.archlinux.org/index.php/CUPS)
 * [Postfix - ArchWiki](https://wiki.archlinux.org/index.php/Local_Mail_Delivery_with_Postfix) for local delivery and relaying
@@ -177,10 +176,12 @@ To Do
 * add a TOC to this README.md - [aslushnikov/table-of-contents-preprocessor · GitHub](https://github.com/aslushnikov/table-of-contents-preprocessor)
 * setup color profiles: https://wiki.archlinux.org/index.php/MacBook#Color_Profile
 * setup LiRC and an apple remote: https://wiki.archlinux.org/index.php/MacBook#Apple_Remote
-* [Laptop Mode Tools - ArchWiki](https://wiki.archlinux.org/index.php/Laptop_Mode_Tools) and/or  [TLP - ArchWiki](https://wiki.archlinux.org/index.php/TLP)
+* [Laptop Mode Tools - ArchWiki](https://wiki.archlinux.org/index.php/Laptop_Mode_Tools) and/or  [TLP - ArchWiki](https://wiki.archlinux.org/index.php/TLP) *(started looking into this, very involved configuration and I don't really need it right now)*
    * modprobe.conf: options usbcore autosuspend=1
    * https://wiki.archlinux.org/index.php/CPU_Frequency_Scaling#Laptop_Mode_Tools for cpu frequency scaling?
-* hibernate to disk: https://wiki.archlinux.org/index.php/MacBook#Power_management
+* hibernate to disk: https://wiki.archlinux.org/index.php/MacBook#Power_management *(I might give this up, as it just increases writes to the SSD...)*
+* [Pdnsd - ArchWiki](https://wiki.archlinux.org/index.php/Pdnsd) for local DNS caching *(started work on this, not sure how it will play nicely with NetworkManager/often-changing DNS configs on a laptop, also not sure if I want DNS cached locally)*
+
 
 Other References
 ================
