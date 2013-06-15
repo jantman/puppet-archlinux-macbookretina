@@ -26,6 +26,6 @@ class puppet-archlinux-macbookretina::pdnsd {
     require => Package['pdnsd'],
   }
 
-  # service laptop-mode
+  # service pdnsd
 
 }
