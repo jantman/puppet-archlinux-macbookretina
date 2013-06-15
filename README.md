@@ -111,10 +111,6 @@ External Puppet Module Dependencies
 
 To Do
 =====
-* [Laptop Mode Tools - ArchWiki](https://wiki.archlinux.org/index.php/Laptop_Mode_Tools) and/or  [TLP - ArchWiki](https://wiki.archlinux.org/index.php/TLP)
-   * modprobe.conf: options usbcore autosuspend=1
-   * https://wiki.archlinux.org/index.php/CPU_Frequency_Scaling#Laptop_Mode_Tools for cpu frequency scaling?
-* general power management, suspend to RAM and disk: https://wiki.archlinux.org/index.php/MacBook#Power_management
 * [Pdnsd - ArchWiki](https://wiki.archlinux.org/index.php/Pdnsd) for local DNS caching
 * [Chrony - ArchWiki](https://wiki.archlinux.org/index.php/Chrony) instead of NTP
 * [CUPS - ArchWiki](https://wiki.archlinux.org/index.php/CUPS)
@@ -181,6 +177,10 @@ To Do
 * add a TOC to this README.md - [aslushnikov/table-of-contents-preprocessor · GitHub](https://github.com/aslushnikov/table-of-contents-preprocessor)
 * setup color profiles: https://wiki.archlinux.org/index.php/MacBook#Color_Profile
 * setup LiRC and an apple remote: https://wiki.archlinux.org/index.php/MacBook#Apple_Remote
+* [Laptop Mode Tools - ArchWiki](https://wiki.archlinux.org/index.php/Laptop_Mode_Tools) and/or  [TLP - ArchWiki](https://wiki.archlinux.org/index.php/TLP)
+   * modprobe.conf: options usbcore autosuspend=1
+   * https://wiki.archlinux.org/index.php/CPU_Frequency_Scaling#Laptop_Mode_Tools for cpu frequency scaling?
+* hibernate to disk: https://wiki.archlinux.org/index.php/MacBook#Power_management
 
 Other References
 ================
