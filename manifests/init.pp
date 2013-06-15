@@ -22,6 +22,9 @@ class puppet-archlinux-macbookretina {
   # Install augeas, required for some of the puppet classes
   include puppet-archlinux-macbookretina::augeas
 
+  # Install and configure chrony, a roaming/laptop friendly NTP client
+  include puppet-archlinux-macbookretina::chrony
+
   # Install proprietary google-chrome package and ttf-google-fonts-git from archlinuxfr repository.
   include puppet-archlinux-macbookretina::googlechrome
 
