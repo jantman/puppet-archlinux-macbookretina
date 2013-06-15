@@ -28,6 +28,9 @@ class puppet-archlinux-macbookretina {
   # Install KDM and KDE basics and run kdm
   include puppet-archlinux-macbookretina::kde
 
+  # Install and configute laptop-mode-tools for power saving
+  include puppet-archlinux-macbookretina::laptop_mode_tools
+
   # Install the mlocate package and run updatedb
   include puppet-archlinux-macbookretina::locate
 

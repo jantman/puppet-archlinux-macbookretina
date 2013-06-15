@@ -103,6 +103,7 @@ Puppet Configuration
 ====================
 * `mkdir /etc/puppet/modules; cd /etc/puppet/modules && git clone git://github.com/jantman/puppet-archlinux-macbookretina.git`
 * `puppet apply --verbose --execute 'include puppet-archlinux-macbookretina'` (since we're just running a local apply)
+* once you have a successful run, reboot the machine so the changes to `/etc/fstab`, sysctl and `modprobe.conf` go into effect.
 
 External Puppet Module Dependencies
 -----------------------------------
