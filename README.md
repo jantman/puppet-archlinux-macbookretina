@@ -13,7 +13,7 @@ What Works
 ==========
 This mainly relates to the hardware, but also includes some notes on the included puppet module:
 
-* suspend works fine
+* suspend (to RAM) works fine
 * USB ethernet adapter A1277
 * Wireless networking using NetworkManager, including WPA
    * but getting dropped connections and `journalctl` showing `wl_cfg80211_get_station wrong mac address`
