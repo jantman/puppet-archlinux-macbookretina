@@ -190,6 +190,7 @@ Second Round
 * hibernate to disk: https://wiki.archlinux.org/index.php/MacBook#Power_management *(I might give this up, as it just increases writes to the SSD...)*
 * [Pdnsd - ArchWiki](https://wiki.archlinux.org/index.php/Pdnsd) for local DNS caching *(started work on this, not sure how it will play nicely with NetworkManager/often-changing DNS configs on a laptop, also not sure if I want DNS cached locally)*
 * make mozilla-profilemanager an AUR package, not this awful exec-based stuff
+* ip6tables
 
 Other References
 ================
