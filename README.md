@@ -134,7 +134,6 @@ Initial Tasks for a working workstation
    * kdebase-dolphin
    * meld
    * kdegraphics-okular
-   * emacs
    * kdesdk-kate
    * eclipse
    * search my Fedora puppet manifests
