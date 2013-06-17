@@ -48,9 +48,6 @@ class puppet-archlinux-macbookretina::ssd {
     source => 'puppet:///modules/puppet-archlinux-macbookretina/60-schedulers.rules',
   }
 
-  # sysctl::value needs the default exec path set; lets set it to root's default
-  Exec { path => '/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl' }
-
   # sysctl values specific to laptops and SSDS
   #  see: https://www.kernel.org/doc/Documentation/sysctl/vm.txt
   #  and: https://www.kernel.org/doc/Documentation/laptops/laptop-mode.txt

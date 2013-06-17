@@ -38,4 +38,13 @@ class puppet-archlinux-macbookretina::arch_base {
     source => 'puppet:///modules/puppet-archlinux-macbookretina/makepkg.conf',
   }
 
+  # need this for a bunch of puppet stuff
+  file {'/etc/puppet/manifests/site.pp':
+    ensure => present,
+    owner  => 'root',
+    group  => 'root',
+    mode   => '0644',
+    source => 'puppet:///modules/puppet-archlinux-macbookretina/site.pp',
+  }
+
 }
