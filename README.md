@@ -118,7 +118,7 @@ To Do
 Initial Tasks for a working workstation
 ---------------------------------------
 * test external monitor hot plug
-* check lm_sensors temp sensors, check fan operation
+* check fan operation
 * more SSD optimizations
    * [AUR (en) - profile-sync-daemon](https://aur.archlinux.org/packages/profile-sync-daemon/) or [AUR (en) - anything-sync-daemon](https://aur.archlinux.org/packages/anything-sync-daemon/) to store browser profiles and other high write activity user directories in tmpfs
    * setup a /scratch tmpfs for compiling, to keep it off disk - [Compiling in tmpfs](https://wiki.archlinux.org/index.php/Solid_State_Drives#Compiling_in_tmpfs)
