@@ -61,6 +61,9 @@ class puppet-archlinux-macbookretina {
   # Install OpenVPN and its NetworkManager part
   include puppet-archlinux-macbookretina::openvpn
 
+  # Install and configure profile-sync-daemon - REQUIRES CONFIGURATION
+  include puppet-archlinux-macbookretina::profilesyncdaemon
+
   # Sets up SSD-specific tuning on the system, disks and ext4 partitions
   include puppet-archlinux-macbookretina::ssd
 

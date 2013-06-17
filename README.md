@@ -24,6 +24,7 @@ This mainly relates to the hardware, but also includes some notes on the include
 * makepkg set to compile and store source and logs under /tmp, which is by default a tmpfs in RAM sized at 50% of physical memory. If you need more space than that, see [Compiling in tmpfs](https://wiki.archlinux.org/index.php/Solid_State_Drives#Compiling_in_tmpfs)
 * a bunch of userspace packages that I use
 * SSD optimizations via sysctl settings, mount /dev/sda* noatime and discard (TRIM), use deadline scheduler on non-rotational disks
+* [Profile-sync-daemon](https://wiki.archlinux.org/index.php/Profile-sync-daemon) to store browser profiles in memory (tmpfs) and periodically sync back to disk
 
 What Doesnt (Yet)
 =================
@@ -108,6 +109,7 @@ Puppet Configuration
 ====================
 * `mkdir /etc/puppet/modules; cd /etc/puppet/modules && git clone git://github.com/jantman/puppet-archlinux-macbookretina.git`
 * `mkdir /etc/puppet/manifests; cp /etc/puppet/modules/puppet-archlinux-macbookretina/files/site.pp /etc/puppet/manifests`
+* edit `manifests/profilesyncdaemon.pp` and add your username in the $profile_sync_users string
 * `puppet apply --verbose /etc/puppet/manifests/site.pp` (since we're just running a local apply)
 * once you have a successful run, reboot the machine so the changes to `/etc/fstab`, sysctl and `modprobe.conf` go into effect.
 
@@ -123,8 +125,6 @@ Initial Tasks for a working workstation
 ---------------------------------------
 * test external monitor hot plug
 * check fan operation
-* more SSD optimizations
-   * [AUR (en) - profile-sync-daemon](https://aur.archlinux.org/packages/profile-sync-daemon/) to store browser profiles in tmpfs
 * application installation - somewhat specific to me, so included in its own manifest
    * irssi
    * firefox
