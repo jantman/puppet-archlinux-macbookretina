@@ -126,20 +126,8 @@ Initial Tasks for a working workstation
 * test external monitor hot plug
 * check fan operation
 * application installation - somewhat specific to me, so included in its own manifest
-   * irssi
-   * firefox
-   * thunderbird
-   * pidgin
-   * skype
-   * kdebase-dolphin
-   * meld
-   * kdegraphics-okular
-   * kdesdk-kate
-   * eclipse
-   * search my Fedora puppet manifests
-   * [VirtualBox - ArchWiki](https://wiki.archlinux.org/index.php/Virtualbox) and [VirtualBox Extension Pack - ArchWiki](https://wiki.archlinux.org/index.php/VirtualBox_Extras#Extension_pack)
+   * finish [VirtualBox - ArchWiki](https://wiki.archlinux.org/index.php/Virtualbox) and [VirtualBox Extension Pack - ArchWiki](https://wiki.archlinux.org/index.php/VirtualBox_Extras#Extension_pack)
 * [Laptop Mode Tools - ArchWiki](https://wiki.archlinux.org/index.php/Laptop_Mode_Tools) and/or  [TLP - ArchWiki](https://wiki.archlinux.org/index.php/TLP) *(started looking into this, very involved configuration and I don't really need it right now)*
-   * modprobe.conf: options usbcore autosuspend=1
    * https://wiki.archlinux.org/index.php/CPU_Frequency_Scaling#Laptop_Mode_Tools for cpu frequency scaling?
 
 Second Round
