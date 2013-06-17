@@ -22,6 +22,8 @@ This mainly relates to the hardware, but also includes some notes on the include
 * [Chrony - ArchWiki](https://wiki.archlinux.org/index.php/Chrony) for NTP that plays well on a laptop
 * iptables with rules provided by the puppetlabs firewall module
 * makepkg set to compile and store source and logs under /tmp, which is by default a tmpfs in RAM sized at 50% of physical memory. If you need more space than that, see [Compiling in tmpfs](https://wiki.archlinux.org/index.php/Solid_State_Drives#Compiling_in_tmpfs)
+* a bunch of userspace packages that I use
+* SSD optimizations via sysctl settings, mount /dev/sda* noatime and discard (TRIM), use deadline scheduler on non-rotational disks
 
 What Doesnt (Yet)
 =================
