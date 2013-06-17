@@ -14,6 +14,7 @@
 #   - set sysctl vm.vfs_cache_pressure to 50; kernel prefers to retain dir/inode caches longer, reduces reads
 #
 # Requires:
+#   - duritong/sysctl puppet forge module for sysctl::value type
 #
 # Sample Usage:
 #
