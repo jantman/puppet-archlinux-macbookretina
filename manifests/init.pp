@@ -28,6 +28,9 @@ class puppet-archlinux-macbookretina {
   # Install proprietary google-chrome package and ttf-google-fonts-git from archlinuxfr repository.
   include puppet-archlinux-macbookretina::googlechrome
 
+  # Packages largely specific to jantman's workstation setup
+  include puppet-archlinux-macbookretina::jantman_packages
+
   # Install KDM and KDE basics and run kdm
   include puppet-archlinux-macbookretina::kde
 
@@ -40,7 +43,7 @@ class puppet-archlinux-macbookretina {
   # Install default xorg.conf for MacBook Pro Retina
   include puppet-archlinux-macbookretina::mbp_retina_xorg
 
-  # Install Mozilla ProfileManager for Firefox - https://developer.mozilla.org/en-US/docs/Profile_Manager
+  # Install Mozilla ProfileManager for Firefox as an ugly binary untar
   include puppet-archlinux-macbookretina::mozilla_profilemanager
 
   # Install and setup networkmanager its KDE components, and ensure dhcpcd is stopped and nm is running
