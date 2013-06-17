@@ -38,6 +38,14 @@ class puppet-archlinux-macbookretina::arch_base {
     source => 'puppet:///modules/puppet-archlinux-macbookretina/makepkg.conf',
   }
 
+  # these are needed for compiling packages under /tmp using makepkg
+  file {'/tmp/sources':
+    ensure => directory,
+    owner  => 'root',
+    group  => 'wheel',
+    mode   => '775',
+  }
+
   # need this for a bunch of puppet stuff
   file {'/etc/puppet/manifests/site.pp':
     ensure => present,
