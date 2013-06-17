@@ -118,7 +118,6 @@ To Do
 Initial Tasks for a working workstation
 ---------------------------------------
 * [CUPS - ArchWiki](https://wiki.archlinux.org/index.php/CUPS)
-* [iptables - ArchWiki](https://wiki.archlinux.org/index.php/Iptables)
 * fnmode - options hid_apple fnmode=2 in modprobe.conf.d
 * test external monitor hot plug
 * check lm_sensors temp sensors, check fan operation

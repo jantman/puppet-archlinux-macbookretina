@@ -6,7 +6,7 @@
 # space-separated list of classes we don't want to automatically include-
 # either partially implemented classes, or highly specific ones that most
 # people won't want.
-BLACKLIST_CLASSES="pdnsd laptop_mode_tools"
+BLACKLIST_CLASSES="pdnsd laptop_mode_tools firewall_pre firewall_post"
 
 pushd `dirname $0` > /dev/null
 

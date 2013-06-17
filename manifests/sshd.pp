@@ -8,6 +8,7 @@
 # Actions:
 #   - Install openssh
 #   - Seed /etc/ssh/sshd_config which allows key auth only, and no root login
+#   - Setup firewall rule to allow ssh on port 22 from anywhere
 #
 # Requires:
 #
@@ -26,6 +27,13 @@ class puppet-archlinux-macbookretina::sshd {
 
   package {'openssh':
     ensure => present,
+  }
+
+  # this requires our iptables class and all of its dependencies
+  firewall { '100 allow ssh':
+    port   => 22,
+    proto  => tcp,
+    action => accept,
   }
 
 }

@@ -28,6 +28,9 @@ class puppet-archlinux-macbookretina {
   # Install proprietary google-chrome package and ttf-google-fonts-git from archlinuxfr repository.
   include puppet-archlinux-macbookretina::googlechrome
 
+  # Install iptables and setup some sane default rules
+  include puppet-archlinux-macbookretina::iptables
+
   # Packages largely specific to jantman's workstation setup
   include puppet-archlinux-macbookretina::jantman_packages
 
