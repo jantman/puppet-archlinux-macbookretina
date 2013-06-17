@@ -20,6 +20,8 @@ This mainly relates to the hardware, but also includes some notes on the include
 * Wired networking using NetworkManager and the USB ethernet adapter
 * installing AUR packages via Yaourt (including in Puppet)
 * [Chrony - ArchWiki](https://wiki.archlinux.org/index.php/Chrony) for NTP that plays well on a laptop
+* iptables with rules provided by the puppetlabs firewall module
+* makepkg set to compile and store source and logs under /tmp, which is by default a tmpfs in RAM sized at 50% of physical memory. If you need more space than that, see [Compiling in tmpfs](https://wiki.archlinux.org/index.php/Solid_State_Drives#Compiling_in_tmpfs)
 
 What Doesnt (Yet)
 =================
