@@ -117,7 +117,6 @@ To Do
 
 Initial Tasks for a working workstation
 ---------------------------------------
-* [CUPS - ArchWiki](https://wiki.archlinux.org/index.php/CUPS)
 * fnmode - options hid_apple fnmode=2 in modprobe.conf.d
 * test external monitor hot plug
 * check lm_sensors temp sensors, check fan operation
@@ -144,6 +143,7 @@ Initial Tasks for a working workstation
 
 Second Round
 ------------
+* [CUPS - ArchWiki](https://wiki.archlinux.org/index.php/CUPS)
 * [Postfix - ArchWiki](https://wiki.archlinux.org/index.php/Local_Mail_Delivery_with_Postfix) for local delivery and relaying
 * sound - snd_hda_intel driver with 'model=mbp101' or 'model=intel-mac-auto' in modprobe config
 * pommed from AUR for keyboard mapping/function keys, with /etc/pommed.conf built from /etc/pommed.conf.mac; or other way of doing this
