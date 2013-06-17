@@ -32,4 +32,14 @@ class puppet-archlinux-macbookretina::profilesyncdaemon {
     ensure => present,
   }
 
+#  service {'psd':
+#    ensure => running,
+#    enable => true,
+#  }
+
+#  service {'psd-resync':
+#    ensure => running,
+#    enable => true,
+#  }
+
 }
