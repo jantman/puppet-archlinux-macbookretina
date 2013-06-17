@@ -183,6 +183,7 @@ Second Round
 * try proprietary nvidia driver? (UseDPLibs Off, no brightness control currently)
 * puppet pacman provider - keeps reinstalling metapackages (kdebase, xorg-apps)
 * add a TOC to this README.md - [aslushnikov/table-of-contents-preprocessor · GitHub](https://github.com/aslushnikov/table-of-contents-preprocessor)
+* generate puppetdoc docs for all of this
 * setup color profiles: https://wiki.archlinux.org/index.php/MacBook#Color_Profile
 * setup LiRC and an apple remote: https://wiki.archlinux.org/index.php/MacBook#Apple_Remote
 * hibernate to disk: https://wiki.archlinux.org/index.php/MacBook#Power_management *(I might give this up, as it just increases writes to the SSD...)*
