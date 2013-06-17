@@ -182,7 +182,7 @@ Second Round
 * figure out why `facter` is having problems getting ipaddress, macaddress, networkmask
 * figure out why wireless keeps dropping connection with `wl_cfg80211_get_station wrong mac address`
 * try proprietary nvidia driver? (UseDPLibs Off, no brightness control currently)
-* puppet pacman provider - keeps reinstalling metapackages (kde-base, 
+* puppet pacman provider - keeps reinstalling metapackages (kdebase, xorg-apps)
 * add a TOC to this README.md - [aslushnikov/table-of-contents-preprocessor · GitHub](https://github.com/aslushnikov/table-of-contents-preprocessor)
 * setup color profiles: https://wiki.archlinux.org/index.php/MacBook#Color_Profile
 * setup LiRC and an apple remote: https://wiki.archlinux.org/index.php/MacBook#Apple_Remote
