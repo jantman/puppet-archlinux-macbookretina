@@ -124,7 +124,7 @@ Initial Tasks for a working workstation
 * test external monitor hot plug
 * check fan operation
 * more SSD optimizations
-   * [AUR (en) - profile-sync-daemon](https://aur.archlinux.org/packages/profile-sync-daemon/) or [AUR (en) - anything-sync-daemon](https://aur.archlinux.org/packages/anything-sync-daemon/) to store browser profiles and other high write activity user directories in tmpfs
+   * [AUR (en) - profile-sync-daemon](https://aur.archlinux.org/packages/profile-sync-daemon/) to store browser profiles in tmpfs
 * application installation - somewhat specific to me, so included in its own manifest
    * irssi
    * firefox
@@ -193,6 +193,7 @@ Second Round
 * [Pdnsd - ArchWiki](https://wiki.archlinux.org/index.php/Pdnsd) for local DNS caching *(started work on this, not sure how it will play nicely with NetworkManager/often-changing DNS configs on a laptop, also not sure if I want DNS cached locally)*
 * make mozilla-profilemanager an AUR package, not this awful exec-based stuff
 * ip6tables
+* [AUR (en) - anything-sync-daemon](https://aur.archlinux.org/packages/anything-sync-daemon/) to store high write activity user directories in tmpfs
 
 Other References
 ================
