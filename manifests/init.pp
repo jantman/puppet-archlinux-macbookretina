@@ -28,7 +28,7 @@ class puppet-archlinux-macbookretina {
   # Install proprietary google-chrome package and ttf-google-fonts-git from archlinuxfr repository.
   include puppet-archlinux-macbookretina::googlechrome
 
-  # Install iptables and setup some sane default rules
+  # Install iptables and setup framework for puppetlabs/firewall module and set custom rules
   include puppet-archlinux-macbookretina::iptables
 
   # Packages largely specific to jantman's workstation setup
@@ -39,6 +39,9 @@ class puppet-archlinux-macbookretina {
 
   # Install the mlocate package and run updatedb
   include puppet-archlinux-macbookretina::locate
+
+  # Sets up macbook-specific keyboard stuff
+  include puppet-archlinux-macbookretina::mac_keyboard
 
   # Setup KDM/KDE specific to the MacBook Pro Retina - setup kdmrc
   include puppet-archlinux-macbookretina::mbp_retina_kde

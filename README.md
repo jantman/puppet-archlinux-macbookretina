@@ -117,7 +117,6 @@ To Do
 
 Initial Tasks for a working workstation
 ---------------------------------------
-* fnmode - options hid_apple fnmode=2 in modprobe.conf.d
 * test external monitor hot plug
 * check lm_sensors temp sensors, check fan operation
 * more SSD optimizations
