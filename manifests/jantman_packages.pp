@@ -50,47 +50,34 @@ class puppet-archlinux-macbookretina::jantman_packages {
   package {'fuse': ensure => present, }
   package {'sshfs': ensure => present, }
 
+  # misc
+  package {'diffutils': ensure => present, }
+  package {'kdeartwork-screensaver': ensure => present, }
+  package {'kdegraphics-gwenview': ensure => present, }
+  package {'kdetoys-kteatime': ensure => present, }
+  package {'keepassx': ensure => present, }
+  package {'libvirt': ensure => present, }
+  package {'minicom': ensure => present, }
+  package {'multitail': ensure => present, }
+  package {'gnu-netcat': ensure => present, }
+  package {'net-snmp': ensure => present, }
+  package {'perl-net-snmp': ensure => present, }
+  package {'nmap': ensure => present, }
+  package {'pdftk': ensure => present, }
+  package {'strace': ensure => present, }
+  package {'tcpdump': ensure => present, }
+  package {'traceroute': ensure => present, }
+  package {'vlc': ensure => present, }
+  package {'wireshark-cli': ensure => present, }
+  package {'wireshark-gtk': ensure => present, }
+  package {'xscreensaver': ensure => present, }
+  package {'mysql-workbench': ensure => present, }
+
   # FEDORA PACKAGES - need to check arch package names
   #package {'cdpr': ensure => present, }
-  #package {'dia': ensure => present, }
-  #package {'diffutils': ensure => present, }
   #package {'fslint': ensure => present, }
-  #package {'gwenview': ensure => present, }
-  #package {'kdeartwork-screensavers': ensure => present, }
-  #package {'kdetoys': ensure => present, }
-  #package {'keepassx': ensure => present, }
-  #package {'libvirt-client': ensure => present, }
-  #package {'libvirt': ensure => present, }
-  #package {'minicom': ensure => present, }
-  #package {'Mosaic': ensure => present, }
-  #package {'multitail': ensure => present, }
-  #package {'nc': ensure => present, }
-  #package {'net-snmp': ensure => present, }
-  #package {'net-snmp-libs': ensure => present, }
-  #package {'net-snmp-utils': ensure => present, }
-  #package {'nmap': ensure => present, }
-  #package {'pdftk': ensure => present, }
   #package {'python': ensure => present, }
   #package {'python-VirtualBox': ensure => present, }
   #package {'python-virtualenv': ensure => present, }
-  #package {'rsync': ensure => present, }
-  #package {'spice-client': ensure => present, }
-  #package {'spice-server': ensure => present, }
-  #package {'spice-xpi': ensure => present, }
-  #package {'sqlite': ensure => present, }
-  #package {'strace': ensure => present, }
-  #package {'tcpdump': ensure => present, }
-  #package {'telnet': ensure => present, }
-  #package {'traceroute': ensure => present, }
-  #package {'vlc-core': ensure => present, }
-  #package {'vlc-devel': ensure => present, }
-  #package {'vlc': ensure => present, }
-  #package {'vlc-extras': ensure => present, }
-  #package {'wireshark': ensure => present, }
-  #package {'wireshark-gnome': ensure => present, }
-  #package {'xscreensaver-extras-base': ensure => present, }
-  #package {'xscreensaver-extras': ensure => present, }
-  #package {'xscreensaver-gl-base': ensure => present, }
-  #package {'xscreensaver-gl-extras': ensure => present, }
-  #package {'mysql-workbench': ensure => present, }
+
 }
