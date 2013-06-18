@@ -26,6 +26,7 @@ This mainly relates to the hardware, but also includes some notes on the include
 * SSD optimizations via sysctl settings, mount /dev/sda* noatime and discard (TRIM), use deadline scheduler on non-rotational disks
 * [Profile-sync-daemon](https://wiki.archlinux.org/index.php/Profile-sync-daemon) to store browser profiles in memory (tmpfs) and periodically sync back to disk (disabled by default)
 * install ksshaskpass and keychain
+* fans work under macfanctld
 
 What Doesnt (Yet)
 =================
@@ -125,7 +126,6 @@ To Do
 Initial Tasks for a working workstation
 ---------------------------------------
 * test external monitor hot plug
-* check fan operation
 * application installation - somewhat specific to me, so included in its own manifest
    * finish [VirtualBox - ArchWiki](https://wiki.archlinux.org/index.php/Virtualbox) and [VirtualBox Extension Pack - ArchWiki](https://wiki.archlinux.org/index.php/VirtualBox_Extras#Extension_pack)
 * [Laptop Mode Tools - ArchWiki](https://wiki.archlinux.org/index.php/Laptop_Mode_Tools) and/or  [TLP - ArchWiki](https://wiki.archlinux.org/index.php/TLP) *(started looking into this, very involved configuration and I don't really need it right now)*
