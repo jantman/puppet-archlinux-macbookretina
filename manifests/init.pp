@@ -49,6 +49,9 @@ class puppet-archlinux-macbookretina {
   # Install default xorg.conf for MacBook Pro Retina
   include puppet-archlinux-macbookretina::mbp_retina_xorg
 
+  # Install mosh (mobile shell) and set firewall rules for it
+  include puppet-archlinux-macbookretina::mosh
+
   # Install Mozilla ProfileManager for Firefox as an ugly binary untar
   include puppet-archlinux-macbookretina::mozilla_profilemanager
 
