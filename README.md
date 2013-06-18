@@ -25,6 +25,7 @@ This mainly relates to the hardware, but also includes some notes on the include
 * a bunch of userspace packages that I use
 * SSD optimizations via sysctl settings, mount /dev/sda* noatime and discard (TRIM), use deadline scheduler on non-rotational disks
 * [Profile-sync-daemon](https://wiki.archlinux.org/index.php/Profile-sync-daemon) to store browser profiles in memory (tmpfs) and periodically sync back to disk (disabled by default)
+* install ksshaskpass and keychain
 
 What Doesnt (Yet)
 =================

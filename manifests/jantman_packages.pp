@@ -42,21 +42,24 @@ class puppet-archlinux-macbookretina::jantman_packages {
   package {'thunderbird': ensure => present, }
   package {'lightning-bin': ensure => present, }
 
+  # keychain/askpass
+  package {'keychain': ensure => present, }
+  package {'ksshaskpass': ensure => present, }
+
+  # FUSE/sshfs
+  #package {'fuse': ensure => present, }
+  #package {'fuse-libs': ensure => present, }
+  #package {'fuse-sshfs': ensure => present, }
+
   # FEDORA PACKAGES - need to check arch package names
   #package {'cdpr': ensure => present, }
   #package {'dia': ensure => present, }
   #package {'diffutils': ensure => present, }
   #package {'fslint': ensure => present, }
-  #package {'fuse': ensure => present, }
-  #package {'fuse-libs': ensure => present, }
-  #package {'fuse-sshfs': ensure => present, }
   #package {'gwenview': ensure => present, }
   #package {'kdeartwork-screensavers': ensure => present, }
   #package {'kdetoys': ensure => present, }
   #package {'keepassx': ensure => present, }
-  #package {'keychain': ensure => present, }
-  #package {'keyutils': ensure => present, }
-  #package {'ksshaskpass': ensure => present, }
   #package {'libvirt-client': ensure => present, }
   #package {'libvirt': ensure => present, }
   #package {'minicom': ensure => present, }
@@ -79,7 +82,6 @@ class puppet-archlinux-macbookretina::jantman_packages {
   #package {'strace': ensure => present, }
   #package {'tcpdump': ensure => present, }
   #package {'telnet': ensure => present, }
-  #package {'thunderbird': ensure => present, }
   #package {'traceroute': ensure => present, }
   #package {'vlc-core': ensure => present, }
   #package {'vlc-devel': ensure => present, }
