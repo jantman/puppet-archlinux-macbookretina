@@ -6,6 +6,11 @@
 #
 # Actions:
 #   - Install virtualbox package
+#   - Install virtualbox-host-modules
+#   - Install virtualbox-guest-iso
+#   - Install virtualbox-ext-oracle
+#   - Setup virtualbox modules-load.d file for required kernel modules
+#   - Install vagrant
 #
 # Requires:
 #
@@ -21,11 +26,22 @@ class puppet-archlinux-macbookretina::virtualbox {
     ensure => present,
   }
 
+  package {'virtualbox-guest-iso': ensure => present, }
+
   package {'vagrant':
     ensure => present,
   }
 
-  # note - left off at "Setup" https://wiki.archlinux.org/index.php/VirtualBox#Setup
-  # also need to do extension pack: https://wiki.archlinux.org/index.php/VirtualBox_Extras#Extension_pack
+  file {'/etc/modules-load.d/virtualbox.conf':
+    ensure  => present,
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0644',
+    source  => 'puppet:///modules/puppet-archlinux-macbookretina/virtualbox-modules.conf',
+  }
+
+  package {'virtualbox-ext-oracle':
+    ensure => present,
+  }
 
 }

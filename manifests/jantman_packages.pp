@@ -26,7 +26,7 @@ class puppet-archlinux-macbookretina::jantman_packages {
   package {'pidgin': ensure => present, }
   package {'pidgin-libnotify': ensure => present, }
   package {'pidgin-otr': ensure => present, }
-  package {'skype2': ensure => present, }
+  package {'skype': ensure => present, }
 
   # misc dev/editing
   package {'meld': ensure => present, }

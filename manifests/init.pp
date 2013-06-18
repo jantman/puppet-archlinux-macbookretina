@@ -73,6 +73,9 @@ class puppet-archlinux-macbookretina {
   # Install sudoers file - Arch default plus allow wheel access to all (with password).
   include puppet-archlinux-macbookretina::sudoers
 
+  # Install and configure VirtualBox and Vagrant
+  include puppet-archlinux-macbookretina::virtualbox
+
   # Install driver for Broadcom BCM4331 wireless, iw and wpa_supplicant
   include puppet-archlinux-macbookretina::wireless
 
