@@ -47,9 +47,8 @@ class puppet-archlinux-macbookretina::jantman_packages {
   package {'ksshaskpass': ensure => present, }
 
   # FUSE/sshfs
-  #package {'fuse': ensure => present, }
-  #package {'fuse-libs': ensure => present, }
-  #package {'fuse-sshfs': ensure => present, }
+  package {'fuse': ensure => present, }
+  package {'sshfs': ensure => present, }
 
   # FEDORA PACKAGES - need to check arch package names
   #package {'cdpr': ensure => present, }
