@@ -22,6 +22,7 @@ class puppet-archlinux-macbookretina::jantman_packages {
 
   # internet service clients
   package {'irssi': ensure => present, }
+  package {'perl-net-dbus': ensure => present, } # for irssi libnotify plugin, from AUR package irssi-libnotify-git or local perl script
   package {'purple-plugin-pack': ensure => present, }
   package {'pidgin': ensure => present, }
   package {'pidgin-libnotify': ensure => present, }
