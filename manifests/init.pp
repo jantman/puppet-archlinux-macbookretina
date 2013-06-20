@@ -67,6 +67,9 @@ class puppet-archlinux-macbookretina {
   # Install and configure profile-sync-daemon - REQUIRES CONFIGURATION
   include puppet-archlinux-macbookretina::profilesyncdaemon
 
+  # Make /etc/mkinitcpio.d/linux.preset changes for booting via rEFInd
+  include puppet-archlinux-macbookretina::rEFInd
+
   # Sets up SSD-specific tuning on the system, disks and ext4 partitions
   include puppet-archlinux-macbookretina::ssd
 
