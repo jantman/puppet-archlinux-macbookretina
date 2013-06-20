@@ -51,6 +51,9 @@ class puppet-archlinux-macbookretina::jantman_packages {
   package {'fuse': ensure => present, }
   package {'sshfs': ensure => present, }
 
+  # review board client tools
+  package {'rbtools': ensure => present, }
+
   # misc
   package {'diffutils': ensure => present, }
   package {'kdeartwork-kscreensaver': ensure => present, }
