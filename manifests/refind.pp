@@ -1,4 +1,4 @@
-# Class: puppet-archlinux-macbookretina::rEFInd
+# Class: puppet-archlinux-macbookretina::refind
 #
 # Make /etc/mkinitcpio.d/linux.preset changes for booting via rEFInd
 #
@@ -11,7 +11,7 @@
 #
 # Sample Usage:
 #
-class puppet-archlinux-macbookretina::rEFInd {
+class puppet-archlinux-macbookretina::refind {
 
   file {'/etc/mkinitcpio.d/linux.preset':
     ensure  => present,

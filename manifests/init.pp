@@ -71,7 +71,7 @@ class puppet-archlinux-macbookretina {
   include puppet-archlinux-macbookretina::profilesyncdaemon
 
   # Make /etc/mkinitcpio.d/linux.preset changes for booting via rEFInd
-  include puppet-archlinux-macbookretina::rEFInd
+  include puppet-archlinux-macbookretina::refind
 
   # Sets up SSD-specific tuning on the system, disks and ext4 partitions
   include puppet-archlinux-macbookretina::ssd
