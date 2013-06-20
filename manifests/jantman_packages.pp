@@ -52,7 +52,7 @@ class puppet-archlinux-macbookretina::jantman_packages {
 
   # misc
   package {'diffutils': ensure => present, }
-  package {'kdeartwork-screensaver': ensure => present, }
+  package {'kdeartwork-kscreensaver': ensure => present, }
   package {'kdegraphics-gwenview': ensure => present, }
   package {'kdetoys-kteatime': ensure => present, }
   package {'keepassx': ensure => present, }
