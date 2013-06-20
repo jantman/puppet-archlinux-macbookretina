@@ -25,6 +25,9 @@ class puppet-archlinux-macbookretina {
   # Install and configure chrony, a roaming/laptop friendly NTP client
   include puppet-archlinux-macbookretina::chrony
 
+  # Install, run and configure DKMS
+  include puppet-archlinux-macbookretina::dkms
+
   # Install proprietary google-chrome package and ttf-google-fonts-git from archlinuxfr repository.
   include puppet-archlinux-macbookretina::googlechrome
 
