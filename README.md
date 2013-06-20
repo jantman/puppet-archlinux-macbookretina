@@ -17,6 +17,7 @@ This mainly relates to the hardware, but also includes some notes on the include
 * USB ethernet adapter A1277
 * Wireless networking using NetworkManager, including WPA
    * but getting dropped connections and `journalctl` showing `wl_cfg80211_get_station wrong mac address`
+   * uses the wireless-broadcom-bcm43142 AUR package and DKMS, for our bcm4331 chipset
 * Wired networking using NetworkManager and the USB ethernet adapter
 * installing AUR packages via Yaourt (including in Puppet)
 * [Chrony - ArchWiki](https://wiki.archlinux.org/index.php/Chrony) for NTP that plays well on a laptop

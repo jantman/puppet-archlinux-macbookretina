@@ -12,6 +12,7 @@
 #   - Install iw and wpa_supplicant
 #
 # Requires:
+#   - requires the dkms class for wireless-bcm43142-dkms
 #
 # Sample Usage:
 #
