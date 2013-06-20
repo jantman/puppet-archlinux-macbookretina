@@ -134,6 +134,7 @@ Initial Tasks for a working workstation
 
 Second Round
 ------------
+* I'm left handed. Use udev/xorg to reverse buttons on USB mice but keep trackpad the same. See https://wiki.archlinux.org/index.php/All_Mouse_Buttons_Working http://www.smop.co.uk/blog/index.php/2010/02/15/udev-rules-for-logitech-g7-mouse/ or might be able to do this with udev triggering "xinput set-button-map"
 * [CUPS - ArchWiki](https://wiki.archlinux.org/index.php/CUPS)
 * [Postfix - ArchWiki](https://wiki.archlinux.org/index.php/Local_Mail_Delivery_with_Postfix) for local delivery and relaying
 * sound - snd_hda_intel driver with 'model=mbp101' or 'model=intel-mac-auto' in modprobe config
