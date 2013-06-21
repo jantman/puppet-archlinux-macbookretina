@@ -54,6 +54,9 @@ class puppet-archlinux-macbookretina::jantman_packages {
   # review board client tools
   package {'rbtools': ensure => present, }
 
+  # java
+  package {'icedtea-web-java7': ensure => present, }
+
   # misc
   package {'diffutils': ensure => present, }
   package {'kdeartwork-kscreensaver': ensure => present, }
