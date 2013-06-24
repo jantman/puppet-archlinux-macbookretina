@@ -12,10 +12,21 @@
 #
 # Sample Usage:
 #
+#   Uncomment EITHER the "nouveau" or "nvidia" line in makeinitpp.sh. 
+#   Run makeinitpp.sh
+#
 class puppet-archlinux-macbookretina::nouveau {
 
-  package {'xf86-video-nouveau':
+  $nouveau_packages = ['xf86-video-nouveau',  'nouveau-dri', 'mesa-libgl', 'lib32-mesa-libgl' ]
+  $nvidia_packages = [ 'nvidia' ]
+
+  package {$nouveau_packages:
     ensure => present,
+    notify => Exec['mkinitcpio'],
+  }
+
+  package {$nvidia_packages:
+    ensure => absent,
   }
 
   file { '/etc/X11/xorg.conf':

@@ -28,6 +28,14 @@ class puppet-archlinux-macbookretina {
   # Install, run and configure DKMS
   include puppet-archlinux-macbookretina::dkms
 
+# BLACKLISTED in makeinitpp.sh: firewall_post
+#  # Define firewall rules that will always be at the end of the chain
+#  include puppet-archlinux-macbookretina::firewall_post
+
+# BLACKLISTED in makeinitpp.sh: firewall_pre
+#  # Define firewall rules that will always be at the beginning of the chain
+#  include puppet-archlinux-macbookretina::firewall_pre
+
   # Install proprietary google-chrome package and ttf-google-fonts-git from archlinuxfr repository.
   include puppet-archlinux-macbookretina::googlechrome
 
@@ -40,6 +48,10 @@ class puppet-archlinux-macbookretina {
   # Install KDM and KDE basics and run kdm
   include puppet-archlinux-macbookretina::kde
 
+# BLACKLISTED in makeinitpp.sh: laptop_mode_tools
+#  # Install and configute laptop-mode-tools for power saving
+#  include puppet-archlinux-macbookretina::laptop_mode_tools
+
   # Install the mlocate package and run updatedb
   include puppet-archlinux-macbookretina::locate
 
@@ -48,9 +60,6 @@ class puppet-archlinux-macbookretina {
 
   # Setup KDM/KDE specific to the MacBook Pro Retina - setup kdmrc
   include puppet-archlinux-macbookretina::mbp_retina_kde
-
-  # Install default xorg.conf for MacBook Pro Retina
-  include puppet-archlinux-macbookretina::mbp_retina_xorg
 
   # Install mosh (mobile shell) and set firewall rules for it
   include puppet-archlinux-macbookretina::mosh
@@ -61,11 +70,19 @@ class puppet-archlinux-macbookretina {
   # Install and setup networkmanager its KDE components, and ensure dhcpcd is stopped and nm is running
   include puppet-archlinux-macbookretina::networkmanager
 
-  # Install nouveau driver for nvidia graphics
-  include puppet-archlinux-macbookretina::nouveau
+# BLACKLISTED in makeinitpp.sh: nouveau
+#  # Install nouveau driver for nvidia graphics and sample xorg.conf. Choose this class OR nvidia.
+#  include puppet-archlinux-macbookretina::nouveau
+
+  # Install proprietary nvidia driver for nvidia graphics and sample xorg.conf. Choose this class OR nouveau.
+  include puppet-archlinux-macbookretina::nvidia
 
   # Install OpenVPN and its NetworkManager part
   include puppet-archlinux-macbookretina::openvpn
+
+# BLACKLISTED in makeinitpp.sh: pdnsd
+#  # Install and configute pdnsd for persistent local dns caching.
+#  include puppet-archlinux-macbookretina::pdnsd
 
   # Install and configure profile-sync-daemon - REQUIRES CONFIGURATION
   include puppet-archlinux-macbookretina::profilesyncdaemon

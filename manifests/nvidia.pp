@@ -14,8 +14,16 @@
 #
 class puppet-archlinux-macbookretina::nvidia {
 
-  package {'nvidia':
+  $nouveau_packages = ['xf86-video-nouveau',  'nouveau-dri', 'mesa-libgl', 'lib32-mesa-libgl' ]
+  $nvidia_packages = [ 'nvidia' ]
+
+  package {$nouveau_packages:
+    ensure => absent,
+  }
+
+  package {$nvidia_packages:
     ensure => present,
+    notify => Exec['mkinitcpio'],
   }
 
 #  file { '/etc/X11/xorg.conf':
@@ -23,7 +31,7 @@ class puppet-archlinux-macbookretina::nvidia {
 #    owner   => 'root',
 #    group   => 'root',
 #    mode    => '0644',
-#    source  => 'puppet:///modules/puppet-archlinux-macbookretina/xorg.conf',
+#    source  => 'puppet:///modules/puppet-archlinux-macbookretina/xorg.conf.nvidia',
 #    require => Package['xorg-server'],
 #  }
 

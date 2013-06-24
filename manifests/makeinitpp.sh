@@ -46,7 +46,7 @@ do
 	# skip blacklisted classes
 	if [[ "$BLACKLIST_CLASSES" == *"$i"* ]]
 	then
-	    echo "# BLACKLISTED in makeinitpp.sh: $i"
+	    echo "# BLACKLISTED in makeinitpp.sh: $i" >> init.pp
 	    echo "#  $summary" >> init.pp
 	    echo "#  include puppet-archlinux-macbookretina::$i" >> init.pp
 	    echo >> init.pp

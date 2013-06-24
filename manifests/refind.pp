@@ -19,6 +19,15 @@ class puppet-archlinux-macbookretina::refind {
     group   => 'root',
     mode    => '0644',
     source  => 'puppet:///modules/puppet-archlinux-macbookretina/mkinitcpio_rEFInd_linux.preset',
+    notify  => Exec['mkinitcpio'],
+  }
+
+  exec {'mkinitcpio':
+    refreshonly => true,
+    command     => '/usr/bin/mkinitcpio -p linux',
+    cwd         => '/',
+    user        => 'root',
+    group       => 'root',
   }
 
 }
