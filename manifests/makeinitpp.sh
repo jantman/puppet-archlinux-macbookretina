@@ -6,7 +6,7 @@
 # space-separated list of classes we don't want to automatically include-
 # either partially implemented classes, or highly specific ones that most
 # people won't want.
-BLACKLIST_CLASSES="pdnsd laptop_mode_tools firewall_pre firewall_post"
+BLACKLIST_CLASSES="pdnsd laptop_mode_tools firewall_pre firewall_post nouveau"
 
 pushd `dirname $0` > /dev/null
 
@@ -41,16 +41,20 @@ do
 		continue
 	fi
 
+	summary=`awk '{if (NR==3) print $0}' $i.pp`
+
 	# skip blacklisted classes
 	if [[ "$BLACKLIST_CLASSES" == *"$i"* ]]
 	then
-		continue
+	    echo "# BLACKLISTED in makeinitpp.sh: $i"
+	    echo "#  $summary" >> init.pp
+	    echo "#  include puppet-archlinux-macbookretina::$i" >> init.pp
+	    echo >> init.pp
+	else
+	    echo "  $summary" >> init.pp
+	    echo "  include puppet-archlinux-macbookretina::$i" >> init.pp
+	    echo >> init.pp
 	fi
-
-	summary=`awk '{if (NR==3) print $0}' $i.pp`
-	echo "  $summary" >> init.pp
-	echo "  include puppet-archlinux-macbookretina::$i" >> init.pp
-	echo >> init.pp
 done
 echo "}" >> init.pp
 
