@@ -18,12 +18,14 @@ class puppet-archlinux-macbookretina::nvidia {
   $nvidia_packages = [ 'nvidia' ]
 
   package {$nouveau_packages:
-    ensure => absent,
+    install_options => '-dds',
+    ensure          => absent,
   }
 
   package {$nvidia_packages:
-    ensure => present,
-    notify => Exec['mkinitcpio'],
+    ensure  => present,
+    notify  => Exec['mkinitcpio'],
+    require => Package[$nouveau_packages],
   }
 
 #  file { '/etc/X11/xorg.conf':
