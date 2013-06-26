@@ -260,7 +260,7 @@ Session=/usr/share/config/kdm/Xsession
 #AutoReLogin=true
 # Allow root logins?
 # Default is true
-AllowRootLogin=false
+AllowRootLogin=true
 # Allow to log in, when user has set an empty password?
 # Default is true
 AllowNullPasswd=false
