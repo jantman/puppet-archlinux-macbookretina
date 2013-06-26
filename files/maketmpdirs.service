@@ -1,0 +1,12 @@
+[Unit]
+Description=Create directories under /tmp tmpfs.
+Requires=tmp.mount
+After=tmp.mount
+Type=oneshot
+RemainAfterExit=yes
+
+[Service]
+ExecStart=/usr/local/bin/maketmpdirs.sh
+
+[Install]
+WantedBy=multi-user.target 

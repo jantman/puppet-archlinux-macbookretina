@@ -10,7 +10,8 @@
 #   - Install alsa-utils, ttf-dejavu
 #   - Install links, make sure lynx isnt on the system
 #   - Install screen
-#   - Setup /etc/makepkg.conf for system-optimized compiling
+#   - Setup /etc/makepkg.conf for system-optimized compiling and compiling in tmpfs
+#   - Setup systemd service to run script to create tmpfs compile dir on boot
 #
 # Requires:
 #
@@ -53,6 +54,28 @@ class puppet-archlinux-macbookretina::arch_base {
     group  => 'root',
     mode   => '0644',
     source => 'puppet:///modules/puppet-archlinux-macbookretina/site.pp',
+  }
+
+  # the following ensures that /tmp/sources is created at boot, even if puppet isnt run
+  file {'/usr/local/bin/maketmpdirs.sh':
+    ensure => present,
+    owner  => 'root',
+    group  => 'root',
+    mode   => '0755',
+    source => 'puppet:///modules/puppet-archlinux-macbookretina/maketmpdirs.sh',
+  }
+  file {'/etc/systemd/system/maketmpdirs.service':
+    ensure  => present,
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0755',
+    source  => 'puppet:///modules/puppet-archlinux-macbookretina/maketmpdirs.service',
+    require => File['/usr/local/bin/maketmpdirs.sh'],
+  }
+  service {'maketmpdirs':
+    ensure  => running,
+    enable  => true,
+    require => File['/etc/systemd/system/maketmpdirs.service'],
   }
 
 }
