@@ -126,6 +126,7 @@ To Do
 
 Initial Tasks for a working workstation
 ---------------------------------------
+* get nouveau/nvidia switch to work - this currently fails, looks like pacman doesn't accept install_options
 * test external monitor hot plug
 * application installation - somewhat specific to me, so included in its own manifest
    * finish [VirtualBox - ArchWiki](https://wiki.archlinux.org/index.php/Virtualbox) and [VirtualBox Extension Pack - ArchWiki](https://wiki.archlinux.org/index.php/VirtualBox_Extras#Extension_pack)

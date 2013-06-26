@@ -503,7 +503,7 @@ ServerCmd=/usr/bin/X -br -novtswitch -quiet
 # Additional arguments for the X-servers for local sessions.
 # This string is subject to word splitting.
 # Default is ""
-ServerArgsLocal=-nolisten tcp -dpi 156
+ServerArgsLocal=-nolisten tcp
 # Additional arguments for the X-servers for remote sessions.
 # This string is subject to word splitting.
 # Default is ""

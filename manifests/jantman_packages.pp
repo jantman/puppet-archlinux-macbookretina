@@ -81,6 +81,10 @@ class puppet-archlinux-macbookretina::jantman_packages {
   package {'xscreensaver': ensure => present, }
   #package {'mysql-workbench': ensure => present, }
   package {'kdeutils-kcalc': ensure => present, }
+  package {'syslinux': ensure => present, }
+  package {'mtools': ensure => present, }
+  package {'dosfstools': ensure => present, }
+  package {'ntfsprogs': ensure => present, }
 
   # FEDORA PACKAGES - need to check arch package names
   #package {'cdpr': ensure => present, }
