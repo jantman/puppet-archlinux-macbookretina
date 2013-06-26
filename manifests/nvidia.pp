@@ -28,13 +28,13 @@ class puppet-archlinux-macbookretina::nvidia {
     require => Package[$nouveau_packages],
   }
 
-#  file { '/etc/X11/xorg.conf':
-#    ensure  => present,
-#    owner   => 'root',
-#    group   => 'root',
-#    mode    => '0644',
-#    source  => 'puppet:///modules/puppet-archlinux-macbookretina/xorg.conf.nvidia',
-#    require => Package['xorg-server'],
-#  }
+  file { '/etc/X11/xorg.conf':
+    ensure  => present,
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0644',
+    source  => 'puppet:///modules/puppet-archlinux-macbookretina/xorg.conf.nvidia',
+    require => Package['xorg-server'],
+  }
 
 }

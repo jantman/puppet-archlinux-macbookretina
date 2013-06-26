@@ -1,0 +1,7 @@
+Section "Device"
+    Identifier     "Device0"
+    Driver         "nvidia"
+    VendorName     "NVIDIA Corporation"
+    Option      "UseDPLib" "Off"
+EndSection
+
