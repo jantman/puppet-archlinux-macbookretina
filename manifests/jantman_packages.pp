@@ -34,6 +34,7 @@ class puppet-archlinux-macbookretina::jantman_packages {
   package {'meld': ensure => present, }
   package {'kdesdk-kate': ensure => present, }
   package {'eclipse': ensure => present, }
+  package {'rpmextract': ensure => present, }
 
   # graphical environment misc
   package {'kdegraphics-okular': ensure => present, }
