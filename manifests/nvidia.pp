@@ -15,7 +15,7 @@
 class puppet-archlinux-macbookretina::nvidia {
 
   $nouveau_packages = ['xf86-video-nouveau',  'nouveau-dri', 'mesa-libgl', 'lib32-mesa-libgl' ]
-  $nvidia_packages = [ 'nvidia' ]
+  $nvidia_packages = [ 'nvidia', 'nvidia-bl' ]
 
   package {$nouveau_packages:
     install_options => '-dds',
