@@ -32,6 +32,7 @@ This mainly relates to the hardware, but also includes some notes on the include
 * Verizon Wireless/Novatel USB551L 3G/4G USB wireless dongle - works OOB with NetworkManager/ModemManager using the included USB cable adapter (adapter is required).
 * [Vagrant](http://www.vagrantup.com/), [VirtualBox](https://www.virtualbox.org/) and the Oracle Virtualbox Extension Pack to get it to do VRDE, all installed via Puppet.
 * [iSight](https://wiki.archlinux.org/index.php/MacBook#iSight) tested OK with Skype client
+* Audio via builtin speakers and USB headset. HDMI untested so far.
 
 Video Status (Nouveau vs Nvidia)
 ================================
@@ -155,7 +156,6 @@ Second Round
 * hibernate to disk: https://wiki.archlinux.org/index.php/MacBook#Power_management *(I might give this up, as it just increases writes to the SSD...)*
 * [CUPS - ArchWiki](https://wiki.archlinux.org/index.php/CUPS)
 * [Postfix - ArchWiki](https://wiki.archlinux.org/index.php/Local_Mail_Delivery_with_Postfix) for local delivery and relaying
-* sound - snd_hda_intel driver with 'model=mbp101' or 'model=intel-mac-auto' in modprobe config
 * on Mac OS X side, mute the startup chime if you want: `/usr/bin/nvram SystemAudioVolume=%01`
 * the stuff in [Maximizing Performance - ArchWiki](https://wiki.archlinux.org/index.php/Maximizing_Performance)
 * implement the stuff in [Enhancing Arch Linux Stability - ArchWiki](https://wiki.archlinux.org/index.php/Enhancing_Arch_Linux_Stability)
