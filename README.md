@@ -30,6 +30,11 @@ This mainly relates to the hardware, but also includes some notes on the include
 * fans work under macfanctld
 * Video working under both Nouveau and Nvidia proprietary, though with some differences. Switching from one to the other does NOT work via Puppet, it's a manual task.
 * Verizon Wireless/Novatel USB551L 3G/4G USB wireless dongle - works OOB with NetworkManager/ModemManager using the included USB cable adapter (adapter is required).
+* [Vagrant](http://www.vagrantup.com/), [VirtualBox](https://www.virtualbox.org/) and the Oracle Virtualbox Extension Pack to get it to do VRDE, all installed via Puppet.
+* [iSight](https://wiki.archlinux.org/index.php/MacBook#iSight) tested OK with Skype client
+
+Video Status (Nouveau vs Nvidia)
+================================
 
 |           | Nouveau | Nvidia |
 | --------- | --------- | -------- |
@@ -39,7 +44,8 @@ This mainly relates to the hardware, but also includes some notes on the include
 
 What Doesnt Work (Yet)
 ======================
-See under "To Do" below.
+* Certain video/graphics related things, as seen in the section above.
+* Hibernate to Disk (haven't set up a swap file yet, not sure I want to trade SSD writes for session persistence)
 
 Arch Installation
 =================
@@ -135,22 +141,18 @@ To Do
 Initial Tasks for a working workstation
 ---------------------------------------
 * get nouveau/nvidia switch to work - this currently fails, looks like pacman provider doesn't accept install_options
-* application installation - somewhat specific to me, so included in its own manifest
-   * finish [VirtualBox - ArchWiki](https://wiki.archlinux.org/index.php/Virtualbox) and [VirtualBox Extension Pack - ArchWiki](https://wiki.archlinux.org/index.php/VirtualBox_Extras#Extension_pack)
 * [Laptop Mode Tools - ArchWiki](https://wiki.archlinux.org/index.php/Laptop_Mode_Tools) and/or  [TLP - ArchWiki](https://wiki.archlinux.org/index.php/TLP) *(started looking into this, very involved configuration and I don't really need it right now)*
    * https://wiki.archlinux.org/index.php/CPU_Frequency_Scaling#Laptop_Mode_Tools for cpu frequency scaling?
 * I'm left handed. Use udev/xorg to reverse buttons on USB mice but keep trackpad the same. See https://wiki.archlinux.org/index.php/All_Mouse_Buttons_Working http://www.smop.co.uk/blog/index.php/2010/02/15/udev-rules-for-logitech-g7-mouse/ or might be able to do this with udev triggering "xinput set-button-map"
-* test iSight: https://wiki.archlinux.org/index.php/MacBook#iSight
 * pommed from AUR for keyboard mapping/function keys, with /etc/pommed.conf built from /etc/pommed.conf.mac; or other way of doing this
 * keyboard backlight - /sys/class/leds/smc::kbd_backlight/brightness
 * backlight adjustment - nvidia-bl, https://wiki.archlinux.org/index.php/MacBook#NVIDIA_note_2
 * light sensor: https://wiki.archlinux.org/index.php/MacBook#Light_sensor
-* hibernate to disk: https://wiki.archlinux.org/index.php/MacBook#Power_management *(I might give this up, as it just increases writes to the SSD...)*
-
 
 Second Round
 ------------
 
+* hibernate to disk: https://wiki.archlinux.org/index.php/MacBook#Power_management *(I might give this up, as it just increases writes to the SSD...)*
 * [CUPS - ArchWiki](https://wiki.archlinux.org/index.php/CUPS)
 * [Postfix - ArchWiki](https://wiki.archlinux.org/index.php/Local_Mail_Delivery_with_Postfix) for local delivery and relaying
 * sound - snd_hda_intel driver with 'model=mbp101' or 'model=intel-mac-auto' in modprobe config
