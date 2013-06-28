@@ -29,6 +29,7 @@ class puppet-archlinux-macbookretina::arch_base {
   package {'hdparm': ensure => present, }
   package {'wget': ensure => present, }
   package {'dnsutils': ensure => present, }
+  package {'net-tools': ensure => present, }
 
   # base config files
   file {'/etc/makepkg.conf':
