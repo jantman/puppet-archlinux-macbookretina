@@ -29,9 +29,10 @@ This mainly relates to the hardware, but also includes some notes on the include
 * install ksshaskpass and keychain
 * fans work under macfanctld
 * Video working under both Nouveau and Nvidia proprietary, though with some differences. Switching from one to the other does NOT work via Puppet, it's a manual task.
-| Feature | Nouveau | Nvidia |
-|---------|---------|--------|
-| Monitor Backlight Adjustment | Fine out of the box | Doesnt work yet.|
+
+| Feature   | Nouveau | Nvidia |
+| --------- | --------- | -------- |
+| Monitor Backlight Adjustment | Fine out of the box | Doesnt work yet. |
 
 What Doesnt (Yet)
 =================
