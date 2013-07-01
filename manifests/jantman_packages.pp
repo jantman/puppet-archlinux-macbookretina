@@ -29,6 +29,7 @@ class puppet-archlinux-macbookretina::jantman_packages {
   package {'pidgin-otr': ensure => present, }
   package {'skype': ensure => present, }
   package {'teamspeak3': ensure => present, }
+  package {'teamviewer': ensure => present, }
 
   # misc dev/editing
   package {'meld': ensure => present, }
