@@ -55,6 +55,9 @@ class puppet-archlinux-macbookretina {
 #  # Install and configute laptop-mode-tools for power saving
 #  include puppet-archlinux-macbookretina::laptop_mode_tools
 
+  # Install LibreOffice suite
+  include puppet-archlinux-macbookretina::libreoffice
+
   # Install the mlocate package and run updatedb
   include puppet-archlinux-macbookretina::locate
 

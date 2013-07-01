@@ -180,7 +180,6 @@ Second Round
    * kdegraphics-ksnapshot
    * scrot
    * vlc
-   * libreoffice
    * nmap
    * wireshark-cli
    * wireshark-gtk
