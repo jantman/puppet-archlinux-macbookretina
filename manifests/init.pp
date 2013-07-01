@@ -25,6 +25,9 @@ class puppet-archlinux-macbookretina {
   # Install and configure chrony, a roaming/laptop friendly NTP client
   include puppet-archlinux-macbookretina::chrony
 
+  # Install CUPS printing
+  include puppet-archlinux-macbookretina::cups
+
   # Install, run and configure DKMS
   include puppet-archlinux-macbookretina::dkms
 
