@@ -20,7 +20,7 @@ class puppet-archlinux-macbookretina::kde {
     require => Package['kdebase-workspace'],
   }
 
-  $kde_packages = ['kdebase', 'kdebase-workspace', 'kdeutils-kwallet', 'kdenetwork-krdc', 'rdesktop', 'kdemultimedia-kmix' ]
+  $kde_packages = ['kdebase', 'kdebase-workspace', 'kdeutils-kwallet', 'kdenetwork-krdc', 'rdesktop', 'kdemultimedia-kmix', 'kdegraphics-ksnapshot' ]
 
   package {$kde_packages:
     ensure => present,
