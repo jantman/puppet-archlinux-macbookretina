@@ -51,14 +51,14 @@ What Doesnt Work (Yet)
    * because I keep kernels in the "wrong" place, the automated installation puts vmlinuz-linux/vmlinux in the wrong directory, which requires a manual copy
    * the result of all this is that after a straight upgrade/reboot, we fail with the following message, and have NO keyboard input working:
 
-        :: Triggering uevents...
-        Waiting 10 seconds for device /dev/disk/by-partuuid/957fddfa-df23-4501-adf1-5a39f2ea08a0 ...
-        ERROR: device 'PARTUUID=957fddfa-df23-4501-adf1-5a39f2ea08a0' not found. Skipping fsck.
-        ERROR: Unable to find root device 'PARTUUID=957fddfa-df23-4501-adf1-5a39f2ea08a0'.
-        You are being dropped to a recovery shell
-            Type 'exit' to try and continue booting
-        sh: can't access tty: job control turned off
-        [rootfs /]#
+            :: Triggering uevents...
+            Waiting 10 seconds for device /dev/disk/by-partuuid/957fddfa-df23-4501-adf1-5a39f2ea08a0 ...
+            ERROR: device 'PARTUUID=957fddfa-df23-4501-adf1-5a39f2ea08a0' not found. Skipping fsck.
+            ERROR: Unable to find root device 'PARTUUID=957fddfa-df23-4501-adf1-5a39f2ea08a0'.
+            You are being dropped to a recovery shell
+                Type 'exit' to try and continue booting
+            sh: can't access tty: job control turned off
+            [rootfs /]#
 
    * the output of the pacman linux update:
     [2013-07-02 06:54] [ALPM-SCRIPTLET] >>> Updating module dependencies. Please wait ...
