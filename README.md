@@ -96,6 +96,7 @@ What Doesnt Work (Yet)
             [2013-07-02 06:54] [PACMAN] upgraded linux (3.9.6-1 -> 3.9.8-1)
             [2013-07-02 06:54] [PACMAN] upgraded linux-headers (3.9.6-1 -> 3.9.8-1)
 
+   * Possible resources for fixing this: [Unified Extensible Firmware Interface - ArchWiki](https://wiki.archlinux.org/index.php/Unified_Extensible_Firmware_Interface#Fixing_errors), [MacBook - ArchWiki](https://wiki.archlinux.org/index.php/MacBook)
 * Certain video/graphics related things, as seen in the section above.
 * Hibernate to Disk (haven't set up a swap file yet, not sure I want to trade SSD writes for session persistence)
 * [suspend to RAM](https://wiki.archlinux.org/index.php/Suspend_to_RAM) with Nvidia proprietary video driver version 319.23
