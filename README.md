@@ -61,41 +61,41 @@ What Doesnt Work (Yet)
             [rootfs /]#
 
    * the output of the pacman linux update:
-    [2013-07-02 06:54] [ALPM-SCRIPTLET] >>> Updating module dependencies. Please wait ...
-    [2013-07-02 06:54] [ALPM-SCRIPTLET] >>> Generating initial ramdisk, using mkinitcpio.  Please wait...
-    [2013-07-02 06:54] [ALPM-SCRIPTLET] ==> Building image from preset: /etc/mkinitcpio.d/linux.preset: 'default'
-    [2013-07-02 06:54] [ALPM-SCRIPTLET]   -> -k /boot/efi/EFI/arch/vmlinuz-linux -c /etc/mkinitcpio.conf -g /boot/efi/EFI/arch/initramfs-
-linux.img
-    [2013-07-02 06:54] [ALPM-SCRIPTLET] ==> Starting build: 3.9.6-1-ARCH
-    [2013-07-02 06:54] [ALPM-SCRIPTLET]   -> Running build hook: [base]
-    [2013-07-02 06:54] [ALPM-SCRIPTLET]   -> Running build hook: [udev]
-    [2013-07-02 06:54] [ALPM-SCRIPTLET]   -> Running build hook: [autodetect]
-    [2013-07-02 06:54] [ALPM-SCRIPTLET]   -> Running build hook: [modconf]
-    [2013-07-02 06:54] [ALPM-SCRIPTLET]   -> Running build hook: [block]
-    [2013-07-02 06:54] [ALPM-SCRIPTLET]   -> Running build hook: [filesystems]
-    [2013-07-02 06:54] [ALPM-SCRIPTLET]   -> Running build hook: [keyboard]
-    [2013-07-02 06:54] [ALPM-SCRIPTLET] ==> ERROR: module not found: `usbhid'
-    [2013-07-02 06:54] [ALPM-SCRIPTLET]   -> Running build hook: [fsck]
-    [2013-07-02 06:54] [ALPM-SCRIPTLET] ==> WARNING: No modules were added to the image. This is probably not what you want.
-    [2013-07-02 06:54] [ALPM-SCRIPTLET] ==> Creating gzip initcpio image: /boot/efi/EFI/arch/initramfs-linux.img
-    [2013-07-02 06:54] [ALPM-SCRIPTLET] ==> WARNING: errors were encountered during the build. The image may not be complete.
-    [2013-07-02 06:54] [ALPM-SCRIPTLET] ==> Building image from preset: /etc/mkinitcpio.d/linux.preset: 'fallback'
-    [2013-07-02 06:54] [ALPM-SCRIPTLET]   -> -k /boot/efi/EFI/arch/vmlinuz-linux -c /etc/mkinitcpio.conf -g /boot/efi/EFI/arch/initramfs-
-linux-fallback.img -S autodetect
-    [2013-07-02 06:54] [ALPM-SCRIPTLET] ==> Starting build: 3.9.6-1-ARCH
-    [2013-07-02 06:54] [ALPM-SCRIPTLET]   -> Running build hook: [base]
-    [2013-07-02 06:54] [ALPM-SCRIPTLET]   -> Running build hook: [udev]
-    [2013-07-02 06:54] [ALPM-SCRIPTLET]   -> Running build hook: [modconf]
-    [2013-07-02 06:54] [ALPM-SCRIPTLET]   -> Running build hook: [block]
-    [2013-07-02 06:54] [ALPM-SCRIPTLET]   -> Running build hook: [filesystems]
-    [2013-07-02 06:54] [ALPM-SCRIPTLET]   -> Running build hook: [keyboard]
-    [2013-07-02 06:54] [ALPM-SCRIPTLET] ==> ERROR: module not found: `usbhid'
-    [2013-07-02 06:54] [ALPM-SCRIPTLET]   -> Running build hook: [fsck]
-    [2013-07-02 06:54] [ALPM-SCRIPTLET] ==> WARNING: No modules were added to the image. This is probably not what you want.
-    [2013-07-02 06:54] [ALPM-SCRIPTLET] ==> Creating gzip initcpio image: /boot/efi/EFI/arch/initramfs-linux-fallback.img
-    [2013-07-02 06:54] [ALPM-SCRIPTLET] ==> WARNING: errors were encountered during the build. The image may not be complete.
-    [2013-07-02 06:54] [PACMAN] upgraded linux (3.9.6-1 -> 3.9.8-1)
-    [2013-07-02 06:54] [PACMAN] upgraded linux-headers (3.9.6-1 -> 3.9.8-1)
+
+            [2013-07-02 06:54] [ALPM-SCRIPTLET] >>> Updating module dependencies. Please wait ...
+            [2013-07-02 06:54] [ALPM-SCRIPTLET] >>> Generating initial ramdisk, using mkinitcpio.  Please wait...
+            [2013-07-02 06:54] [ALPM-SCRIPTLET] ==> Building image from preset: /etc/mkinitcpio.d/linux.preset: 'default'
+            [2013-07-02 06:54] [ALPM-SCRIPTLET]   -> -k /boot/efi/EFI/arch/vmlinuz-linux -c /etc/mkinitcpio.conf -g /boot/efi/EFI/arch/initramfs-linux.img
+            [2013-07-02 06:54] [ALPM-SCRIPTLET] ==> Starting build: 3.9.6-1-ARCH
+            [2013-07-02 06:54] [ALPM-SCRIPTLET]   -> Running build hook: [base]
+            [2013-07-02 06:54] [ALPM-SCRIPTLET]   -> Running build hook: [udev]
+            [2013-07-02 06:54] [ALPM-SCRIPTLET]   -> Running build hook: [autodetect]
+            [2013-07-02 06:54] [ALPM-SCRIPTLET]   -> Running build hook: [modconf]
+            [2013-07-02 06:54] [ALPM-SCRIPTLET]   -> Running build hook: [block]
+            [2013-07-02 06:54] [ALPM-SCRIPTLET]   -> Running build hook: [filesystems]
+            [2013-07-02 06:54] [ALPM-SCRIPTLET]   -> Running build hook: [keyboard]
+            [2013-07-02 06:54] [ALPM-SCRIPTLET] ==> ERROR: module not found: `usbhid'
+            [2013-07-02 06:54] [ALPM-SCRIPTLET]   -> Running build hook: [fsck]
+            [2013-07-02 06:54] [ALPM-SCRIPTLET] ==> WARNING: No modules were added to the image. This is probably not what you want.
+            [2013-07-02 06:54] [ALPM-SCRIPTLET] ==> Creating gzip initcpio image: /boot/efi/EFI/arch/initramfs-linux.img
+            [2013-07-02 06:54] [ALPM-SCRIPTLET] ==> WARNING: errors were encountered during the build. The image may not be complete.
+            [2013-07-02 06:54] [ALPM-SCRIPTLET] ==> Building image from preset: /etc/mkinitcpio.d/linux.preset: 'fallback'
+            [2013-07-02 06:54] [ALPM-SCRIPTLET]   -> -k /boot/efi/EFI/arch/vmlinuz-linux -c /etc/mkinitcpio.conf -g /boot/efi/EFI/arch/initramfs-linux-fallback.img -S autodetect
+            [2013-07-02 06:54] [ALPM-SCRIPTLET] ==> Starting build: 3.9.6-1-ARCH
+            [2013-07-02 06:54] [ALPM-SCRIPTLET]   -> Running build hook: [base]
+            [2013-07-02 06:54] [ALPM-SCRIPTLET]   -> Running build hook: [udev]
+            [2013-07-02 06:54] [ALPM-SCRIPTLET]   -> Running build hook: [modconf]
+            [2013-07-02 06:54] [ALPM-SCRIPTLET]   -> Running build hook: [block]
+            [2013-07-02 06:54] [ALPM-SCRIPTLET]   -> Running build hook: [filesystems]
+            [2013-07-02 06:54] [ALPM-SCRIPTLET]   -> Running build hook: [keyboard]
+            [2013-07-02 06:54] [ALPM-SCRIPTLET] ==> ERROR: module not found: `usbhid'
+            [2013-07-02 06:54] [ALPM-SCRIPTLET]   -> Running build hook: [fsck]
+            [2013-07-02 06:54] [ALPM-SCRIPTLET] ==> WARNING: No modules were added to the image. This is probably not what you want.
+            [2013-07-02 06:54] [ALPM-SCRIPTLET] ==> Creating gzip initcpio image: /boot/efi/EFI/arch/initramfs-linux-fallback.img
+            [2013-07-02 06:54] [ALPM-SCRIPTLET] ==> WARNING: errors were encountered during the build. The image may not be complete.
+            [2013-07-02 06:54] [PACMAN] upgraded linux (3.9.6-1 -> 3.9.8-1)
+            [2013-07-02 06:54] [PACMAN] upgraded linux-headers (3.9.6-1 -> 3.9.8-1)
+
 * Certain video/graphics related things, as seen in the section above.
 * Hibernate to Disk (haven't set up a swap file yet, not sure I want to trade SSD writes for session persistence)
 * [suspend to RAM](https://wiki.archlinux.org/index.php/Suspend_to_RAM) with Nvidia proprietary video driver version 319.23
