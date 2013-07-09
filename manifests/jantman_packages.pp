@@ -30,6 +30,7 @@ class puppet-archlinux-macbookretina::jantman_packages {
   package {'skype': ensure => present, }
   package {'teamspeak3': ensure => present, }
   package {'teamviewer': ensure => present, }
+  package {'whois': ensure => present, }
 
   # misc dev/editing
   package {'meld': ensure => present, }
