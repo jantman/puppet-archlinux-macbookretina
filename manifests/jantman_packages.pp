@@ -89,6 +89,7 @@ class puppet-archlinux-macbookretina::jantman_packages {
   package {'mtools': ensure => present, }
   package {'dosfstools': ensure => present, }
   package {'ntfsprogs': ensure => present, }
+  package {'guvcview': ensure => present, }
 
   # FEDORA PACKAGES - need to check arch package names
   #package {'cdpr': ensure => present, }
