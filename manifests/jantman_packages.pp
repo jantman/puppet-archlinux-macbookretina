@@ -91,6 +91,19 @@ class puppet-archlinux-macbookretina::jantman_packages {
   package {'ntfsprogs': ensure => present, }
   package {'guvcview': ensure => present, }
 
+  package {'sane': ensure => present, }
+  package {'kdegraphics-ksaneplugin': ensure => present, }
+  package {'libksane': ensure => present, }
+  package {'sane-frontends': ensure => present, }
+  package {'xsane-gimp': ensure => present, }
+
+  package {'avidemux-cli': ensure => present, }
+  package {'avidemux-qt': ensure => present, }
+  package {'cinelerra-cv': ensure => present, }
+  package {'kdenlive': ensure => present, }
+  package {'kino': ensure => present, }
+
+
   # FEDORA PACKAGES - need to check arch package names
   #package {'cdpr': ensure => present, }
   #package {'fslint': ensure => present, }
