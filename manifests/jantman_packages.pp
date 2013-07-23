@@ -103,6 +103,7 @@ class puppet-archlinux-macbookretina::jantman_packages {
   package {'kdenlive': ensure => present, }
   package {'kino': ensure => present, }
 
+  package {'acroread': ensure => present, }
 
   # FEDORA PACKAGES - need to check arch package names
   #package {'cdpr': ensure => present, }
