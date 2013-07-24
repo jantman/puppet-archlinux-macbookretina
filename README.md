@@ -98,12 +98,11 @@ What Doesnt Work (Yet)
 
    * Possible resources for fixing this: [Unified Extensible Firmware Interface - ArchWiki](https://wiki.archlinux.org/index.php/Unified_Extensible_Firmware_Interface#Fixing_errors), [MacBook - ArchWiki](https://wiki.archlinux.org/index.php/MacBook)
 * Certain video/graphics related things, as seen in the section above.
-* Hibernate to Disk (haven't set up a swap file yet, not sure I want to trade SSD writes for session persistence)
+* Hibernate to Disk is currently being tested
 * [suspend to RAM](https://wiki.archlinux.org/index.php/Suspend_to_RAM) with Nvidia proprietary video driver version 319.23
    * There was a bug in nvidia 302 (https://bugs.archlinux.org/task/30330) but it was fixed in 304, so that shouldn't be the problem.
    * From [Ubuntu bug 488720](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/488720), "It turned out that commenting out a single line in the nvidia section of pm/sleep.d/98smart-kernel-video solved my issues. Dropping the chvt causes my X session to resume with garbled garbage.". This is a very long bug with lots of history, but there's also mention of an upstream bug in pm-utils (a much older version than we're running; 1.3.0), or needing to boot the kernel with 'nomodeset'. 
    * [NVidia DevTalk forum post on this from 2012-2013](https://devtalk.nvidia.com/default/topic/523257/linux-3-6-x-hybrid-suspend/), regarding driver versions ~313, reporting SSH running and working OK but can't resume X at all.
-   * add "resume" to mkinitcpio HOOKS (before filesystems) and kernel command line???
 
 Arch Installation
 =================

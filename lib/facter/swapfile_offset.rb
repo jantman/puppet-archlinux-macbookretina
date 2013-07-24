@@ -6,7 +6,7 @@
 
 require 'facter'
 
-if Facter.value(:kernel) == 'Linux'
+if Facter.value(:kernel) == 'Linux' and FileTest.exists?("/swapfile")
 
   # output looks something like:
   #[root@jarvis boot]# filefrag -v /swapfile | head -10
@@ -26,28 +26,23 @@ if Facter.value(:kernel) == 'Linux'
   ENV['LANG']   = 'POSIX'
   ENV['LC_ALL'] = 'POSIX'
 
-  if FileTest.exists?("/swapfile") do
+  Facter::Util::Resolution.exec('/usr/bin/filefrag -v /swapfile').each_line do |line|
+    # Remove bloat ...
+    line.strip!
 
-    Facter::Util::Resolution.exec('/usr/bin/filefrag -v /swapfile').each_line do |line|
-      # Remove bloat ...
-      line.strip!
+    # Skip header line ...
+    next if not line.match(/^0:+/)
 
-      # Skip header line ...
-      next if not line.match(/^0:+/)
+    # Parse line and retrieve offset...
+    offset = line.split(' ')[3].strip.gsub(/\./, "")
 
-      # Parse line and retrieve offset...
-      offset = line.split(' ')[3].strip
-
-      Facter.add('swapfile_offset') do
-        confine :kernel => :linux
-        setcode { offset }
-      end
-
+    Facter.add('swapfile_offset') do
+      confine :kernel => :linux
+      setcode { offset }
     end
 
   end
 
-end
 end
 # vim: set ts=2 sw=2 et :
 # encoding: utf-8

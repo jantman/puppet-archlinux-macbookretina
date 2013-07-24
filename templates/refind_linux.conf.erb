@@ -1,0 +1,12 @@
+## This file should be present in the same directory as the EFISTUB kernel and initramfs files
+## More info at http://www.rodsbooks.com/refind/linux.html , http://www.rodsbooks.com/efi-bootloaders/efistub.html
+
+<% if @swapfile_offset then %>
+"Boot with defaults"    "root=PARTUUID=957fddfa-df23-4501-adf1-5a39f2ea08a0 resume=957fddfa-df23-4501-adf1-5a39f2ea08a0 resume_offset=<%= @swapfile_offset %> rootfstype=ext4 ro add_efi_memmap"
+"Boot to terminal"      "root=PARTUUID=957fddfa-df23-4501-adf1-5a39f2ea08a0 resume=957fddfa-df23-4501-adf1-5a39f2ea08a0 resume_offset=<%= @swapfile_offset %> rootfstype=ext4 ro add_efi_memmap systemd.unit=multi-user.target"
+## <%= @swapfile_offset %>
+<% else %>
+## NOT swapfile_offset
+"Boot with defaults"    "root=PARTUUID=957fddfa-df23-4501-adf1-5a39f2ea08a0 resume=957fddfa-df23-4501-adf1-5a39f2ea08a0 rootfstype=ext4 ro add_efi_memmap"
+"Boot to terminal"      "root=PARTUUID=957fddfa-df23-4501-adf1-5a39f2ea08a0 resume=957fddfa-df23-4501-adf1-5a39f2ea08a0 rootfstype=ext4 ro add_efi_memmap systemd.unit=multi-user.target"
+<% end %>

@@ -105,6 +105,9 @@ class puppet-archlinux-macbookretina {
   # Install sudoers file - Arch default plus allow wheel access to all (with password).
   include puppet-archlinux-macbookretina::sudoers
 
+  # Creates a swap file, makes swap, swapon, update fstab
+  include puppet-archlinux-macbookretina::swapfile
+
   # Install and configure VirtualBox and Vagrant
   include puppet-archlinux-macbookretina::virtualbox
 
