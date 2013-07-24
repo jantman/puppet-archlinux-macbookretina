@@ -96,6 +96,9 @@ class puppet-archlinux-macbookretina {
   # Make /etc/mkinitcpio.d/linux.preset changes for booting via rEFInd
   include puppet-archlinux-macbookretina::refind
 
+  # Install prerequisites for ruby rvm
+  include puppet-archlinux-macbookretina::rvm
+
   # Sets up SSD-specific tuning on the system, disks and ext4 partitions
   include puppet-archlinux-macbookretina::ssd
 
