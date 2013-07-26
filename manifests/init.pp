@@ -16,6 +16,9 @@
 # Sample Usage:
 #
 class puppet-archlinux-macbookretina {
+  # Install Android development tools
+  include puppet-archlinux-macbookretina::android
+
   # Install base packages we want on any (arch) system and setup makepkg.conf
   include puppet-archlinux-macbookretina::arch_base
 
