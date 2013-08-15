@@ -26,6 +26,7 @@ class puppet-archlinux-macbookretina::arch_base {
   package {'alsa-utils': ensure => present, }
   package {'ttf-dejavu': ensure => present, }
   package {'screen': ensure => present, }
+  package {'tmux': ensure => present, }
   package {'hdparm': ensure => present, }
   package {'wget': ensure => present, }
   package {'dnsutils': ensure => present, }
