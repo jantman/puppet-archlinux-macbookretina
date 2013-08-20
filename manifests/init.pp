@@ -93,6 +93,9 @@ class puppet-archlinux-macbookretina {
 #  # Install and configute pdnsd for persistent local dns caching.
 #  include puppet-archlinux-macbookretina::pdnsd
 
+  # Install PHP for CLI
+  include puppet-archlinux-macbookretina::php
+
   # Install and configure profile-sync-daemon - REQUIRES CONFIGURATION
   include puppet-archlinux-macbookretina::profilesyncdaemon
 
