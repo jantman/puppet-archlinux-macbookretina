@@ -91,6 +91,7 @@ class puppet-archlinux-macbookretina::jantman_packages {
   package {'dosfstools': ensure => present, }
   package {'ntfsprogs': ensure => present, }
   package {'guvcview': ensure => present, }
+  package { 'imagemagick': ensure => present, }
 
   package {'sane': ensure => present, }
   package {'kdegraphics-ksaneplugin': ensure => present, }
