@@ -130,7 +130,7 @@ Enable=false
 #KeyFile=/usr/share/config/kdm/kdmkeys
 # XDMCP access control file in the usual XDM-Xaccess format.
 # Default is "/usr/share/config/kdm/Xaccess"
-#Xaccess=
+Xaccess=/usr/share/config/kdm/Xaccess
 # Number of seconds to wait for display to respond after the user has
 # selected a host from the chooser.
 # Default is 15
@@ -431,7 +431,7 @@ MaxShowUID=65000
 #UseBackground=false
 # The configuration file to be used by krootimage.
 # Default is "/usr/share/config/kdm/backgroundrc"
-#BackgroundCfg=
+BackgroundCfg=/usr/share/config/kdm/backgroundrc
 # Whether to grab keyboard and mouse while the greeter is visible. Grabs
 # may improve security, but make on-screen keyboards, etc. unusable.
 # "Never" - never grab
