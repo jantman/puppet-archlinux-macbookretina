@@ -42,6 +42,7 @@ class puppet-archlinux-macbookretina::jantman_packages {
 
   # graphical environment misc
   package {'kdegraphics-okular': ensure => present, }
+  package {'dia': ensure => present, }
 
   # mozilla
   package {'firefox': ensure => present, }
