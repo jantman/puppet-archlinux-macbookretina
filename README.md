@@ -33,6 +33,7 @@ This mainly relates to the hardware, but also includes some notes on the include
 * [Vagrant](http://www.vagrantup.com/), [VirtualBox](https://www.virtualbox.org/) and the Oracle Virtualbox Extension Pack to get it to do VRDE, all installed via Puppet.
 * [iSight](https://wiki.archlinux.org/index.php/MacBook#iSight) tested OK with Skype client
 * Audio via builtin speakers and USB headset. HDMI untested so far.
+* With up-to-date packages (as of 2013-09-15), keyboard backlight now works via the function keys
 
 Video Status (Nouveau vs Nvidia)
 ================================
@@ -202,7 +203,6 @@ Initial Tasks for a working workstation
    * https://wiki.archlinux.org/index.php/CPU_Frequency_Scaling#Laptop_Mode_Tools for cpu frequency scaling?
 * I'm left handed. Use udev/xorg to reverse buttons on USB mice but keep trackpad the same. See https://wiki.archlinux.org/index.php/All_Mouse_Buttons_Working http://www.smop.co.uk/blog/index.php/2010/02/15/udev-rules-for-logitech-g7-mouse/ or might be able to do this with udev triggering "xinput set-button-map"
 * pommed from AUR for keyboard mapping/function keys, with /etc/pommed.conf built from /etc/pommed.conf.mac; or other way of doing this
-* keyboard backlight - /sys/class/leds/smc::kbd_backlight/brightness
 * backlight adjustment - nvidia-bl, https://wiki.archlinux.org/index.php/MacBook#NVIDIA_note_2
 * light sensor: https://wiki.archlinux.org/index.php/MacBook#Light_sensor
 
