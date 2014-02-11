@@ -139,6 +139,7 @@ class puppet-archlinux-macbookretina::jantman_packages {
   package{ 'tcl': ensure => present, }
   package{ 'tk': ensure => present, }
   package{ 'graphviz': ensure => present, }
+  package{ 'pandoc-static': ensure => present, }
 
   # FEDORA PACKAGES - need to check arch package names
   #package {'cdpr': ensure => present, }
