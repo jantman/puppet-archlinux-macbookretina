@@ -115,4 +115,9 @@ class puppet-archlinux-macbookretina::jantman_packages {
   #package {'python-VirtualBox': ensure => present, }
   #package {'python-virtualenv': ensure => present, }
 
+  # wine
+  package {'wine': ensure => present, }
+  package {'winetricks': ensure => present, }
+  package {'playonlinux': ensure => present, }
+
 }
