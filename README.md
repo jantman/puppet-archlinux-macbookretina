@@ -98,6 +98,13 @@ What Doesnt Work (Yet)
             [2013-07-02 06:54] [PACMAN] upgraded linux-headers (3.9.6-1 -> 3.9.8-1)
 
    * Possible resources for fixing this: [Unified Extensible Firmware Interface - ArchWiki](https://wiki.archlinux.org/index.php/Unified_Extensible_Firmware_Interface#Fixing_errors), [MacBook - ArchWiki](https://wiki.archlinux.org/index.php/MacBook)
+   * Workaround (as root):
+
+        pacman -Syu
+        (if you use it) yaourt -Syua
+        cp /boot/vmlinuz-linux /boot/efi/EFI/arch/
+        mkinitcpio -p linux
+
 * Certain video/graphics related things, as seen in the section above.
 * Hibernate to Disk is currently being tested
 * [suspend to RAM](https://wiki.archlinux.org/index.php/Suspend_to_RAM) with Nvidia proprietary video driver version 319.23

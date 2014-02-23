@@ -108,6 +108,39 @@ class puppet-archlinux-macbookretina::jantman_packages {
 
   package {'acroread': ensure => present, }
 
+  package {'tree': ensure => present, }
+  package{ 'python2-pyserial': ensure => present, }
+  package{ 'wxgtk': ensure => present, }
+  package{ 'wxpython': ensure => present, }
+  package{ 'perl-net-ssleay': ensure => present, }
+  package{ 'perl-soap-lite': ensure => present, }
+  package{ 'python-setuptools': ensure => present, }
+  package{ 'python-pip': ensure => present, }
+  package{ 'virtualbox-host-dkms': ensure => present, }
+  package{ 'gdb': ensure => present, }
+  package{ 'python2-augeas': ensure => present, }
+  package{ 'postgresql': ensure => present, }
+  package{ 'postgresql-docs': ensure => present, }
+  package{ 'geos': ensure => present, }
+  package{ 'python2-numpy': ensure => present, }
+  package{ 'gdal': ensure => present, }
+  package{ 'postgis': ensure => present, }
+  package{ 'python-psycopg2': ensure => present, }
+  package{ 'python2-psycopg2': ensure => present, }
+  package{ 'apr': ensure => present, }
+  package{ 'apr-util': ensure => present, }
+  package{ 'apache': ensure => present, }
+  package{ 'mod_wsgi': ensure => present, }
+  package{ 'jshon': ensure => present, }
+  package{ 'dos2unix': ensure => present, }
+  package{ 'squashfs-tools': ensure => present, }
+  package{ 'python-pyelftools': ensure => present, }
+  package{ 'subversion': ensure => present, }
+  package{ 'tcl': ensure => present, }
+  package{ 'tk': ensure => present, }
+  package{ 'graphviz': ensure => present, }
+  package{ 'pandoc-static': ensure => present, }
+
   # FEDORA PACKAGES - need to check arch package names
   #package {'cdpr': ensure => present, }
   #package {'fslint': ensure => present, }
