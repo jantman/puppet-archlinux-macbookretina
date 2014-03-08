@@ -9,6 +9,19 @@ I use Puppet to manage everything on my laptop after the initial configuration -
 
 If some of this seems overly verbose to experienced Arch users, this install is my first experience with Arch. I've jumped ship from Fedora (which I've always run, because I've always worked at RedHat/CentOS server shops, so it seemed logical), so it's taking me a while to adjust back to a desktop Linux that doesn't expect the user to be an idiot. This is also my first real foray into the new hotness in Puppet 3, so I'm playing around with that a bit too.
 
+__Update/Notice March 2014 - please read before using__ - I wrote this a while ago when installing Arch on my MacBook Pro Retina. It hasn't seen much
+use or update since then, mainly because I had issues with the Nouveau open source grapics driver (thunderbolt display hot plug not working right),
+switched to the proprietary Nvidia driver, and hit a bug in that that's had me stuck on the same kernel and Nvidia driver version for months. As a result,
+this has started to rot a bit. Since the MBP is my primary machine for work, I haven't been able to do much experimentation knowing that even if I start
+messing around on Friday evening, I *need* it back in a working state by Monday morning.
+
+Next week I'm getting a shiny new desktop machine at home, and will be installing Arch on it. I'm also hopefully going to be able to work from home more,
+which means I'll have more time to play around with my MBP. My plan (see the "module" branch here) is to split everything that's not totally MBP-specific
+into separate modules ("archlinux", and a "workstation-potpurri" module for the odds-and-ends), to be pulled in through my new
+[workstation-bootstrap](https://github.com/jantman/workstation-bootstrap) [r10k](https://github.com/adrienthebo/r10k)-based framework. So, **be warned that there
+are major changes to this module coming soon**. In the process, I plan on also actually converting it to a "real" Puppet module, on the forge,
+and hopefully with configuration via parameterized classes instead of hacking init.pp.
+
 What Works
 ==========
 This mainly relates to the hardware, but also includes some notes on the included puppet module:
