@@ -17,8 +17,9 @@ messing around on Friday evening, I *need* it back in a working state by Monday 
 
 Next week I'm getting a shiny new desktop machine at home, and will be installing Arch on it. I'm also hopefully going to be able to work from home more,
 which means I'll have more time to play around with my MBP. My plan (see the "module" branch here) is to split everything that's not totally MBP-specific
-into separate modules ("archlinux", and a "workstation-potpurri" module for the odds-and-ends), to be pulled in through my new
-[workstation-bootstrap](https://github.com/jantman/workstation-bootstrap) [r10k](https://github.com/adrienthebo/r10k)-based framework. So, **be warned that there
+into my [archlinux_workstation](https://github.com/jantman/puppet-archlinux-workstation) module, to be pulled in through my new
+[workstation-bootstrap](https://github.com/jantman/workstation-bootstrap) [r10k](https://github.com/adrienthebo/r10k)-based framework.
+After that, this will be rewritten as a real module, with tests and everything. So, **be warned that there
 are major changes to this module coming soon**. In the process, I plan on also actually converting it to a "real" Puppet module, on the forge,
 and hopefully with configuration via parameterized classes instead of hacking init.pp.
 
