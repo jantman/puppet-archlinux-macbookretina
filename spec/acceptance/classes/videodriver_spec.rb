@@ -6,7 +6,8 @@ describe 'archlinux_macbookretina::videodriver class' do
     # Using puppet_apply as a helper
     it 'should work with no errors' do
       pp = <<-EOS
-      class { 'archlinux_workstation::repos::jantman': }
+      class { 'archlinux_workstation': username => 'myuser', } ->
+      class { 'archlinux_workstation::repos::jantman': } ->
       class { 'archlinux_macbookretina::videodriver': }
       EOS
 

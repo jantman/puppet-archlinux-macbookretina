@@ -2,9 +2,10 @@ fixtures:
   repositories:
     archlinux_workstation:
       repo: "https://github.com/jantman/puppet-archlinux-workstation.git"
-      ref: "puppet4"
+      branch: "puppet4"
     stdlib: "git://github.com/puppetlabs/puppetlabs-stdlib.git"
     firewall: "https://github.com/puppetlabs/puppetlabs-firewall.git"
     sysctl: "https://github.com/duritong/puppet-sysctl.git"
+    inifile: "https://github.com/puppetlabs/puppetlabs-inifile.git"
   symlinks:
     archlinux_macbookretina: "#{source_dir}"
