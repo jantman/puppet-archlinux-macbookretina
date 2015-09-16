@@ -11,7 +11,7 @@ describe 'archlinux_macbookretina::videodriver' do
     let(:params) {{ :driver => 'foo' }}
 
     describe "raises error" do
-      it { expect { should contain_class('archlinux_macbookretina::videodriver') }.to raise_error(Puppet::Error, /You must include the base/) }
+      it { expect { should contain_class('archlinux_macbookretina::videodriver') }.to raise_error(Puppet::Error, /"foo" does not match/) }
       end
   end
   context 'default params' do
