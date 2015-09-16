@@ -1,0 +1,5 @@
+2015-09-16 Release 0.1.0
+- complete rewrite to be more reusable, standalone module, and targeted at puppet4
+
+2014-03-15 Release 0.0.1
+- initial module creation

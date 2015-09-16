@@ -1,0 +1,13 @@
+HOSTS:
+  arch-x64:
+    roles:
+      - master
+    platform: archlinux-2015.09.01-amd64
+    box: packer-arch-workstation
+    box_url: https://s3-us-west-2.amazonaws.com/jantman-repo/vagrant-boxes/packer_arch_virtualbox_e08d20a.box
+    hypervisor: vagrant
+    vb_gui: true
+
+CONFIG:
+  log_level: verbose
+  type: foss
