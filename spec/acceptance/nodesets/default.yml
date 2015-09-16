@@ -4,7 +4,7 @@ HOSTS:
       - master
     platform: archlinux-2015.09.01-amd64
     box: packer-arch-workstation
-    box_url: https://s3-us-west-2.amazonaws.com/jantman-repo/vagrant-boxes/packer_arch_virtualbox_e08d20a.box
+    box_url: https://s3-us-west-2.amazonaws.com/jantman-repo/vagrant-boxes/packer_arch_virtualbox_a27631e.box
     hypervisor: vagrant
     vb_gui: true
 
