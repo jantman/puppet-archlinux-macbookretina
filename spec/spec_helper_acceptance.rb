@@ -15,6 +15,10 @@ RSpec.configure do |c|
 
   # Configure all nodes in nodeset
   c.before :suite do
+    # pacman update
+    hosts.each do |h|
+      on h, 'pacman -Syu'
+    end
     # Install module and dependencies
     puppet_module_install(:source => proj_root, :module_name => 'archlinux_macbookretina', :target_module_path => '/etc/puppetlabs/code/modules')
     moddir = 'spec/fixtures/modules/*'
