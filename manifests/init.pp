@@ -30,69 +30,15 @@ class archlinux_macbookretina {
     }
   }
 
-  notify {'archlinux_macbookretina running': }
-  # Install Android development tools
-  #include archlinux_macbookretina::android
-
-  # Install base packages we want on any (arch) system and setup makepkg.conf
-  #include archlinux_macbookretina::arch_base
-
-  # Install augeas, required for some of the puppet classes
-  #include archlinux_macbookretina::augeas
-
-  # Install and configure chrony, a roaming/laptop friendly NTP client
-  #include archlinux_macbookretina::chrony
-
-  # Install CUPS printing
-  #include archlinux_macbookretina::cups
-
-  # Install, run and configure DKMS
-  #include archlinux_macbookretina::dkms
-
-# BLACKLISTED in makeinitpp.sh: firewall_post
-#  # Define firewall rules that will always be at the end of the chain
-#  include archlinux_macbookretina::firewall_post
-
-# BLACKLISTED in makeinitpp.sh: firewall_pre
-#  # Define firewall rules that will always be at the beginning of the chain
-#  include archlinux_macbookretina::firewall_pre
-
-  # Install proprietary google-chrome package and ttf-google-fonts-git from archlinuxfr repository.
-  #include archlinux_macbookretina::googlechrome
-
-  # Install iptables and setup framework for puppetlabs/firewall module and set custom rules
-  #include archlinux_macbookretina::iptables
-
-  # Packages largely specific to jantman's workstation setup
-  #include archlinux_macbookretina::jantman_packages
-
-  # Install KDM and KDE basics and run kdm
-  #include archlinux_macbookretina::kde
-
 # BLACKLISTED in makeinitpp.sh: laptop_mode_tools
 #  # Install and configute laptop-mode-tools for power saving
 #  include archlinux_macbookretina::laptop_mode_tools
-
-  # Install LibreOffice suite
-  #include archlinux_macbookretina::libreoffice
-
-  # Install the mlocate package and run updatedb
-  #include archlinux_macbookretina::locate
 
   # Sets up macbook-specific keyboard stuff
   #include archlinux_macbookretina::mac_keyboard
 
   # Setup KDM/KDE specific to the MacBook Pro Retina - setup kdmrc
   #include archlinux_macbookretina::mbp_retina_kde
-
-  # Install mosh (mobile shell) and set firewall rules for it
-  #include archlinux_macbookretina::mosh
-
-  # Install Mozilla ProfileManager for Firefox as an ugly binary untar
-  #include archlinux_macbookretina::mozilla_profilemanager
-
-  # Install and setup networkmanager its KDE components, and ensure dhcpcd is stopped and nm is running
-  #include archlinux_macbookretina::networkmanager
 
 # BLACKLISTED in makeinitpp.sh: nouveau
 #  # Install nouveau driver for nvidia graphics and sample xorg.conf. Choose this class OR nvidia.
@@ -101,47 +47,13 @@ class archlinux_macbookretina {
   # Install proprietary nvidia driver for nvidia graphics and sample xorg.conf. Choose this class OR nouveau.
   #include archlinux_macbookretina::nvidia
 
-  # Install OpenVPN and its NetworkManager part
-  #include archlinux_macbookretina::openvpn
-
-# BLACKLISTED in makeinitpp.sh: pdnsd
-#  # Install and configute pdnsd for persistent local dns caching.
-#  include archlinux_macbookretina::pdnsd
-
-  # Install PHP for CLI
-  #include archlinux_macbookretina::php
-
-  # Install and configure profile-sync-daemon - REQUIRES CONFIGURATION
-  #include archlinux_macbookretina::profilesyncdaemon
-
-  # Make /etc/mkinitcpio.d/linux.preset changes for booting via rEFInd
-  #include archlinux_macbookretina::refind
-
-  # Install prerequisites for ruby rvm
-  #include archlinux_macbookretina::rvm
-
   # Sets up SSD-specific tuning on the system, disks and ext4 partitions
   #include archlinux_macbookretina::ssd
 
-  # Install and setup OpenSSH, drop in sshd_config
-  #include archlinux_macbookretina::sshd
-
-  # Install sudoers file - Arch default plus allow wheel access to all (with password).
-  #include archlinux_macbookretina::sudoers
-
-  # Creates a swap file, makes swap, swapon, update fstab
-  #include archlinux_macbookretina::swapfile
-
-  # Install and configure VirtualBox and Vagrant
-  #include archlinux_macbookretina::virtualbox
-
-  # Install driver for Broadcom BCM4331 wireless, iw and wpa_supplicant
-  #include archlinux_macbookretina::wireless
+  # Install driver for Broadcom wireless, iw and wpa_supplicant
+  include archlinux_macbookretina::wireless
 
   # Install packages required for xorg X server
   #include archlinux_macbookretina::xorg
-
-  # Add the archlinuxfr repo to pacman, install yaourt <https://wiki.archlinux.org/index.php/Yaourt> so we can get packages from AUR
-  #include archlinux_macbookretina::yaourt
 
 }

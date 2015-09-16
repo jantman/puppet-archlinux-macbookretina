@@ -1,25 +1,18 @@
 # Class: archlinux_macbookretina::wireless
 #
-# Install driver for Broadcom BCM4331 wireless, iw and wpa_supplicant
-#
-# Note that we're using the bcm43142 package from AUR, but that appears to have
-# the 6.20.x driver which supports BCM4331.
+# Install driver for Broadcom wireless, iw and wpa_supplicant
 #
 # Parameters:
 #
 # Actions:
-#   - Install wireless-broadcom-bcm43142
+#   - Install broadcom-wl
 #   - Install iw and wpa_supplicant
-#
-# Requires:
-#   - requires the dkms class for wireless-bcm43142-dkms
-#
-# Sample Usage:
 #
 class archlinux_macbookretina::wireless {
 
-  # @TODO: look for a specific bcm4331 package, or wait for this to get renamed more generically
-  package {'wireless-bcm43142-dkms':
+  # we could also use the open source [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/)
+  # for a custom kernel, we'll need https://aur.archlinux.org/packages/broadcom-wl-dkms/
+  package {'broadcom-wl':
     ensure => present,
   }
 
