@@ -3,27 +3,18 @@ puppet-archlinux-macbookretina
 
 [![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/0.1.0/active.svg)](http://www.repostatus.org/#active)
 
-Puppet module and accompanying documentation to install/setup Arch linux on a MacBook Pro Retina 10,1
+Puppet module and accompanying documentation to install/setup Arch linux on a MacBook Pro Retina 10,1 using puppet4.
 
-This is the puppet module I use to manage my shiny new MacBook Pro Retina (10,1). My final setup will be Arch Linux, running KDM as the login/display manager and KDE4 as a desktop environment - though if you want something different, you can simply exclude those classes. 
+This is the puppet module I use to manage my shiny new MacBook Pro Retina (10,1).
 
-I use Puppet to manage everything on my laptop after the initial configuration - packages, config files, etc.. For the intial configuration, I've documented my steps here.
+__Important Notice:__ this project is currently undergoing a major rewrite. Please stay tuned.
 
-If some of this seems overly verbose to experienced Arch users, this install is my first experience with Arch. I've jumped ship from Fedora (which I've always run, because I've always worked at RedHat/CentOS server shops, so it seemed logical), so it's taking me a while to adjust back to a desktop Linux that doesn't expect the user to be an idiot. This is also my first real foray into the new hotness in Puppet 3, so I'm playing around with that a bit too.
+Requirements
+------------
 
-__Update/Notice March 2014 - please read before using__ - I wrote this a while ago when installing Arch on my MacBook Pro Retina. It hasn't seen much
-use or update since then, mainly because I had issues with the Nouveau open source grapics driver (thunderbolt display hot plug not working right),
-switched to the proprietary Nvidia driver, and hit a bug in that that's had me stuck on the same kernel and Nvidia driver version for months. As a result,
-this has started to rot a bit. Since the MBP is my primary machine for work, I haven't been able to do much experimentation knowing that even if I start
-messing around on Friday evening, I *need* it back in a working state by Monday morning.
-
-Next week I'm getting a shiny new desktop machine at home, and will be installing Arch on it. I'm also hopefully going to be able to work from home more,
-which means I'll have more time to play around with my MBP. My plan (see the "module" branch here) is to split everything that's not totally MBP-specific
-into my [archlinux_workstation](https://github.com/jantman/puppet-archlinux-workstation) module, to be pulled in through my new
-[workstation-bootstrap](https://github.com/jantman/workstation-bootstrap) [r10k](https://github.com/adrienthebo/r10k)-based framework.
-After that, this will be rewritten as a real module, with tests and everything. So, **be warned that there
-are major changes to this module coming soon**. In the process, I plan on also actually converting it to a "real" Puppet module, on the forge,
-and hopefully with configuration via parameterized classes instead of hacking init.pp.
+* A MacBook Pro Retina 10,1 with a __brand new install__ of Arch Linux
+* Puppet4
+* A minimal install, ideally following the instructions in my [workstation-bootstrap](https://github.com/jantman/workstation-bootstrap#arch-linux) repository.
 
 What Works
 ==========
