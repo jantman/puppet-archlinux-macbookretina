@@ -1,4 +1,4 @@
-# Class: puppet-archlinux-macbookretina::iptables
+# Class: archlinux_macbookretina::iptables
 #
 # Install iptables and setup framework for puppetlabs/firewall module and set custom rules
 #
@@ -19,7 +19,7 @@
 #
 # Sample Usage:
 #
-class puppet-archlinux-macbookretina::iptables {
+class archlinux_macbookretina::iptables {
 
   # this file needs to be in place before anything else, to tell iptables where to save/restore rules to/from
   file {'/etc/conf.d/iptables':
@@ -27,7 +27,7 @@ class puppet-archlinux-macbookretina::iptables {
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
-    source  => 'puppet:///modules/puppet-archlinux-macbookretina/confd_iptables',
+    source  => 'puppet:///modules/archlinux_macbookretina/confd_iptables',
   }
 
   #

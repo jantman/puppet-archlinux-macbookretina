@@ -1,4 +1,4 @@
-# Class: puppet-archlinux-macbookretina::rvm
+# Class: archlinux_macbookretina::rvm
 #
 # Install prerequisites for ruby rvm
 
@@ -12,14 +12,14 @@
 #
 # Sample Usage:
 #
-class puppet-archlinux-macbookretina::rvm {
+class archlinux_macbookretina::rvm {
 
   file { '/etc/gemrc':
     ensure  => present,
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
-    source  => 'puppet:///modules/puppet-archlinux-macbookretina/gemrc',
+    source  => 'puppet:///modules/archlinux_macbookretina/gemrc',
   }
 
 }

@@ -1,4 +1,4 @@
-# Class: puppet-archlinux-macbookretina::locate
+# Class: archlinux_macbookretina::locate
 #
 # Install the mlocate package and run updatedb
 #
@@ -12,7 +12,7 @@
 #
 # Sample Usage:
 #
-class puppet-archlinux-macbookretina::locate {
+class archlinux_macbookretina::locate {
 
   package {'mlocate':
     ensure => present,

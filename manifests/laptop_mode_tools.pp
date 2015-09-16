@@ -1,4 +1,4 @@
-# Class: puppet-archlinux-macbookretina::laptop_mode_tools
+# Class: archlinux_macbookretina::laptop_mode_tools
 #
 # Install and configute laptop-mode-tools for power saving
 #
@@ -11,7 +11,7 @@
 #
 # Sample Usage:
 #
-class puppet-archlinux-macbookretina::laptop_mode_tools {
+class archlinux_macbookretina::laptop_mode_tools {
 
   package {'laptop-mode-tools':
     ensure => present,
@@ -22,7 +22,7 @@ class puppet-archlinux-macbookretina::laptop_mode_tools {
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
-    source  => 'puppet:///modules/puppet-archlinux-macbookretina/laptop-mode.conf',
+    source  => 'puppet:///modules/archlinux_macbookretina/laptop-mode.conf',
     require => Package['laptop-mode-tools'],
   }
 

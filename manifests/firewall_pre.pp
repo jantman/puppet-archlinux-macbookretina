@@ -1,4 +1,4 @@
-# Class: puppet-archlinux-macbookretina::firewall_pre
+# Class: archlinux_macbookretina::firewall_pre
 #
 # Define firewall rules that will always be at the beginning of the chain
 #
@@ -11,7 +11,7 @@
 #
 # Sample Usage:
 #
-class puppet-archlinux-macbookretina::firewall_pre {
+class archlinux_macbookretina::firewall_pre {
 
   Firewall {
     require => undef,

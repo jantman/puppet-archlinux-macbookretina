@@ -1,4 +1,4 @@
-# Class: puppet-archlinux-macbookretina::refind
+# Class: archlinux_macbookretina::refind
 #
 # Make /etc/mkinitcpio.d/linux.preset changes for booting via rEFInd
 #
@@ -11,14 +11,14 @@
 #
 # Sample Usage:
 #
-class puppet-archlinux-macbookretina::refind {
+class archlinux_macbookretina::refind {
 
   file {'/etc/mkinitcpio.conf':
     ensure  => present,
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
-    source  => 'puppet:///modules/puppet-archlinux-macbookretina/mkinitcpio.conf',
+    source  => 'puppet:///modules/archlinux_macbookretina/mkinitcpio.conf',
     notify  => Exec['mkinitcpio'],
   }
 
@@ -27,7 +27,7 @@ class puppet-archlinux-macbookretina::refind {
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
-    source  => 'puppet:///modules/puppet-archlinux-macbookretina/mkinitcpio_rEFInd_linux.preset',
+    source  => 'puppet:///modules/archlinux_macbookretina/mkinitcpio_rEFInd_linux.preset',
     notify  => Exec['mkinitcpio'],
   }
 
@@ -36,7 +36,7 @@ class puppet-archlinux-macbookretina::refind {
     owner    => root,
     group    => root,
     mode     => '0755',
-    content  => template('puppet-archlinux-macbookretina/refind_linux.conf.erb'),
+    content  => template('archlinux_macbookretina/refind_linux.conf.erb'),
   }
 
   exec {'mkinitcpio':

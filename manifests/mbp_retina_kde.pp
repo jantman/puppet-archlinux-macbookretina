@@ -1,4 +1,4 @@
-# Class: puppet-archlinux-macbookretina::mbp_retina_kde
+# Class: archlinux_macbookretina::mbp_retina_kde
 #
 # Setup KDM/KDE specific to the MacBook Pro Retina - setup kdmrc
 #
@@ -11,7 +11,7 @@
 #
 # Sample Usage:
 #
-class puppet-archlinux-macbookretina::mbp_retina_kde {
+class archlinux_macbookretina::mbp_retina_kde {
 
   file {'kdmrc':
     ensure  => present,
@@ -19,7 +19,7 @@ class puppet-archlinux-macbookretina::mbp_retina_kde {
     mode    => '0644',
     owner   => 'root',
     group   => 'root',
-    source  => 'puppet:///modules/puppet-archlinux-macbookretina/kdmrc',
+    source  => 'puppet:///modules/archlinux_macbookretina/kdmrc',
     require => Package['kdebase-workspace'],
   }
 

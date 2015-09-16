@@ -1,4 +1,4 @@
-# Class: puppet-archlinux-macbookretina::yaourt
+# Class: archlinux_macbookretina::yaourt
 #
 # Add the archlinuxfr repo to pacman, install yaourt <https://wiki.archlinux.org/index.php/Yaourt> so we can get packages from AUR
 #
@@ -13,14 +13,14 @@
 #
 # Sample Usage:
 #
-class puppet-archlinux-macbookretina::yaourt {
+class archlinux_macbookretina::yaourt {
 
   file { '/etc/pacman.conf':
     ensure  => present,
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
-    source  => 'puppet:///modules/puppet-archlinux-macbookretina/pacman.conf',
+    source  => 'puppet:///modules/archlinux_macbookretina/pacman.conf',
   }
 
   file {'/etc/pacman.d/archlinuxfr.conf':
@@ -28,7 +28,7 @@ class puppet-archlinux-macbookretina::yaourt {
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
-    source  => 'puppet:///modules/puppet-archlinux-macbookretina/archlinuxfr.conf',
+    source  => 'puppet:///modules/archlinux_macbookretina/archlinuxfr.conf',
     notify  => Exec['pacman_sync_yaourt'],
     require => File['/etc/pacman.conf'],
   }

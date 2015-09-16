@@ -1,4 +1,4 @@
-# Class: puppet-archlinux-macbookretina::pdnsd
+# Class: archlinux_macbookretina::pdnsd
 #
 # Install and configute pdnsd for persistent local dns caching.
 #
@@ -11,7 +11,7 @@
 #
 # Sample Usage:
 #
-class puppet-archlinux-macbookretina::pdnsd {
+class archlinux_macbookretina::pdnsd {
 
   package {'pdnsd':
     ensure => present,
@@ -22,7 +22,7 @@ class puppet-archlinux-macbookretina::pdnsd {
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
-    source  => 'puppet:///modules/puppet-archlinux-macbookretina/pdnsd.conf',
+    source  => 'puppet:///modules/archlinux_macbookretina/pdnsd.conf',
     require => Package['pdnsd'],
   }
 

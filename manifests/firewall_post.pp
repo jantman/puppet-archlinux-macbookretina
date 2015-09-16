@@ -1,4 +1,4 @@
-# Class: puppet-archlinux-macbookretina::firewall_post
+# Class: archlinux_macbookretina::firewall_post
 #
 # Define firewall rules that will always be at the end of the chain
 #
@@ -11,7 +11,7 @@
 #
 # Sample Usage:
 #
-class puppet-archlinux-macbookretina::firewall_post {
+class archlinux_macbookretina::firewall_post {
 
   firewall { '999 drop all':
     proto   => 'all',

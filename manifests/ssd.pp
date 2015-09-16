@@ -1,4 +1,4 @@
-# Class: puppet-archlinux-macbookretina::ssd
+# Class: archlinux_macbookretina::ssd
 #
 # Sets up SSD-specific tuning on the system, disks and ext4 partitions
 #
@@ -18,7 +18,7 @@
 #
 # Sample Usage:
 #
-class puppet-archlinux-macbookretina::ssd {
+class archlinux_macbookretina::ssd {
 
   # this is a horrible hack, but I just can't find a better way to do it.
   # augeas' XPath queries don't handle globbing or regexes the way I want.
@@ -45,7 +45,7 @@ class puppet-archlinux-macbookretina::ssd {
     owner  => 'root',
     group  => 'root',
     mode   => '0644',
-    source => 'puppet:///modules/puppet-archlinux-macbookretina/60-schedulers.rules',
+    source => 'puppet:///modules/archlinux_macbookretina/60-schedulers.rules',
   }
 
   # sysctl values specific to laptops and SSDS

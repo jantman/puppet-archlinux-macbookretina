@@ -1,4 +1,4 @@
-# Class: puppet-archlinux-macbookretina::mac_keyboard
+# Class: archlinux_macbookretina::mac_keyboard
 #
 # Sets up macbook-specific keyboard stuff
 #
@@ -11,14 +11,14 @@
 #
 # Sample Usage:
 #
-class puppet-archlinux-macbookretina::mac_keyboard {
+class archlinux_macbookretina::mac_keyboard {
 
   file { "/etc/modprobe.d/apple.conf":
     ensure => present,
     owner  => 'root',
     group  => 'root',
     mode   => '0644',
-    source => 'puppet:///modules/puppet-archlinux-macbookretina/apple.conf',
+    source => 'puppet:///modules/archlinux_macbookretina/apple.conf',
   }
 
 }

@@ -1,4 +1,4 @@
-# Class: puppet-archlinux-macbookretina::dkms
+# Class: archlinux_macbookretina::dkms
 #
 # Install, run and configure DKMS
 #
@@ -12,7 +12,7 @@
 #
 # Sample Usage:
 #
-class puppet-archlinux-macbookretina::dkms {
+class archlinux_macbookretina::dkms {
 
   package {'dkms':
     ensure => present,

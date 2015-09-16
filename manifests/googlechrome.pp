@@ -1,4 +1,4 @@
-# Class: puppet-archlinux-macbookretina::googlechrome
+# Class: archlinux_macbookretina::googlechrome
 #
 # Install proprietary google-chrome package and ttf-google-fonts-git from archlinuxfr repository.
 #
@@ -12,7 +12,7 @@
 #
 # Sample Usage:
 #
-class puppet-archlinux-macbookretina::googlechrome {
+class archlinux_macbookretina::googlechrome {
 
   package {'google-chrome':
     ensure  => present,

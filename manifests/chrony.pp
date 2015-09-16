@@ -1,4 +1,4 @@
-# Class: puppet-archlinux-macbookretina::chrony
+# Class: archlinux_macbookretina::chrony
 #
 # Install and configure chrony, a roaming/laptop friendly NTP client
 #
@@ -15,7 +15,7 @@
 #
 # Sample Usage:
 #
-class puppet-archlinux-macbookretina::chrony {
+class archlinux_macbookretina::chrony {
 
   # we're only allowing access from 127.0.0.1, so I don't see a reason
   # to be paranoid about this. Change it if you want.
@@ -35,7 +35,7 @@ class puppet-archlinux-macbookretina::chrony {
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
-    source  => 'puppet:///modules/puppet-archlinux-macbookretina/chrony.conf',
+    source  => 'puppet:///modules/archlinux_macbookretina/chrony.conf',
     require => Package['chrony'],
     notify  => Service['chrony'],
   }

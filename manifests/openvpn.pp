@@ -1,4 +1,4 @@
-# Class: puppet-archlinux-macbookretina::openvpn
+# Class: archlinux_macbookretina::openvpn
 #
 # Install OpenVPN and its NetworkManager part
 #
@@ -11,7 +11,7 @@
 #
 # Sample Usage:
 #
-class puppet-archlinux-macbookretina::openvpn {
+class archlinux_macbookretina::openvpn {
 
   package {'networkmanager-openvpn':
     ensure => present,

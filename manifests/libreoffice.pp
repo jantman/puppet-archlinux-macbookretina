@@ -1,4 +1,4 @@
-# Class: puppet-archlinux-macbookretina::libreoffice
+# Class: archlinux_macbookretina::libreoffice
 #
 # Install LibreOffice suite
 #
@@ -11,7 +11,7 @@
 #
 # Sample Usage:
 #
-class puppet-archlinux-macbookretina::libreoffice {
+class archlinux_macbookretina::libreoffice {
 
   $libreoffice_packages = ['libreoffice-base', 'libreoffice-calc', 'libreoffice-common', 'libreoffice-draw', 'libreoffice-extension-nlpsolver', 'libreoffice-extension-presentation-minimizer', 'libreoffice-impress', 'libreoffice-kde4', 'libreoffice-math', 'libreoffice-writer', 'libreoffice-en-US']
 

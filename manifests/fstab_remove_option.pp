@@ -1,4 +1,4 @@
-# Define: puppet-archlinux-macbookretina::fstab_remove_option
+# Define: archlinux_macbookretina::fstab_remove_option
 #
 # Removes a specified option from /etc/fstab entry for a specified filesystem
 #
@@ -17,7 +17,7 @@
 #
 # Sample Usage:
 #
-define puppet-archlinux-macbookretina::fstab_remove_option ($drive = $title, $option, $only_fstype = '') {
+define archlinux_macbookretina::fstab_remove_option ($drive = $title, $option, $only_fstype = '') {
 
   # let us constrain to one fs type
   if $only_fstype == '' {

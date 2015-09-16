@@ -1,4 +1,4 @@
-# Define: puppet-archlinux-macbookretina::fstab_replace_option
+# Define: archlinux_macbookretina::fstab_replace_option
 #
 # Replace a specified option from /etc/fstab entry for a specified filesystem, with another option
 #
@@ -19,7 +19,7 @@
 #
 # Sample Usage:
 #
-define puppet-archlinux-macbookretina::fstab_replace_option ($drive = $title, $option, $old_option, $only_fstype = '') {
+define archlinux_macbookretina::fstab_replace_option ($drive = $title, $option, $old_option, $only_fstype = '') {
 
   # let us constrain to one fs type
   if $only_fstype == '' {

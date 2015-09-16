@@ -1,4 +1,4 @@
-# Class: puppet-archlinux-macbookretina::cups
+# Class: archlinux_macbookretina::cups
 #
 # Install CUPS printing
 #
@@ -11,7 +11,7 @@
 #
 # Sample Usage:
 #
-class puppet-archlinux-macbookretina::cups {
+class archlinux_macbookretina::cups {
 
   $cups_packages = ['libcups', 'cups', 'ghostscript', 'gsfonts', 'gutenprint', 'foomatic-db', 'foomatic-filters', 'hplip', 'cups-pdf']
 

@@ -1,4 +1,4 @@
-# Class: puppet-archlinux-macbookretina::nvidia
+# Class: archlinux_macbookretina::nvidia
 #
 # Install proprietary nvidia driver for nvidia graphics and sample xorg.conf. Choose this class OR nouveau.
 #
@@ -12,7 +12,7 @@
 #
 # Sample Usage:
 #
-class puppet-archlinux-macbookretina::nvidia {
+class archlinux_macbookretina::nvidia {
 
   $nouveau_packages = ['xf86-video-nouveau',  'nouveau-dri', 'mesa-libgl', 'lib32-mesa-libgl' ]
   $nvidia_packages = [ 'nvidia', 'nvidia-bl' ]
@@ -33,7 +33,7 @@ class puppet-archlinux-macbookretina::nvidia {
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
-    source  => 'puppet:///modules/puppet-archlinux-macbookretina/xorg.conf.nvidia',
+    source  => 'puppet:///modules/archlinux_macbookretina/xorg.conf.nvidia',
     require => Package['xorg-server'],
   }
 

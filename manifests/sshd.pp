@@ -1,4 +1,4 @@
-# Class: puppet-archlinux-macbookretina::sshd
+# Class: archlinux_macbookretina::sshd
 #
 # Install and setup OpenSSH, drop in sshd_config
 
@@ -14,14 +14,14 @@
 #
 # Sample Usage:
 #
-class puppet-archlinux-macbookretina::sshd {
+class archlinux_macbookretina::sshd {
 
   file { '/etc/ssh/sshd_config':
     ensure  => present,
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
-    source  => 'puppet:///modules/puppet-archlinux-macbookretina/sshd_config',
+    source  => 'puppet:///modules/archlinux_macbookretina/sshd_config',
     require => Package['openssh'],
   }
 

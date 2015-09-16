@@ -1,4 +1,4 @@
-# Class: puppet-archlinux-macbookretina::swapfile
+# Class: archlinux_macbookretina::swapfile
 #
 # Creates a swap file, makes swap, swapon, update fstab
 #
@@ -11,7 +11,7 @@
 #
 # Sample Usage:
 #
-class puppet-archlinux-macbookretina::swapfile {
+class archlinux_macbookretina::swapfile {
 
   $swapfile_path = '/swapfile'
   $swapfile_size = '4G'

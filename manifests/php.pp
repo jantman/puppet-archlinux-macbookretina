@@ -1,4 +1,4 @@
-# Class: puppet-archlinux-macbookretina::php
+# Class: archlinux_macbookretina::php
 #
 # Install PHP for CLI
 #
@@ -11,7 +11,7 @@
 #
 # Sample Usage:
 #
-class puppet-archlinux-macbookretina::php {
+class archlinux_macbookretina::php {
 
   $php_packages = ['php', ]
 

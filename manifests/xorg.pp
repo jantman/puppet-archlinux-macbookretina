@@ -1,4 +1,4 @@
-# Class: puppet-archlinux-macbookretina::xorg
+# Class: archlinux_macbookretina::xorg
 #
 # Install packages required for xorg X server
 #
@@ -11,7 +11,7 @@
 #
 # Sample Usage:
 #
-class puppet-archlinux-macbookretina::xorg {
+class archlinux_macbookretina::xorg {
 
   $xorg_packages = ['xorg-server', 'xorg-apps', 'xorg-server-utils', 'xorg-xinit', 'mesa']
 

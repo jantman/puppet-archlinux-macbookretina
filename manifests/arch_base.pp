@@ -1,4 +1,4 @@
-# Class: puppet-archlinux-macbookretina::arch_base
+# Class: archlinux_macbookretina::arch_base
 #
 # Install base packages we want on any (arch) system and setup makepkg.conf
 #
@@ -17,7 +17,7 @@
 #
 # Sample Usage:
 #
-class puppet-archlinux-macbookretina::arch_base {
+class archlinux_macbookretina::arch_base {
   package {'links': ensure => present, }
   package {'lynx': ensure => absent, }
   package {'lsb-release': ensure => present, }
@@ -39,7 +39,7 @@ class puppet-archlinux-macbookretina::arch_base {
     owner  => 'root',
     group  => 'root',
     mode   => '0644',
-    source => 'puppet:///modules/puppet-archlinux-macbookretina/makepkg.conf',
+    source => 'puppet:///modules/archlinux_macbookretina/makepkg.conf',
   }
 
   # these are needed for compiling packages under /tmp using makepkg
@@ -56,7 +56,7 @@ class puppet-archlinux-macbookretina::arch_base {
     owner  => 'root',
     group  => 'root',
     mode   => '0644',
-    source => 'puppet:///modules/puppet-archlinux-macbookretina/site.pp',
+    source => 'puppet:///modules/archlinux_macbookretina/site.pp',
   }
 
   # the following ensures that /tmp/sources is created at boot, even if puppet isnt run
@@ -65,14 +65,14 @@ class puppet-archlinux-macbookretina::arch_base {
     owner  => 'root',
     group  => 'root',
     mode   => '0755',
-    source => 'puppet:///modules/puppet-archlinux-macbookretina/maketmpdirs.sh',
+    source => 'puppet:///modules/archlinux_macbookretina/maketmpdirs.sh',
   }
   file {'/etc/systemd/system/maketmpdirs.service':
     ensure  => present,
     owner   => 'root',
     group   => 'root',
     mode    => '0755',
-    source  => 'puppet:///modules/puppet-archlinux-macbookretina/maketmpdirs.service',
+    source  => 'puppet:///modules/archlinux_macbookretina/maketmpdirs.service',
     require => File['/usr/local/bin/maketmpdirs.sh'],
   }
   service {'maketmpdirs':

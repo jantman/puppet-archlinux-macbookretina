@@ -1,4 +1,4 @@
-# Class: puppet-archlinux-macbookretina::augeas
+# Class: archlinux_macbookretina::augeas
 #
 # Install augeas, required for some of the puppet classes
 #
@@ -11,7 +11,7 @@
 #
 # Sample Usage:
 #
-class puppet-archlinux-macbookretina::augeas {
+class archlinux_macbookretina::augeas {
 
   package {'augeas':
     ensure => present,

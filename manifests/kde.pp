@@ -1,4 +1,4 @@
-# Class: puppet-archlinux-macbookretina::kde
+# Class: archlinux_macbookretina::kde
 #
 # Install KDM and KDE basics and run kdm
 #
@@ -12,7 +12,7 @@
 #
 # Sample Usage:
 #
-class puppet-archlinux-macbookretina::kde {
+class archlinux_macbookretina::kde {
 
   service {'kdm.service':
     enable  => true,

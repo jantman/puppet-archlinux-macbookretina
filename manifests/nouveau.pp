@@ -1,4 +1,4 @@
-# Class: puppet-archlinux-macbookretina::nouveau
+# Class: archlinux_macbookretina::nouveau
 #
 # Install nouveau driver for nvidia graphics and sample xorg.conf. Choose this class OR nvidia.
 #
@@ -15,7 +15,7 @@
 #   Uncomment EITHER the "nouveau" or "nvidia" line in makeinitpp.sh. 
 #   Run makeinitpp.sh
 #
-class puppet-archlinux-macbookretina::nouveau {
+class archlinux_macbookretina::nouveau {
 
   $nouveau_packages = ['xf86-video-nouveau',  'nouveau-dri', 'mesa-libgl', 'lib32-mesa-libgl' ]
   $nvidia_packages = [ 'nvidia' ]
@@ -35,7 +35,7 @@ class puppet-archlinux-macbookretina::nouveau {
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
-    source  => 'puppet:///modules/puppet-archlinux-macbookretina/xorg.conf.nouveau',
+    source  => 'puppet:///modules/archlinux_macbookretina/xorg.conf.nouveau',
     require => Package['xorg-server'],
   }
 

@@ -1,4 +1,4 @@
-# Class: puppet-archlinux-macbookretina::profilesyncdaemon
+# Class: archlinux_macbookretina::profilesyncdaemon
 #
 # Install and configure profile-sync-daemon - REQUIRES CONFIGURATION
 #
@@ -14,7 +14,7 @@
 #
 # Sample Usage:
 #
-class puppet-archlinux-macbookretina::profilesyncdaemon {
+class archlinux_macbookretina::profilesyncdaemon {
 
   $profile_sync_users = 'jantman'
 
@@ -23,7 +23,7 @@ class puppet-archlinux-macbookretina::profilesyncdaemon {
     owner    => 'root',
     group    => 'root',
     mode     => '0644',
-    content  => template('puppet-archlinux-macbookretina/psd.conf.erb'),
+    content  => template('archlinux_macbookretina/psd.conf.erb'),
     require  => Package['profile-sync-daemon'],
   }
 

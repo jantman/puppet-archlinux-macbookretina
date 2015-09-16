@@ -1,4 +1,4 @@
-# Class: puppet-archlinux-macbookretina::android
+# Class: archlinux_macbookretina::android
 #
 # Install Android development tools
 #
@@ -11,7 +11,7 @@
 #
 # Sample Usage:
 #
-class puppet-archlinux-macbookretina::android {
+class archlinux_macbookretina::android {
 
   package {'android-sdk':
     ensure => present,

@@ -1,4 +1,4 @@
-# Class: puppet-archlinux-macbookretina::mozilla_profilemanager
+# Class: archlinux_macbookretina::mozilla_profilemanager
 #
 # Install Mozilla ProfileManager for Firefox as an ugly binary untar
 #
@@ -12,7 +12,7 @@
 #
 # Sample Usage:
 #
-class puppet-archlinux-macbookretina::mozilla_profilemanager {
+class archlinux_macbookretina::mozilla_profilemanager {
 
   # we don't want this in /tmp since it's a ramdisk and would get re-done at every reboot
   $tmp_dir = "/root/mozilla-profilemanager"
@@ -36,7 +36,7 @@ class puppet-archlinux-macbookretina::mozilla_profilemanager {
   } -> 
   file { "/usr/share/applications/mozilla-profilemanager.desktop":
     ensure => present,
-    source => 'puppet:///modules/puppet-archlinux-macbookretina/mozilla-profilemanager.desktop',
+    source => 'puppet:///modules/archlinux_macbookretina/mozilla-profilemanager.desktop',
   }
 
 }

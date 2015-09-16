@@ -1,4 +1,4 @@
-# Class: puppet-archlinux-macbookretina::mosh
+# Class: archlinux_macbookretina::mosh
 #
 # Install mosh (mobile shell) and set firewall rules for it
 #
@@ -14,7 +14,7 @@
 #
 # Sample Usage:
 #
-class puppet-archlinux-macbookretina::mosh {
+class archlinux_macbookretina::mosh {
 
   package {'mosh':
     ensure => present,

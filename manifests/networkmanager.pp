@@ -1,4 +1,4 @@
-# Class: puppet-archlinux-macbookretina::networkmanager
+# Class: archlinux_macbookretina::networkmanager
 #
 # Install and setup networkmanager its KDE components, and ensure dhcpcd is stopped and nm is running
 #
@@ -13,7 +13,7 @@
 #
 # Sample Usage:
 #
-class puppet-archlinux-macbookretina::networkmanager {
+class archlinux_macbookretina::networkmanager {
 
   package {'networkmanager':
     ensure => present,

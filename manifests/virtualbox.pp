@@ -1,4 +1,4 @@
-# Class: puppet-archlinux-macbookretina::virtualbox
+# Class: archlinux_macbookretina::virtualbox
 #
 # Install and configure VirtualBox and Vagrant
 #
@@ -16,7 +16,7 @@
 #
 # Sample Usage:
 #
-class puppet-archlinux-macbookretina::virtualbox {
+class archlinux_macbookretina::virtualbox {
 
   package {'virtualbox':
     ensure => present,
@@ -37,7 +37,7 @@ class puppet-archlinux-macbookretina::virtualbox {
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
-    source  => 'puppet:///modules/puppet-archlinux-macbookretina/virtualbox-modules.conf',
+    source  => 'puppet:///modules/archlinux_macbookretina/virtualbox-modules.conf',
   }
 
   package {'virtualbox-ext-oracle':
