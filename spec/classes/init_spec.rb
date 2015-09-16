@@ -75,4 +75,17 @@ describe 'archlinux_macbookretina' do
       it { expect { should contain_class('archlinux_macbookretina') }.to raise_error(Puppet::Error, /To be filled by O\.E\.M\. is not a supported hardware productname/) }
     end
   end
+  context 'parameters' do
+    describe 'default' do
+      let(:facts) {{
+                     :osfamily        => 'Archlinux',
+                     :operatingsystem => 'Archlinux',
+                     :productname     => 'MacBookPro11,4',
+      }}
+      it { should compile.with_all_deps }
+      it { should contain_class('archlinux_macbookretina') }
+      it { should contain_class('archlinux_macbookretina::wireless') }
+      it { should contain_class('archlinux_macbookretina::videodriver') }
+    end
+  end
 end

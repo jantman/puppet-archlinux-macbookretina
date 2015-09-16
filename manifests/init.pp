@@ -30,30 +30,12 @@ class archlinux_macbookretina {
     }
   }
 
-# BLACKLISTED in makeinitpp.sh: laptop_mode_tools
-#  # Install and configute laptop-mode-tools for power saving
-#  include archlinux_macbookretina::laptop_mode_tools
-
-  # Sets up macbook-specific keyboard stuff
-  #include archlinux_macbookretina::mac_keyboard
-
-  # Setup KDM/KDE specific to the MacBook Pro Retina - setup kdmrc
-  #include archlinux_macbookretina::mbp_retina_kde
-
-# BLACKLISTED in makeinitpp.sh: nouveau
-#  # Install nouveau driver for nvidia graphics and sample xorg.conf. Choose this class OR nvidia.
-#  include archlinux_macbookretina::nouveau
-
-  # Install proprietary nvidia driver for nvidia graphics and sample xorg.conf. Choose this class OR nouveau.
-  #include archlinux_macbookretina::nvidia
-
-  # Sets up SSD-specific tuning on the system, disks and ext4 partitions
-  #include archlinux_macbookretina::ssd
+  # Install proprietary nvidia driver for nvidia graphics and sample xorg.conf
+  class {'archlinux_macbookretina::videodriver':
+    driver => 'nvidia', # default
+  }
 
   # Install driver for Broadcom wireless, iw and wpa_supplicant
   include archlinux_macbookretina::wireless
-
-  # Install packages required for xorg X server
-  #include archlinux_macbookretina::xorg
 
 }
