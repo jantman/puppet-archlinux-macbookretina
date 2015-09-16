@@ -20,8 +20,8 @@ describe 'archlinux_macbookretina::videodriver' do
       it { should compile.with_all_deps }
       it { should contain_class('archlinux_macbookretina::videodriver') }
 
-      nouveau_packages = ['xf86-video-nouveau',  'nouveau-dri', 'mesa-libgl', 'lib32-mesa-libgl' ]
-      nvidia_packages = [ 'nvidia', 'nvidia-bl' ]
+      nouveau_packages = ['xf86-video-nouveau',  'nouveau-dri' ]
+      nvidia_packages = [ 'nvidia' ]
 
       nvidia_packages.each do |pkgname|
         it { should contain_package(pkgname)
@@ -43,8 +43,8 @@ describe 'archlinux_macbookretina::videodriver' do
       it { should compile.with_all_deps }
       it { should contain_class('archlinux_macbookretina::videodriver') }
 
-      nouveau_packages = ['xf86-video-nouveau',  'nouveau-dri', 'mesa-libgl', 'lib32-mesa-libgl' ]
-      nvidia_packages = [ 'nvidia', 'nvidia-bl' ]
+      nouveau_packages = ['xf86-video-nouveau',  'nouveau-dri' ]
+      nvidia_packages = [ 'nvidia' ]
 
       nouveau_packages.each do |pkgname|
         it { should contain_package(pkgname)

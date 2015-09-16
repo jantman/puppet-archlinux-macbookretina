@@ -16,8 +16,8 @@ describe 'archlinux_macbookretina::videodriver class' do
       expect(apply_manifest(pp).exit_code).to eq(0)
     end
 
-    nouveau_packages = ['xf86-video-nouveau',  'nouveau-dri', 'mesa-libgl', 'lib32-mesa-libgl' ]
-    nvidia_packages = [ 'nvidia', 'nvidia-bl' ]
+    nouveau_packages = ['xf86-video-nouveau',  'nouveau-dri' ]
+    nvidia_packages = [ 'nvidia' ]
 
     nvidia_packages.each do |pkgname|
       describe package(pkgname) do

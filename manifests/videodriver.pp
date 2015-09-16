@@ -21,8 +21,11 @@ class archlinux_macbookretina::videodriver (
 
   validate_re($driver, '^(nvidia|nouveau)$')
 
-  $nouveau_packages = ['xf86-video-nouveau',  'nouveau-dri', 'mesa-libgl', 'lib32-mesa-libgl' ]
-  $nvidia_packages = [ 'nvidia', 'nvidia-bl' ]
+  $nouveau_packages = ['xf86-video-nouveau',  'nouveau-dri' ]
+  # nvidia-bl is a backlight driver - https://aur.archlinux.org/packages/nvidia-bl/
+  #  https://wiki.archlinux.org/index.php/MacBookPro11,x#Screen_backlight seems to
+  #  indicate that this weird driver may not be needed anymore
+  $nvidia_packages = [ 'nvidia' ]
 
   if $driver == 'nvidia' {
     $add_packages = $nvidia_packages
