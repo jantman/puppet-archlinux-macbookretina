@@ -25,19 +25,22 @@ class archlinux_macbookretina::ssd {
   # so we have to use a custom fact to find the mounted /dev/sda partitions
   # then (since facter only returns strings) split it, and pass the array
   # to create the define for each partition
-  $ssd_partitions = split($::partitions_sda, ',')
+  # TODO: commented out until I have linux running on a machine to test this
+  #$ssd_partitions = split($::partitions_sda, ',')
 
   # make sure relatime isn't specified on the /dev/sda mounts and noatime is
-  fstab_replace_option {$ssd_partitions:
-    old_option => 'relatime',
-    option     => 'noatime',
-  }
+  # TODO: commented out until I have linux running on a machine to test this
+  #fstab_replace_option {$ssd_partitions:
+  #  old_option => 'relatime',
+  #  option     => 'noatime',
+  #}
 
   # since we're arch, we're going to assume you're on a recent kernel (at time of module writing)
-  fstab_add_option {$ssd_partitions:
-    option => 'discard',
-    only_fstype => 'ext4',
-  }
+  # TODO: commented out until I have linux running on a machine to test this
+  #fstab_add_option {$ssd_partitions:
+  #  option => 'discard',
+  #  only_fstype => 'ext4',
+  #}
 
   # CFQ is a *bad* scheduler for SSD. let's tell udev that we want to use deadline instead
   file {'/etc/udev/rules.d/60-schedulers.rules':
@@ -51,10 +54,10 @@ class archlinux_macbookretina::ssd {
   # sysctl values specific to laptops and SSDS
   #  see: https://www.kernel.org/doc/Documentation/sysctl/vm.txt
   #  and: https://www.kernel.org/doc/Documentation/laptops/laptop-mode.txt
-  sysctl::value {'vm.dirty_writeback_centisecs': value => '1500', }
-  sysctl::value {'vm.laptop_mode': value => '5', }
-  sysctl::value {'vm.swappiness': value => '1', }
-  sysctl::value {'vm.vfs_cache_pressure': value => '50', }
-
+  # TODO: commented out; will return to these later
+  #sysctl::value {'vm.dirty_writeback_centisecs': value => '1500', }
+  #sysctl::value {'vm.laptop_mode': value => '5', }
+  #sysctl::value {'vm.swappiness': value => '1', }
+  #sysctl::value {'vm.vfs_cache_pressure': value => '50', }
 }
 
