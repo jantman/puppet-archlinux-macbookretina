@@ -41,9 +41,11 @@ class archlinux_macbookretina::videodriver (
   } ->
   package {$add_packages :
     ensure  => present,
+    # TODO: is this needed?
     #notify  => Exec['mkinitcpio'],
   }
 
+  # TODO: temporarily comment out xorg.conf, see how much of this we need or if there's a better way to manage it
   #file { '/etc/X11/xorg.conf':
   #  ensure  => present,
   #  owner   => 'root',
