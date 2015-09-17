@@ -38,4 +38,6 @@ class archlinux_macbookretina {
   # Install driver for Broadcom wireless, iw and wpa_supplicant
   include archlinux_macbookretina::wireless
 
+  # setup the apple kernel module for the mac keyboard
+  include archlinux_macbookretina::mac_keyboard
 }
