@@ -5,6 +5,9 @@ describe 'archlinux_macbookretina::mac_keyboard' do
     :osfamily        => 'Archlinux',
     :operatingsystem => 'Archlinux',
     :productname     => 'MacBookPro11,4',
+    # structured facts
+    :os              => { 'family' => 'Archlinux' },
+    :dmi             => { 'product' => { 'name' => 'MacBookPro11,4' } },
   }}
 
   describe "creates file" do

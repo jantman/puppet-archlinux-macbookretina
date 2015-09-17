@@ -5,6 +5,9 @@ describe 'archlinux_macbookretina::videodriver' do
     :osfamily        => 'Archlinux',
     :operatingsystem => 'Archlinux',
     :productname     => 'MacBookPro11,4',
+    # structured facts
+    :os              => { 'family' => 'Archlinux' },
+    :dmi             => { 'product' => { 'name' => 'MacBookPro11,4' } },
   }}
 
   context 'invalid driver param' do
