@@ -37,4 +37,7 @@ class archlinux_macbookretina {
 
   # SSD tuning
   include archlinux_macbookretina::ssd
+
+  # fan control
+  include archlinux_macbookretina::macfanctld
 }
