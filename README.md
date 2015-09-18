@@ -24,27 +24,43 @@ Hardware Support Status
 
 ### Mid-2015 MacBookPro11,4
 
-* [Suspend to RAM](https://wiki.archlinux.org/index.php/Suspend_to_RAM) https://wiki.archlinux.org/index.php/MacBookPro11,x#Suspend
-* [Hibernate / Suspend to Disk]()
+#### Working
+
+Or mostly-working:
+
 * __Networking__
   * USB ethernet adapter A1277 works out-of-the-box
   * BCM43602 AirPort Extreme (14e4:43ba) works with kernel built-in [brcmfmac](https://wireless.wiki.kernel.org/en/users/drivers/brcm80211) driver, autodetected, but __2.4GHz only__
-* __Touchpad__ - clicks out of the box, no scrolling or multi-touch/right click ( https://wiki.archlinux.org/index.php/MacBookPro11,x#Touchpad )
+* __Sound__ - Works. Under KDE/Phonon, needed to unmute/enable the "Built-in Audio Analog Stereo" (detected "Built-in Audio Digital Stereo (HDMI)" as default).
+* __Video__ - video works with the proprietary nvidia driver, the default in this module.
+  * __External Displays__ - Tested OK using both direct HDMI and Thunderbolt to HDMI; works seamlessly.
+  * __Video during suspend/hibernate__ - 
+  * __Display/Desktop Scaling__ - This can be fixed within KDE:
+    * System Settings -> Fonts: check off "Force fonts DIP" and set to 144
+    * System Settings -> Icons -> "Advanced" tab: set them all to 48
+    * Click the menu button on the far right edge of the Panel, then drag the "Height" box up until the scale/size looks good
+  * __Screen Backlight Adjustment__ - https://wiki.archlinux.org/index.php/MacBookPro11,x#Screen_backlight
+* __Hibernate / Suspend to Disk__ - doesn't wake up without long hold of power button & then turn back on. Session resumes once that's done.
+
+#### Broken
+
+* __Touchpad__ - Per the [wiki](https://wiki.archlinux.org/index.php/MacBook#Early_2015_13.22.2F15.22_-_Version_12.2Cx.2F11.2C4.2B), the touchpad isn't supported until kernel 4.2.x, with ``xf86-input-synaptics``. Until then, cursor and click works, but no right-click or scroll. I tried both [xf86-input-multitouch-git](https://aur.archlinux.org/packages/xf86-input-multitouch-git/) and [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) and neither helped this.
+* __Webcam__ - Per [Arch Wiki](https://wiki.archlinux.org/index.php/MacBookPro11,x#Web_cam), there's no driver for this yet. There's a [project on GitHub](https://github.com/patjak/bcwc_pcie/) but it (2015-09-18) isn't working yet.
+* __Suspend to RAM__ - doesn't wake up; long hold of power button & then turn back on gives a fresh boot.
+* __Lid Close__ - suspends to ram and doesn't wake up
+* __Bluetooth__ - Per [wiki](https://wiki.archlinux.org/index.php/MacBook#Bluetooth_2), "not working at all"; even though ``dmesg`` shows that the bluetooth controller is recognized, my tests seem to confirm that it doesn't work.
+
+#### Untested
+
 * __not yet done__ - __makepkg__ set to compile and store source and logs under /tmp, which is by default a tmpfs in RAM sized at 50% of physical memory. If you need more space than that, see [Compiling in tmpfs](https://wiki.archlinux.org/index.php/Solid_State_Drives#Compiling_in_tmpfs)
 * __not yet done__ - __SSD optimizations__ via sysctl settings, mount /dev/sda* noatime and discard (TRIM), use deadline scheduler on non-rotational disks
 * __not yet done__ - [Profile-sync-daemon](https://wiki.archlinux.org/index.php/Profile-sync-daemon) to store browser profiles in memory (tmpfs) and periodically sync back to disk (disabled by default)
 * __not yet done__fans work under macfanctld
-* __Webcam__ - __non-functional__ - Per [Arch Wiki](https://wiki.archlinux.org/index.php/MacBookPro11,x#Web_cam), there's no driver for this yet. There's a [project on GitHub](https://github.com/patjak/bcwc_pcie/) but it (2015-09-18) isn't working yet.
-* __Sound__ - https://wiki.archlinux.org/index.php/MacBookPro11,x#Sound
-* __Power Saving__ - https://wiki.archlinux.org/index.php/MacBookPro11,x#Powersave
-* __Video__ - video works with the proprietary nvidia driver, the default in this module.
-  * __External Displays__ -
-  * __Video during suspend/hibernate__ -
-  * __Display/Desktop Scaling__ -
-  * __Screen Backlight Adjustment__ - https://wiki.archlinux.org/index.php/MacBookPro11,x#Screen_backlight
 * __Keyboard Backlight__ - https://wiki.archlinux.org/index.php/MacBookPro11,x#Keyboard_backlight
 * __SD Card Reader__ - https://wiki.archlinux.org/index.php/MacBookPro11,x#SD_Card_Reader
-* [Chrony - ArchWiki](https://wiki.archlinux.org/index.php/Chrony) for NTP that plays well on a laptop
+* __Power Saving__ - https://wiki.archlinux.org/index.php/MacBookPro11,x#Powersave
+* __Ctrl-Click as Right Click__ - http://superuser.com/questions/217615/how-to-right-click-using-the-keyboard-from-ubuntu-on-a-mac
+* __Light Sensor__ - https://github.com/poliva/lightum
 
 To Do
 =====
