@@ -40,7 +40,4 @@ class archlinux_macbookretina {
 
   # fan control
   include archlinux_macbookretina::macfanctld
-
-  # pommed for mac hotkeys
-  include archlinux_macbookretina::pommed
 }
