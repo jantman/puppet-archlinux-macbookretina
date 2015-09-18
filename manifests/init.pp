@@ -40,7 +40,4 @@ class archlinux_macbookretina {
 
   # setup the apple kernel module for the mac keyboard
   include archlinux_macbookretina::mac_keyboard
-
-  # touchpad setup
-  include archlinux_macbookretina::touchpad
 }
