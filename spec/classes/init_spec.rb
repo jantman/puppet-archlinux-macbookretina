@@ -110,6 +110,8 @@ describe 'archlinux_macbookretina' do
       it { should contain_class('archlinux_macbookretina') }
       it { should contain_class('archlinux_macbookretina::wireless') }
       it { should contain_class('archlinux_macbookretina::videodriver') }
+      it { should contain_class('archlinux_macbookretina::mac_keyboard') }
+      it { should contain_class('archlinux_macbookretina::touchpad') }
     end
   end
 end
