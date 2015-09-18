@@ -41,6 +41,7 @@ Or mostly-working:
     * Click the menu button on the far right edge of the Panel, then drag the "Height" box up until the scale/size looks good
   * __Screen Backlight Adjustment__ - https://wiki.archlinux.org/index.php/MacBookPro11,x#Screen_backlight
 * __Hibernate / Suspend to Disk__ - doesn't wake up without long hold of power button & then turn back on. Session resumes once that's done.
+* __SD Card Reader__ - Working out of the box.
 
 #### Broken
 
@@ -52,13 +53,11 @@ Or mostly-working:
 
 #### Untested
 
-* __Partially-compleye__ - __SSD optimizations__ via sysctl settings, mount /dev/sda* noatime and discard (TRIM), use deadline scheduler on non-rotational disks
+* __Partially-complete__ - __SSD optimizations__ via sysctl settings, mount /dev/sda* noatime and discard (TRIM), use deadline scheduler on non-rotational disks
 * __not yet done__fans work under macfanctld
 * __Keyboard Backlight__ - https://wiki.archlinux.org/index.php/MacBookPro11,x#Keyboard_backlight
-* __SD Card Reader__ - https://wiki.archlinux.org/index.php/MacBookPro11,x#SD_Card_Reader
-* __Power Saving__ - https://wiki.archlinux.org/index.php/MacBookPro11,x#Powersave
+* __Power Saving__ - https://wiki.archlinux.org/index.php/MacBookPro11,x#Powersave and https://wiki.archlinux.org/index.php/Laptop_Mode_Tools
 * __Ctrl-Click as Right Click__ - http://superuser.com/questions/217615/how-to-right-click-using-the-keyboard-from-ubuntu-on-a-mac
-* __Light Sensor__ - https://github.com/poliva/lightum
 
 To Do
 =====

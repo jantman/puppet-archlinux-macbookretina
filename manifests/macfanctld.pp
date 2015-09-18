@@ -1,15 +1,15 @@
 # Class: archlinux_macbookretina::macfanctld
 #
-# Install driver for Broadcom macfanctld, iw and wpa_supplicant
+# Install macfanctld
 #
 # Parameters:
 #
 # Actions:
-#   - Install broadcom-wl
-#   - Install iw and wpa_supplicant
+#   - Install macfanctld
 #
 class archlinux_macbookretina::macfanctld {
 
+  # AUR package
   package {'macfanctld':
     ensure => present,
   }
