@@ -15,7 +15,7 @@ describe 'archlinux_macbookretina::wireless class' do
     end
 
     describe package('broadcom-wl') do
-      it { should be_installed }
+      it { should_not be_installed }
     end
 
     describe package('iw') do
