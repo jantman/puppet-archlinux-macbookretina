@@ -17,7 +17,7 @@ RSpec.configure do |c|
   c.before :suite do
     # pacman update
     hosts.each do |h|
-      on h, 'pacman -Syu'
+      on h, 'pacman -Syu --noconfirm'
     end
     # Install module and dependencies
     puppet_module_install(:source => proj_root, :module_name => 'archlinux_macbookretina', :target_module_path => '/etc/puppetlabs/code/modules')
