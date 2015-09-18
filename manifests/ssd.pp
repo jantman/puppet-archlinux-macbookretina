@@ -20,28 +20,6 @@
 #
 class archlinux_macbookretina::ssd {
 
-  # this is a horrible hack, but I just can't find a better way to do it.
-  # augeas' XPath queries don't handle globbing or regexes the way I want.
-  # so we have to use a custom fact to find the mounted /dev/sda partitions
-  # then (since facter only returns strings) split it, and pass the array
-  # to create the define for each partition
-  # TODO: commented out until I have linux running on a machine to test this
-  #$ssd_partitions = split($::partitions_sda, ',')
-
-  # make sure relatime isn't specified on the /dev/sda mounts and noatime is
-  # TODO: commented out until I have linux running on a machine to test this
-  #fstab_replace_option {$ssd_partitions:
-  #  old_option => 'relatime',
-  #  option     => 'noatime',
-  #}
-
-  # since we're arch, we're going to assume you're on a recent kernel (at time of module writing)
-  # TODO: commented out until I have linux running on a machine to test this
-  #fstab_add_option {$ssd_partitions:
-  #  option => 'discard',
-  #  only_fstype => 'ext4',
-  #}
-
   # CFQ is a *bad* scheduler for SSD. let's tell udev that we want to use deadline instead
   file {'/etc/udev/rules.d/60-schedulers.rules':
     ensure => present,
@@ -59,5 +37,27 @@ class archlinux_macbookretina::ssd {
   #sysctl::value {'vm.laptop_mode': value => '5', }
   #sysctl::value {'vm.swappiness': value => '1', }
   #sysctl::value {'vm.vfs_cache_pressure': value => '50', }
+
+  # TODO - had to disable this, tests failing:
+  # https://github.com/rodjek/rspec-puppet/issues/295#issuecomment-141514297
+  # filter down to just SSD disks
+  #$ssd_disks = filter($::disks) |$x| {
+  #  $x[1]['model'] =~ /(?i:ssd)/
+  #}
+
+  # make sure relatime isn't specified on the /dev/sda mounts and noatime is
+  # TODO: commented out until I have linux running on a machine to test this
+  #fstab_replace_option {$ssd_partitions:
+  #  old_option => 'relatime',
+  #  option     => 'noatime',
+  #}
+
+  # since we're arch, we're going to assume you're on a recent kernel (at time of module writing)
+  # TODO: commented out until I have linux running on a machine to test this
+  #fstab_add_option {$ssd_partitions:
+  #  option => 'discard',
+  #  only_fstype => 'ext4',
+  #}
+
 }
 

@@ -52,9 +52,7 @@ Or mostly-working:
 
 #### Untested
 
-* __not yet done__ - __makepkg__ set to compile and store source and logs under /tmp, which is by default a tmpfs in RAM sized at 50% of physical memory. If you need more space than that, see [Compiling in tmpfs](https://wiki.archlinux.org/index.php/Solid_State_Drives#Compiling_in_tmpfs)
-* __not yet done__ - __SSD optimizations__ via sysctl settings, mount /dev/sda* noatime and discard (TRIM), use deadline scheduler on non-rotational disks
-* __not yet done__ - [Profile-sync-daemon](https://wiki.archlinux.org/index.php/Profile-sync-daemon) to store browser profiles in memory (tmpfs) and periodically sync back to disk (disabled by default)
+* __Partially-compleye__ - __SSD optimizations__ via sysctl settings, mount /dev/sda* noatime and discard (TRIM), use deadline scheduler on non-rotational disks
 * __not yet done__fans work under macfanctld
 * __Keyboard Backlight__ - https://wiki.archlinux.org/index.php/MacBookPro11,x#Keyboard_backlight
 * __SD Card Reader__ - https://wiki.archlinux.org/index.php/MacBookPro11,x#SD_Card_Reader
