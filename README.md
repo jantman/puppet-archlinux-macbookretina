@@ -34,14 +34,14 @@ Or mostly-working:
 * __Sound__ - Works. Under KDE/Phonon, needed to unmute/enable the "Built-in Audio Analog Stereo" (detected "Built-in Audio Digital Stereo (HDMI)" as default).
 * __Video__ - video works with the proprietary nvidia driver, the default in this module.
   * __External Displays__ - Tested OK using both direct HDMI and Thunderbolt to HDMI; works seamlessly.
-  * __Video during suspend/hibernate__ - 
   * __Display/Desktop Scaling__ - This can be fixed within KDE:
     * System Settings -> Fonts: check off "Force fonts DIP" and set to 144
     * System Settings -> Icons -> "Advanced" tab: set them all to 48
     * Click the menu button on the far right edge of the Panel, then drag the "Height" box up until the scale/size looks good
-  * __Screen Backlight Adjustment__ - https://wiki.archlinux.org/index.php/MacBookPro11,x#Screen_backlight
+  * __Screen Backlight Adjustment__ - works using ``/sys/class/backlight/acpi_video0/brightness``
 * __Hibernate / Suspend to Disk__ - doesn't wake up without long hold of power button & then turn back on. Session resumes once that's done.
 * __SD Card Reader__ - Working out of the box.
+* __Fans__ - macfanctld
 
 #### Broken
 
@@ -51,34 +51,22 @@ Or mostly-working:
 * __Lid Close__ - suspends to ram and doesn't wake up
 * __Bluetooth__ - Per [wiki](https://wiki.archlinux.org/index.php/MacBook#Bluetooth_2), "not working at all"; even though ``dmesg`` shows that the bluetooth controller is recognized, my tests seem to confirm that it doesn't work.
 
-#### Untested
+#### Untested / To Do
 
 * __Partially-complete__ - __SSD optimizations__ via sysctl settings, mount /dev/sda* noatime and discard (TRIM), use deadline scheduler on non-rotational disks
-* __not yet done__fans work under macfanctld
-* __Keyboard Backlight__ - https://wiki.archlinux.org/index.php/MacBookPro11,x#Keyboard_backlight
+* __Keyboard Backlight__ - works via ``/sys/class/leds/smc::kbd_backlight/brightness``; https://wiki.archlinux.org/index.php/MacBookPro11,x#Keyboard_backlight
 * __Power Saving__ - https://wiki.archlinux.org/index.php/MacBookPro11,x#Powersave and https://wiki.archlinux.org/index.php/Laptop_Mode_Tools
 * __Ctrl-Click as Right Click__ - http://superuser.com/questions/217615/how-to-right-click-using-the-keyboard-from-ubuntu-on-a-mac
-
-To Do
-=====
-
+* __Screen Backlight Adjustment__ - Need to get this working via hotkeys; https://wiki.archlinux.org/index.php/MacBookPro11,x#Screen_backlight
+* __Hotkeys__ - [pommed-light](https://aur.archlinux.org/packages/pommed-light/) didn't work for me with the stock config. There's also patched [pommed-jalaziz](https://aur.archlinux.org/packages/pommed-jalaziz/) in AUR, from [github](https://github.com/jalaziz/pommed) but the support list only goes up to mid-2013 series.
 * [Laptop Mode Tools - ArchWiki](https://wiki.archlinux.org/index.php/Laptop_Mode_Tools) and/or  [TLP - ArchWiki](https://wiki.archlinux.org/index.php/TLP) *(started looking into this, very involved configuration and I don't really need it right now)*
-   * https://wiki.archlinux.org/index.php/CPU_Frequency_Scaling#Laptop_Mode_Tools for cpu frequency scaling?
 * I'm left handed. Use udev/xorg to reverse buttons on USB mice but keep trackpad the same. See https://wiki.archlinux.org/index.php/All_Mouse_Buttons_Working http://www.smop.co.uk/blog/index.php/2010/02/15/udev-rules-for-logitech-g7-mouse/ or might be able to do this with udev triggering "xinput set-button-map"
-* pommed from AUR for keyboard mapping/function keys, with /etc/pommed.conf built from /etc/pommed.conf.mac; or other way of doing this
-* backlight adjustment - nvidia-bl, https://wiki.archlinux.org/index.php/MacBook#NVIDIA_note_2
-* light sensor: https://wiki.archlinux.org/index.php/MacBook#Light_sensor
-* hibernate to disk: https://wiki.archlinux.org/index.php/MacBook#Power_management *(I might give this up, as it just increases writes to the SSD...)*
 * the stuff in [Maximizing Performance - ArchWiki](https://wiki.archlinux.org/index.php/Maximizing_Performance)
 * implement the stuff in [Enhancing Arch Linux Stability - ArchWiki](https://wiki.archlinux.org/index.php/Enhancing_Arch_Linux_Stability)
- SMART/other SSD health check, with warnings if things go south
-* further [KDE - ArchWiki](https://wiki.archlinux.org/index.php/Kde) configuration
-* IP stack hardening [sysctl - ArchWiki](https://wiki.archlinux.org/index.php/Sysctl#TCP.2FIP_stack_hardening) - see also [thias/sysctl · Puppet Forge](https://forge.puppetlabs.com/thias/sysctl)
+* SMART/other SSD health check, with warnings if things go south
 * look into replacing macfanctld with mbpfan / fan-control-daemon are two options that are less abrupt
-* setup color profiles: https://wiki.archlinux.org/index.php/MacBook#Color_Profile
 * [Pdnsd - ArchWiki](https://wiki.archlinux.org/index.php/Pdnsd) for local DNS caching *(started work on this, not sure how it will play nicely with NetworkManager/often-changing DNS configs on a laptop, also not sure if I want DNS cached locally)*
 * make mozilla-profilemanager an AUR package, not this awful exec-based stuff
-* [AUR (en) - anything-sync-daemon](https://aur.archlinux.org/packages/anything-sync-daemon/) to store high write activity user directories in tmpfs
 
 Other References
 ================
