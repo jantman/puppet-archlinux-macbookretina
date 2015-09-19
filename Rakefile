@@ -1,13 +1,20 @@
 require 'puppetlabs_spec_helper/rake_tasks'
 require 'puppet-lint/tasks/puppet-lint'
 
-PuppetLint.configuration.fail_on_warnings = true
-PuppetLint.configuration.send('relative')
-PuppetLint.configuration.send('disable_80chars')
-PuppetLint.configuration.send('disable_class_inherits_from_params_class')
-PuppetLint.configuration.send('disable_documentation')
-PuppetLint.configuration.send('disable_single_quote_string_with_variables')
-PuppetLint.configuration.ignore_paths = ["spec/**/*.pp", "pkg/**/*.pp"]
+# workaround for https://github.com/rodjek/puppet-lint/issues/355
+Rake::Task[:lint].clear
+PuppetLint::RakeTask.new :lint do |config|
+  config.fail_on_warnings = true
+  config.disable_checks = [
+    '80chars',
+    'class_inherits_from_params_class',
+  ]
+  config.ignore_paths = [
+    "spec/**/*.pp",
+    "pkg/**/*.pp",
+    "vendor/**/*.pp",
+  ]
+end
 
 # task to run all tests
 desc "run all tests (lint, metadata, spec, syntax, validate)"
