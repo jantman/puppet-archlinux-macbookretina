@@ -1,0 +1,3 @@
+---
+spec/spec_helper_acceptance.rb:
+  module_name: archlinux_macbookretina
