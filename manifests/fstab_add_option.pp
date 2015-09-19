@@ -17,7 +17,7 @@
 #
 # Sample Usage:
 #
-define archlinux_macbookretina::fstab_add_option ($drive = $title, $option, $only_fstype = '') {
+define archlinux_macbookretina::fstab_add_option ($option, $drive = $title, $only_fstype = '') {
 
   # let us constrain to one fs type
   if $only_fstype == '' {
@@ -31,10 +31,10 @@ define archlinux_macbookretina::fstab_add_option ($drive = $title, $option, $onl
     incl    => '/etc/fstab',
     lens    => 'fstab.lns',
     changes => [
-      "ins opt after *[$spec]/opt[last()]",
-      "set *[$spec]/opt[last()] $option",
+      "ins opt after *[${spec}]/opt[last()]",
+      "set *[${spec}]/opt[last()] ${option}",
     ],
-    onlyif  => "match *[$spec and count(opt[.='$option'])=0] size > 0",
+    onlyif  => "match *[${spec} and count(opt[.='${option}'])=0] size > 0",
   }
 
 }

@@ -17,7 +17,7 @@
 #
 # Sample Usage:
 #
-define archlinux_macbookretina::fstab_remove_option ($drive = $title, $option, $only_fstype = '') {
+define archlinux_macbookretina::fstab_remove_option ($option, $drive = $title, $only_fstype = '') {
 
   # let us constrain to one fs type
   if $only_fstype == '' {
@@ -31,9 +31,9 @@ define archlinux_macbookretina::fstab_remove_option ($drive = $title, $option, $
     incl    => '/etc/fstab',
     lens    => 'fstab.lns',
     changes => [
-      "rm *[$spec]/opt[.='$option']",
+      "rm *[${spec}]/opt[.='${option}']",
     ],
-    onlyif  => "match *[$spec]/opt[.='$option'] size > 0",
+    onlyif  => "match *[${spec}]/opt[.='${option}'] size > 0",
   }
 
 }

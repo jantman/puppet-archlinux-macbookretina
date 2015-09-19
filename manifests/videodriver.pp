@@ -36,8 +36,8 @@ class archlinux_macbookretina::videodriver (
   }
 
   package {$remove_packages :
-    install_options => '-dds',
     ensure          => absent,
+    install_options => '-dds',
   } ->
   package {$add_packages :
     ensure  => present,

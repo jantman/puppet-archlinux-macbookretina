@@ -19,7 +19,7 @@
 #
 # Sample Usage:
 #
-define archlinux_macbookretina::fstab_replace_option ($drive = $title, $option, $old_option, $only_fstype = '') {
+define archlinux_macbookretina::fstab_replace_option ($option, $old_option, $drive = $title, $only_fstype = '') {
 
   # let us constrain to one fs type
   if $only_fstype == '' {
@@ -33,9 +33,9 @@ define archlinux_macbookretina::fstab_replace_option ($drive = $title, $option, 
     incl    => '/etc/fstab',
     lens    => 'fstab.lns',
     changes => [
-      "rm *[$spec]/opt[.='$old_option']",
+      "rm *[${spec}]/opt[.='${old_option}']",
     ],
-    onlyif  => "match *[$spec]/opt[.='$old_option'] size > 0",
+    onlyif  => "match *[${spec}]/opt[.='${old_option}'] size > 0",
   }
 
   augeas {"sda_replace_add_${option}_${drive}":
@@ -43,10 +43,10 @@ define archlinux_macbookretina::fstab_replace_option ($drive = $title, $option, 
     incl    => '/etc/fstab',
     lens    => 'fstab.lns',
     changes => [
-      "ins opt after *[$spec]/opt[last()]",
-      "set *[$spec]/opt[last()] $option",
+      "ins opt after *[${spec}]/opt[last()]",
+      "set *[${spec}]/opt[last()] ${option}",
     ],
-    onlyif  => "match *[$spec and count(opt[.='$option'])=0] size > 0",
+    onlyif  => "match *[${spec} and count(opt[.='${option}'])=0] size > 0",
   }
 
 }

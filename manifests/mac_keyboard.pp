@@ -14,7 +14,7 @@
 #
 class archlinux_macbookretina::mac_keyboard {
 
-  file { "/etc/modprobe.d/apple.conf":
+  file { '/etc/modprobe.d/apple.conf':
     ensure => present,
     owner  => 'root',
     group  => 'root',
@@ -22,13 +22,13 @@ class archlinux_macbookretina::mac_keyboard {
     source => 'puppet:///modules/archlinux_macbookretina/apple.conf',
   }
 
-  file { "/etc/systemd/system/kdm.service.d":
+  file { '/etc/systemd/system/kdm.service.d':
     ensure => directory,
     owner  => 'root',
     group  => 'root',
     mode   => '0755',
   } ->
-  file { "/etc/systemd/system/kdm.service.d/kbd_backlight.conf":
+  file { '/etc/systemd/system/kdm.service.d/kbd_backlight.conf':
     ensure => present,
     owner  => 'root',
     group  => 'root',
