@@ -28,6 +28,7 @@ Hardware Support Status
 
 Or mostly-working:
 
+* __Touchpad__ using Kernel 4.2+ and [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics); works for tap-to-click, drag, two-finger scroll, and 2- or 3-finger taps for different mouse buttons.
 * __Networking__
   * USB ethernet adapter A1277 works out-of-the-box
   * BCM43602 AirPort Extreme (14e4:43ba) works with kernel built-in [brcmfmac](https://wireless.wiki.kernel.org/en/users/drivers/brcm80211) driver, autodetected, but __2.4GHz only__
@@ -45,15 +46,6 @@ Or mostly-working:
 
 #### Broken
 
-* __Touchpad__ - Per the [wiki](https://wiki.archlinux.org/index.php/MacBook#Early_2015_13.22.2F15.22_-_Version_12.2Cx.2F11.2C4.2B), the touchpad isn't supported until kernel 4.2.x, with ``xf86-input-synaptics``. Until then, cursor and click works, but no right-click or scroll. I tried both [xf86-input-multitouch-git](https://aur.archlinux.org/packages/xf86-input-multitouch-git/) and [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) and neither helped this. I was able to come up with a workaround to enable Command-click as right click per [the Arch wiki](https://wiki.archlinux.org/index.php/MacBookPro11,x#Ctrl-Click_as_Right-Click):
-  1. ``pacman -S xbindkeys xdotool``
-  2. Create ``~/.xbindkeysrc`` with the following two lines:
-  ```
-  "sleep .1 && xdotool click 3"
-    Mod4 + Super_L + b:1
-  ```
-  3. ``echo 'xbindkeys' >> ~/.xprofile`` to start xbindkeys with your login session
-  4. It's a bit finnicky - it doesn't work right every time - but this should let you use the left Command (Apple) key in combination with a mouse click to generate a right click.
 * __Webcam__ - Per [Arch Wiki](https://wiki.archlinux.org/index.php/MacBookPro11,x#Web_cam), there's no driver for this yet. There's a [project on GitHub](https://github.com/patjak/bcwc_pcie/) but it (2015-09-18) isn't working yet.
 * __Suspend to RAM__ - doesn't wake up; long hold of power button & then turn back on gives a fresh boot.
 * __Lid Close__ - suspends to ram and doesn't wake up
