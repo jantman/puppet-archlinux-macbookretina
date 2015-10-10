@@ -113,6 +113,7 @@ describe 'archlinux_macbookretina' do
       it { should contain_class('archlinux_macbookretina::mac_keyboard') }
       it { should contain_class('archlinux_macbookretina::ssd') }
       it { should contain_class('archlinux_macbookretina::macfanctld') }
+      it { should contain_class('archlinux_macbookretina::touchpad') }
     end
   end
 end

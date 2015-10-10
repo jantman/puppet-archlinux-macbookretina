@@ -40,4 +40,7 @@ class archlinux_macbookretina {
 
   # fan control
   include archlinux_macbookretina::macfanctld
+
+  # touchpad setup
+  include archlinux_macbookretina::touchpad
 }
