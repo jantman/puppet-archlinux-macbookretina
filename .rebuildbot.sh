@@ -1,4 +1,4 @@
-#!/bin/bash -e -x
+#!/bin/bash -ex
 
 bundle install --path vendor
 bundle exec rake beaker
