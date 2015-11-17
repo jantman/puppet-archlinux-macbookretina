@@ -1,5 +1,6 @@
 #!/bin/bash -ex
 
+. ~/.rvm/scripts/rvm
 rvm use $(cat .ruby-version)
 rvm info
 which ruby
