@@ -18,7 +18,7 @@ class archlinux_macbookretina::touchpad {
     ensure => present,
   }
 
-  file { "/etc/X11/xorg.conf.d/00-touchpad.conf":
+  file { '/etc/X11/xorg.conf.d/00-touchpad.conf':
     ensure  => present,
     owner   => 'root',
     group   => 'root',
