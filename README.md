@@ -17,36 +17,36 @@ Requirements
 * Puppet4
 * A minimal install, ideally following the instructions in my [workstation-bootstrap](https://github.com/jantman/workstation-bootstrap#arch-linux) repository.
 * This module is only tested alongside my [archlinux_workstation](https://github.com/jantman/puppet-archlinux-workstation) module.
-* A pacman repo providing ``xf86-input-mtrack-git``; you can use [jantman/archlinux_workstation archlinux_workstation::repos::jantman](https://github.com/jantman/puppet-archlinux-workstation/blob/master/manifests/repos/jantman.pp) for that.
+* A pacman repo providing AUR packages: [macfanctld](https://aur.archlinux.org/packages/macfanctld), [bcwc-pcie-dkms](https://aur.archlinux.org/packages/bcwc-pcie-dkms/) and [bcwc-pcie-firmware](https://aur.archlinux.org/packages/bcwc-pcie-firmware/); you can use [jantman/archlinux_workstation archlinux_workstation::repos::jantman](https://github.com/jantman/puppet-archlinux-workstation/blob/master/manifests/repos/jantman.pp) for that.
 
 Hardware Support Status
 ------------------------
 
-### Mid-2015 MacBookPro11,4
+### Mid-2015 MacBookPro11,4 as of 2016-10-25 (4.8.4-1 kernel)
 
 #### Working
 
 Or mostly-working:
 
-* __Touchpad__ using Kernel 4.2+ and [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics); works for tap-to-click, drag, two-finger scroll, and 2- or 3-finger taps for different mouse buttons.
-* __Networking__
+* __Touchpad__ using Kernel 4.2+ and [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics); works for tap-to-click, drag, two-finger scroll, and 2- or 3-finger taps (sometimes) for different mouse buttons.
+* __Networking__ on MacBookPro 11,4
   * USB ethernet adapter A1277 works out-of-the-box
-  * BCM43602 AirPort Extreme (14e4:43ba) works with kernel built-in [brcmfmac](https://wireless.wiki.kernel.org/en/users/drivers/brcm80211) driver, autodetected, but __2.4GHz only__
+  * BCM43602 AirPort Extreme (14e4:43ba) works with kernel built-in [brcmfmac](https://wireless.wiki.kernel.org/en/users/drivers/brcm80211) driver, autodetected, both 2.4GHz and 5GHz.
 * __Sound__ - Works. Under KDE/Phonon, needed to unmute/enable the "Built-in Audio Analog Stereo" (detected "Built-in Audio Digital Stereo (HDMI)" as default).
 * __Video__ - video works with the proprietary nvidia driver, the default in this module.
-  * __External Displays__ - Tested OK using both direct HDMI and Thunderbolt to HDMI; works seamlessly.
+  * __External Displays__ - Tested OK using both direct HDMI and Thunderbolt to HDMI (1 or 2 external monitors); works seamlessly.
   * __Display/Desktop Scaling__ - This can be fixed within KDE:
     * System Settings -> Fonts: check off "Force fonts DIP" and set to 144
     * System Settings -> Icons -> "Advanced" tab: set them all to 48
     * Click the menu button on the far right edge of the Panel, then drag the "Height" box up until the scale/size looks good
-  * __Screen Backlight Adjustment__ - works using ``/sys/class/backlight/acpi_video0/brightness`` or the sliders on 'KDE5 System Settings -> Energy Saving'
+  * __Screen Backlight Adjustment__ - works using ``/sys/class/backlight/acpi_video0/brightness``, the sliders on 'KDE5 System Settings -> Energy Saving' or the keyboard function keys.
 * __Hibernate / Suspend to Disk__ - doesn't wake up without long hold of power button & then turn back on. Session resumes once that's done.
 * __SD Card Reader__ - Working out of the box.
-* __Fans__ - macfanctld
+* __Fans__ - [macfanctld (AUR)](https://aur.archlinux.org/packages/macfanctld)
+* __Webcam__ - Per [Arch Wiki](https://wiki.archlinux.org/index.php/MacBookPro11,x#Web_cam), there's a [project on GitHub](https://github.com/patjak/bcwc_pcie/) for a reverse-engineered driver. This works properly in Linux using the [bcwc-pcie-dkms](https://aur.archlinux.org/packages/bcwc-pcie-dkms/) and [bcwc-pcie-firmware](https://aur.archlinux.org/packages/bcwc-pcie-firmware/) AUR packages, though the color balance seems a bit off.
 
 #### Broken
 
-* __Webcam__ - Per [Arch Wiki](https://wiki.archlinux.org/index.php/MacBookPro11,x#Web_cam), there's no driver for this yet. There's a [project on GitHub](https://github.com/patjak/bcwc_pcie/) but it (2015-09-18) isn't working yet.
 * __Suspend to RAM__ - doesn't wake up; long hold of power button & then turn back on gives a fresh boot.
 * __Lid Close__ - suspends to ram and doesn't wake up
 * __Bluetooth__ - Per [wiki](https://wiki.archlinux.org/index.php/MacBook#Bluetooth_2), "not working at all"; even though ``dmesg`` shows that the bluetooth controller is recognized, my tests seem to confirm that it doesn't work.
@@ -54,9 +54,7 @@ Or mostly-working:
 #### Untested / To Do
 
 * __Partially-complete__ - __SSD optimizations__ via sysctl settings, mount /dev/sda* noatime and discard (TRIM), use deadline scheduler on non-rotational disks
-* __Keyboard Backlight__ - works via ``/sys/class/leds/smc::kbd_backlight/brightness`` or the sliders on 'KDE5 System Settings -> Energy Saving'; https://wiki.archlinux.org/index.php/MacBookPro11,x#Keyboard_backlight
 * __Power Saving__ - https://wiki.archlinux.org/index.php/MacBookPro11,x#Powersave and https://wiki.archlinux.org/index.php/Laptop_Mode_Tools
-* __Hotkeys__ - [pommed-light](https://aur.archlinux.org/packages/pommed-light/) didn't work for me with the stock config. There's also patched [pommed-jalaziz](https://aur.archlinux.org/packages/pommed-jalaziz/) in AUR, from [github](https://github.com/jalaziz/pommed) but the support list only goes up to mid-2013 series. [this](https://bbs.archlinux.org/viewtopic.php?pid=1550990#p1550990) indicates that the 4.2.x kernels should have touchpad *and* keyboard hotkeys working. Another option would be doing keybinding as described [here](http://nocodenolife.com/blog/2015/03/12/running-arch-linux-on-a-macbook-pro-retina-mid-2014/) or [here](https://wiki.gentoo.org/wiki/Apple_Macbook_Pro_Retina#Media_keys)
 * [Laptop Mode Tools - ArchWiki](https://wiki.archlinux.org/index.php/Laptop_Mode_Tools) and/or  [TLP - ArchWiki](https://wiki.archlinux.org/index.php/TLP) *(started looking into this, very involved configuration and I don't really need it right now)*
 * I'm left handed. Use udev/xorg to reverse buttons on USB mice but keep trackpad the same. See https://wiki.archlinux.org/index.php/All_Mouse_Buttons_Working http://www.smop.co.uk/blog/index.php/2010/02/15/udev-rules-for-logitech-g7-mouse/ or might be able to do this with udev triggering "xinput set-button-map"
 * the stuff in [Maximizing Performance - ArchWiki](https://wiki.archlinux.org/index.php/Maximizing_Performance)
