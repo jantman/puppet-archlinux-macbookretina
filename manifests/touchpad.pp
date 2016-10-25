@@ -1,11 +1,12 @@
 # Class: archlinux_macbookretina::touchpad
 #
-# Set up the MBP touchpad using mtrack
+# Set up the MBP touchpad using synaptics driver
 #
 # Parameters:
 #
 # Actions:
-#   - install xf86-input-synaptics (AUR package)
+#   - install xf86-input-synaptics
+#   - ensure xf86-input-mtrack-git is absent
 #   - setup /etc/X11/xorg.conf.d/00-touchpad.conf
 #
 # Requires:
@@ -16,6 +17,10 @@ class archlinux_macbookretina::touchpad {
 
   package {'xf86-input-synaptics':
     ensure => present,
+  }
+
+  package {'xf86-input-mtrack-git':
+    ensure => absent,
   }
 
   file { '/etc/X11/xorg.conf.d/00-touchpad.conf':
