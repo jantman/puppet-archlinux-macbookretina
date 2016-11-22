@@ -49,7 +49,7 @@ Or mostly-working:
 
 * __Suspend to RAM__ - doesn't wake up; long hold of power button & then turn back on gives a fresh boot.
 * __Lid Close__ - suspends to ram and doesn't wake up
-* __Bluetooth__ - Per [wiki](https://wiki.archlinux.org/index.php/MacBook#Bluetooth_2), "not working at all"; even though ``dmesg`` shows that the bluetooth controller is recognized, my tests seem to confirm that it doesn't work.
+* __Bluetooth__ - Per [wiki](https://wiki.archlinux.org/index.php/MacBook#Bluetooth_2), fully supported as of kernel 4.4.0. Works with my bluetooth mouse.
 
 #### Untested / To Do
 
