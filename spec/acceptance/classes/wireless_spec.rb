@@ -10,8 +10,9 @@ describe 'archlinux_macbookretina::wireless class' do
       EOS
 
       # Run it twice and test for idempotency
-      expect(apply_manifest(pp).exit_code).to_not eq(1)
-      expect(apply_manifest(pp).exit_code).to eq(0)
+      # Because of the notify we can't detect changes
+      apply_manifest(pp, :catch_failures => true)
+      apply_manifest(pp, :catch_failures => true)
     end
 
     describe package('broadcom-wl') do
