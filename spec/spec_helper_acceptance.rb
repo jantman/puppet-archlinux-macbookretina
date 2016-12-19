@@ -1,10 +1,7 @@
-require 'beaker-rspec/spec_helper'
-require 'beaker-rspec/helpers/serverspec'
+require 'beaker-rspec'
+require 'beaker/puppet_install_helper'
 
-hosts.each do |host|
-  # Install Puppet
-  install_puppet, opts={:version => '4.2.2'}
-end
+run_puppet_install_helper unless ENV['BEAKER_provision'] == 'no'
 
 RSpec.configure do |c|
   # Project root
