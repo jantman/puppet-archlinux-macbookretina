@@ -1,3 +1,4 @@
+# This must run after the videodriver spec, as it needs xorg-server
 require 'spec_helper_acceptance'
 
 describe 'archlinux_macbookretina::touchpad class' do
