@@ -62,8 +62,36 @@ Or mostly-working:
 * SMART/other SSD health check, with warnings if things go south
 * look into replacing macfanctld with mbpfan / fan-control-daemon are two options that are less abrupt
 
+Testing
+-------
+
+Unit Tests
+++++++++++
+
+Unit tests should be run automatically by TravisCI. To run them locally, use ``bundle exec rake spec``. To run the full commit tests (validation, syntax, lint, rspec, etc.) use ``bundle exec rake test``.
+
+1. Use whatever ruby version is specified in ``.ruby-version``
+2. ``bundle install --path vendor``
+3. ``bundle exec rake test``
+
+Acceptance Tests
+++++++++++++++++
+
+Acceptance tests are done with [beaker](https://github.com/puppetlabs/beaker) and [beaker-rspec](https://github.com/puppetlabs/beaker-rspec). They currently use the "2016.12.01" version of the [ogarcia/archlinux-x64 Vagrant box](https://atlas.hashicorp.com/ogarcia/boxes/archlinux-x64/) for VirtualBox.
+
+1. Use whatever ruby version is specified in ``.ruby-version``
+2. ``bundle install --path vendor``
+3. ``bundle exec rake spec_prep`` to setup the fixture modules that the specs will need
+4. ``bundle exec rake beaker`` to run the tests.
+
+See [beaker-rspec](https://github.com/puppetlabs/beaker-rspec) for environment variables to control the run. The important settings are:
+
+* ``BEAKER_destroy=no`` - keep the VMs after the test run
+* ``BEAKER_destroy=onpass`` - to keep the VMs around only after a test failure
+
 Other References
-================
+----------------
+
 * First, many thanks to [eli meister](https://twitter.com/elitmeister) for being the office linux-on-MBP retina guinea pig
 * [MacBookPro Retina - ArchWiki](https://wiki.archlinux.org/index.php/MacBookPro_Retina)
 * [MacBook - ArchWiki](https://wiki.archlinux.org/index.php/MacBook)
