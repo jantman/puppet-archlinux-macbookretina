@@ -11,16 +11,24 @@ def location_for(place, fake_version = nil)
 end
 
 group :development, :unit_tests do
-  gem 'rspec-core', '3.1.7',     :require => false
+  if RUBY_VERSION < '1.9'
+    gem 'rspec-core', '3.1.7'
+  else
+    # newer version required to avoid BKR-537
+    gem 'rspec-core', '>= 3.4'
+  end
   gem 'puppetlabs_spec_helper',  :require => false
   gem 'simplecov',               :require => false
   gem 'puppet_facts',            :require => false
   gem 'json',                    :require => false
   gem 'metadata-json-lint',      :require => false
+  gem 'rake', '< 11.0',          :require => false
+  gem 'vagrant-wrapper',         :require => false
 end
 
 group :system_tests do
-  gem 'beaker', :git => 'https://github.com/jantman/beaker.git', :branch => 'archlinux'
+  gem 'beaker', :git => 'https://github.com/puppetlabs/beaker.git',
+    :ref => '6ee14f1a4842b8a555cf0dc56cb0d39ebf6cab17'
   if beaker_rspec_version = ENV['BEAKER_RSPEC_VERSION']
     gem 'beaker-rspec', *location_for(beaker_rspec_version)
   else

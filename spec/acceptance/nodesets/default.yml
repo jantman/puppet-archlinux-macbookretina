@@ -1,12 +1,12 @@
 HOSTS:
-  arch-x64:
+  archlinux-2016.12.01-amd64:
     roles:
       - master
-    platform: archlinux-2015.09.01-amd64
-    box: jantman/packer-arch-workstation
+    platform: archlinux-2016.12.01-amd64
+    box: ogarcia/archlinux-x64
+    box_version: 2016.12.01
     hypervisor: vagrant
     vb_gui: true
-
 CONFIG:
   log_level: verbose
-  type: foss
+  type: aio
