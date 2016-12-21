@@ -323,7 +323,6 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.2)
-    vagrant-wrapper (2.0.3)
     xml-simple (1.1.5)
 
 PLATFORMS
@@ -343,7 +342,6 @@ DEPENDENCIES
   rspec-core (>= 3.4)
   serverspec
   simplecov
-  vagrant-wrapper
 
 BUNDLED WITH
    1.13.6

@@ -23,7 +23,6 @@ group :development, :unit_tests do
   gem 'json',                    :require => false
   gem 'metadata-json-lint',      :require => false
   gem 'rake', '< 11.0',          :require => false
-  gem 'vagrant-wrapper',         :require => false
 end
 
 group :system_tests do
