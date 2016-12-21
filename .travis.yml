@@ -3,8 +3,7 @@ language: ruby
 bundler_args: --without development
 before_install: rm Gemfile.lock || true
 rvm:
-  - 2.0.0
+  - 2.3
 script: bundle exec rake test
 env:
-  - PUPPET_VERSION="~> 3.0"
   - PUPPET_VERSION="~> 4.0"
