@@ -65,8 +65,7 @@ Or mostly-working:
 Testing
 -------
 
-Unit Tests
-++++++++++
+### Unit Tests
 
 Unit tests should be run automatically by TravisCI. To run them locally, use ``bundle exec rake spec``. To run the full commit tests (validation, syntax, lint, rspec, etc.) use ``bundle exec rake test``.
 
@@ -74,8 +73,7 @@ Unit tests should be run automatically by TravisCI. To run them locally, use ``b
 2. ``bundle install --path vendor``
 3. ``bundle exec rake test``
 
-Acceptance Tests
-++++++++++++++++
+### Acceptance Tests
 
 Acceptance tests are done with [beaker](https://github.com/puppetlabs/beaker) and [beaker-rspec](https://github.com/puppetlabs/beaker-rspec). They currently use the "2016.12.01" version of the [ogarcia/archlinux-x64 Vagrant box](https://atlas.hashicorp.com/ogarcia/boxes/archlinux-x64/) for VirtualBox.
 
