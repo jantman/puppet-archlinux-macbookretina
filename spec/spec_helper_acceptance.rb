@@ -1,7 +1,7 @@
 require 'beaker-rspec'
 require 'beaker/puppet_install_helper'
 
-run_puppet_install_helper unless ENV['BEAKER_provision'] == 'no'
+run_puppet_install_helper(type_arg='foss') unless ENV['BEAKER_provision'] == 'no'
 
 RSpec.configure do |c|
   # Project root
