@@ -6,7 +6,6 @@ HOSTS:
     box: ogarcia/archlinux-x64
     box_version: 2016.12.01
     hypervisor: vagrant
-    vb_gui: true
 CONFIG:
   log_level: verbose
   type: aio
