@@ -1,10 +1,15 @@
-GIT
-  remote: https://github.com/puppetlabs/beaker.git
-  revision: 6ee14f1a4842b8a555cf0dc56cb0d39ebf6cab17
-  ref: 6ee14f1a4842b8a555cf0dc56cb0d39ebf6cab17
+GEM
+  remote: https://rubygems.org/
   specs:
-    beaker (3.6.0)
+    CFPropertyList (2.2.8)
+    addressable (2.5.0)
+      public_suffix (~> 2.0, >= 2.0.2)
+    aws-sdk-v1 (1.66.0)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
+    beaker (3.7.0)
       aws-sdk-v1 (~> 1.57)
+      beaker-facter (~> 0.0)
       beaker-hiera (~> 0.0)
       beaker-hostgenerator
       docker-api
@@ -23,16 +28,8 @@ GIT
       rsync (~> 1.0.9)
       stringify-hash (~> 0.0)
       unf (~> 0.1)
-
-GEM
-  remote: https://rubygems.org/
-  specs:
-    CFPropertyList (2.2.8)
-    addressable (2.5.0)
-      public_suffix (~> 2.0, >= 2.0.2)
-    aws-sdk-v1 (1.66.0)
-      json (~> 1.4)
-      nokogiri (>= 1.4.4)
+    beaker-facter (0.1.0)
+      stringify-hash (~> 0.0.0)
     beaker-hiera (0.1.1)
       stringify-hash (~> 0.0.0)
     beaker-hostgenerator (0.8.2)
@@ -189,9 +186,10 @@ GEM
     gettext (3.2.2)
       locale (>= 2.0.5)
       text (>= 1.3.0)
-    gettext-setup (0.10)
+    gettext-setup (0.11)
       fast_gettext (~> 1.1.0)
       gettext (>= 3.0.2)
+      locale
     google-api-client (0.9.20)
       addressable (~> 2.3)
       googleauth (~> 0.5)
@@ -255,7 +253,7 @@ GEM
       facter (> 2.0, < 4)
       hiera (>= 2.0, < 4)
       json_pure (~> 1.8)
-    puppet-lint (2.0.2)
+    puppet-lint (2.1.0)
     puppet-syntax (2.2.0)
       rake
     puppet_facts (0.2.1)
@@ -329,7 +327,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  beaker!
+  beaker (~> 3.7.0)
   beaker-puppet_install_helper
   beaker-rspec
   facter

@@ -26,8 +26,7 @@ group :development, :unit_tests do
 end
 
 group :system_tests do
-  gem 'beaker', :git => 'https://github.com/puppetlabs/beaker.git',
-    :ref => '6ee14f1a4842b8a555cf0dc56cb0d39ebf6cab17'
+  gem 'beaker', '~> 3.7.0'
   if beaker_rspec_version = ENV['BEAKER_RSPEC_VERSION']
     gem 'beaker-rspec', *location_for(beaker_rspec_version)
   else
