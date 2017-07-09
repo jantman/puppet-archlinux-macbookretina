@@ -7,7 +7,7 @@
 # Parameters:
 #
 # Actions:
-#   - Install bcwc-pcie-git and bcwc-pcie-firmware on MacBookPro11,4
+#   - Install bcwc-pcie-git and facetimehd-firmware on MacBookPro11,4
 #
 class archlinux_macbookretina::webcam {
 
@@ -17,7 +17,7 @@ class archlinux_macbookretina::webcam {
         ensure => present,
       }
 
-      package {'bcwc-pcie-firmware':
+      package {'facetimehd-firmware':
         ensure => present,
       }
     }

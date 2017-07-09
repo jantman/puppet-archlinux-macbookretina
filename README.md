@@ -75,7 +75,7 @@ Unit tests should be run automatically by TravisCI. To run them locally, use ``b
 
 ### Acceptance Tests
 
-Acceptance tests are done with [beaker](https://github.com/puppetlabs/beaker) and [beaker-rspec](https://github.com/puppetlabs/beaker-rspec). They currently use the "2016.12.01" version of the [ogarcia/archlinux-x64 Vagrant box](https://atlas.hashicorp.com/ogarcia/boxes/archlinux-x64/) for VirtualBox.
+Acceptance tests are done with [beaker](https://github.com/puppetlabs/beaker) and [beaker-rspec](https://github.com/puppetlabs/beaker-rspec). They currently use the "2017.07.01" version of the [ogarcia/archlinux-x64 Vagrant box](https://atlas.hashicorp.com/ogarcia/boxes/archlinux-x64/) for VirtualBox.
 
 1. Use whatever ruby version is specified in ``.ruby-version``
 2. ``bundle install --path vendor``

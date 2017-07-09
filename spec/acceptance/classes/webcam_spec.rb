@@ -18,7 +18,7 @@ describe 'archlinux_macbookretina::webcam class' do
       it { should be_installed }
     end
 
-    describe package('bcwc-pcie-firmware') do
+    describe package('facetimehd-firmware') do
       it { should be_installed }
     end
   end
