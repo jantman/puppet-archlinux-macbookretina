@@ -1,3 +1,6 @@
+2017-07-09 release 0.2.2
+- Update for AUR package changes: bcwc-pcie-dkms -> bcwc-pcie-git and bcwc-firmware -> facetimehd-firmware
+
 2017-01-08 release 0.2.1
 - updated README with note that bluetooth now works
 - many changes to testing (TravisCI, spec, beaker acceptance) and use new versions of dependencies (thanks to petems)
