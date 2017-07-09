@@ -14,11 +14,11 @@ describe 'archlinux_macbookretina::webcam class' do
       apply_manifest(pp, :catch_changes => true)
     end
 
-    describe package('bcwc-pcie-dkms') do
+    describe package('bcwc-pcie-git') do
       it { should be_installed }
     end
 
-    describe package('bcwc-pcie-firmware') do
+    describe package('facetimehd-firmware') do
       it { should be_installed }
     end
   end
