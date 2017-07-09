@@ -38,8 +38,8 @@ class archlinux_macbookretina::videodriver (
   package {$remove_packages :
     ensure          => absent,
     install_options => '-dds',
-  } ->
-  package {$add_packages :
+  }
+  -> package {$add_packages :
     ensure  => present,
     # TODO: is this needed?
     #notify  => Exec['mkinitcpio'],
