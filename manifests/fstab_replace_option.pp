@@ -1,23 +1,12 @@
-# Define: archlinux_macbookretina::fstab_replace_option
 #
-# Replace a specified option from /etc/fstab entry for a specified filesystem, with another option
+# Replace a specified option from /etc/fstab entry for a specified filesystem,
+# with another option
 #
-# Parameters:
-#
-# $drive:: the filesystem specifier, first column in /etc/fstab
-#
-# $option:: string, the option to add
-#
-# $old_option:: string, the option to remove
-#
-# $only_fstype:: optional, string, only apply to mounts with this filesystem
-#
-# Actions:
-#   - add a specified option for a specified filesystem in /etc/fstab
-#
-# Requires:
-#
-# Sample Usage:
+# @param drive the filesystem specifier, first column in /etc/fstab; defaults to
+#  the resource title.
+# @param option the option to add
+# @param old_option the option to remove
+# @param only_fstype optional; only apply to mounts with this filesystem
 #
 define archlinux_macbookretina::fstab_replace_option (
   String $option,

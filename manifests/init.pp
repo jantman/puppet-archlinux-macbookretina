@@ -1,13 +1,6 @@
-# Class: archlinux_macbookretina
 #
-# Include all working archlinux_macbookretina::* classes
-#
-# Actions:
-#   - Include other classes
-#
-# Requires:
-#
-# Sample Usage:
+# Include all working archlinux_macbookretina::* classes. Ensure that this is
+# running on a supported hardware product, and fail otherwise.
 #
 class archlinux_macbookretina {
 
@@ -24,7 +17,7 @@ class archlinux_macbookretina {
     }
   }
 
-  # Install proprietary nvidia driver for nvidia graphics and sample xorg.conf
+  # Install proprietary nvidia driver for nvidia graphics
   class {'archlinux_macbookretina::videodriver':
     driver => 'nvidia', # default
   }

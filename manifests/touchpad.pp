@@ -1,17 +1,9 @@
-# Class: archlinux_macbookretina::touchpad
 #
-# Set up the MBP touchpad using synaptics driver
+# Set up the MBP touchpad using synaptics driver and configure it.
 #
-# Parameters:
-#
-# Actions:
-#   - install xf86-input-synaptics
-#   - ensure xf86-input-mtrack-git is absent
-#   - setup /etc/X11/xorg.conf.d/00-touchpad.conf
-#
-# Requires:
-#
-# Sample Usage:
+# - install ``xf86-input-synaptics``
+# - ensure ``xf86-input-mtrack-git`` is absent
+# - setup ``/etc/X11/xorg.conf.d/00-touchpad.conf`` from template
 #
 class archlinux_macbookretina::touchpad {
 
