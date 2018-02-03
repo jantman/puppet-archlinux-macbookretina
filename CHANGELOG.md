@@ -48,6 +48,12 @@ This release makes major changes to the module code style, testing and deploymen
 
 - complete rewrite to be more reusable, standalone module, and targeted at puppet4
 
-## [0.0.1] Released 2014-03-15
+## 0.0.1 Released 2014-03-15
 
 - initial module creation
+
+[Unreleased]: https://github.com/jantman/puppet-archlinux-macbookretina/compare/0.2.2...master
+[0.2.2]: https://github.com/jantman/puppet-archlinux-macbookretina/compare/0.2.1...0.2.2
+[0.2.1]: https://github.com/jantman/puppet-archlinux-macbookretina/compare/0.2.0...0.2.1
+[0.2.0]: https://github.com/jantman/puppet-archlinux-macbookretina/compare/0.1.0...0.2.0
+[0.1.0]: https://github.com/jantman/puppet-archlinux-macbookretina/releases/tag/0.1.0
