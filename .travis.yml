@@ -27,7 +27,7 @@ deploy:
   - provider: pages
     skip_cleanup: true
     github_token:
-      secure: ""
+      secure: "XfxAA80XBKZV0eOL2M3FLw5IiEcgt8knwtHoYh6yYax1ZZiVbb6yIjN5LSlJsL7bQ7jxW7Q7XcZXygOI15JKTqM6kJ6N0Z+QPxljeqwI3CedDKHZCBa1lwfuSqHrAuek9q3tsqPBJGoe86/+fp9TnDogGX7q+Ie1Ct0k5wiBeFk="
     local_dir: doc
     on:
       repo: jantman/puppet-archlinux-macbookretina
@@ -38,7 +38,7 @@ deploy:
   - provider: puppetforge
     user: jantman
     password:
-      secure: ""
+      secure: "iGt519UxAls/ys0tPj3G6vDA8dvQfaJIZ1L2AaB4HkDGozPhEU5eas0LVnaV1vt5t05IqQRwTysY2UenrxQ9/NkAEB3M2xXdJJc69uUEuEnJKe7Ex/SklCeqGprxiylw7DKbSfUyVfF/IlssHPIThX9RW2UpQHVunRbK01J0F0w="
     on:
       repo: jantman/puppet-archlinux-macbookretina
       rvm: 2.4.1
