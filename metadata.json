@@ -1,6 +1,6 @@
 {
   "name": "jantman-archlinux_macbookretina",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "summary": "Configure Arch Linux on a MacBook Retina",
   "author": "jantman",
   "description": "Provides many classes (and a sane default class/init.pp) for configuring Arch Linux on a MacBook Retina.",

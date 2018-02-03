@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 [comment]: # IMPORTANT: Remember to update the links at the bottom of the file!
 
-## [Unreleased]
+## [0.3.0] Released 2018-02-03
 
 This release makes major changes to the module code style, testing and deployment. It does not make any functional changes to what the module does or how it works.
 
@@ -52,7 +52,7 @@ This release makes major changes to the module code style, testing and deploymen
 
 - initial module creation
 
-[Unreleased]: https://github.com/jantman/puppet-archlinux-macbookretina/compare/0.2.2...master
+[0.3.0]: https://github.com/jantman/puppet-archlinux-macbookretina/compare/0.2.2...0.3.0
 [0.2.2]: https://github.com/jantman/puppet-archlinux-macbookretina/compare/0.2.1...0.2.2
 [0.2.1]: https://github.com/jantman/puppet-archlinux-macbookretina/compare/0.2.0...0.2.1
 [0.2.0]: https://github.com/jantman/puppet-archlinux-macbookretina/compare/0.1.0...0.2.0
