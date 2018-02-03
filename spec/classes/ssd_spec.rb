@@ -1,28 +1,7 @@
 require 'spec_helper'
 
 describe 'archlinux_macbookretina::ssd' do
-  let(:facts) {{
-    :osfamily        => 'Archlinux',
-    :operatingsystem => 'Archlinux',
-    :productname     => 'MacBookPro11,4',
-    # structured facts
-    :os              => { 'family' => 'Archlinux' },
-    :dmi             => { 'product' => { 'name' => 'MacBookPro11,4' } },
-    :disks           => {
-      'sda' => {
-        'model' => "APPLE SSD SM0256",
-        'size' => "233.76 GiB",
-        'size_bytes' => 251000193024,
-        'vendor' => "ATA"
-      },
-      'sdb' => {
-        'model' => "SD Card Reader",
-        'size' => "0 bytes",
-        'size_bytes' => 0,
-        'vendor' => "APPLE"
-      }
-    },
-  }}
+  let(:facts) { spec_facts }
 
   describe "installs packages" do
     it { should compile.with_all_deps }
