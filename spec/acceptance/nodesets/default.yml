@@ -1,10 +1,17 @@
 HOSTS:
-  ubuntu-1404-x64:
-    roles:
-      - agent
-      - default
-    platform: ubuntu-14.04-amd64
-    hypervisor: vagrant
-    box: puppetlabs/ubuntu-14.04-64-nocm
+  archlinux-current-x64:
+    platform: archlinux-current-amd64
+    hypervisor: docker
+    image: archimg/base-devel:latest
+    docker_preserve_image: true
+    docker_cmd: '["/sbin/init"]'
+    docker_cap_add: ['SYS_ADMIN']
+    mount_folders:
+      cgroup:
+        host_path: /sys/fs/cgroup
+        container_path: /sys/fs/cgroup
+        opts: ro
+    docker_image_commands:
+      - 'echo "en_US.UTF-8 UTF-8" > /etc/locale.gen'
 CONFIG:
-  type: foss
+  trace_limit: 200

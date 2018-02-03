@@ -49,9 +49,11 @@ group :development do
   gem "json_pure", '<= 2.0.1',                            :require => false if Gem::Version.new(RUBY_VERSION.dup) < Gem::Version.new('2.0.0')
   gem "fast_gettext", '1.1.0',                            :require => false if Gem::Version.new(RUBY_VERSION.dup) < Gem::Version.new('2.1.0')
   gem "fast_gettext",                                     :require => false if Gem::Version.new(RUBY_VERSION.dup) >= Gem::Version.new('2.1.0')
+  gem "puppet-strings",                                   :require => false
 end
 
 group :system_tests do
+  gem "beaker-docker", '>= 0.3.0',                                               :require => false
   gem "puppet-module-posix-system-r#{minor_version}",                            :require => false, :platforms => "ruby"
   gem "puppet-module-win-system-r#{minor_version}",                              :require => false, :platforms => ["mswin", "mingw", "x64_mingw"]
   gem "beaker", *location_for(ENV['BEAKER_VERSION'] || '>= 3')                  
@@ -59,7 +61,9 @@ group :system_tests do
   gem "beaker-rspec", *location_for(ENV['BEAKER_RSPEC_VERSION'])                
   gem "beaker-hostgenerator", *location_for(ENV['BEAKER_HOSTGENERATOR_VERSION'])
   gem "beaker-abs", *location_for(ENV['BEAKER_ABS_VERSION'] || '~> 0.1')        
-  gem "puppet-blacksmith", '~> 3.4',                                             :require => false
+  gem "puppet-blacksmith", '>= 4.1.1',                                           :require => false
+  gem "vandamme",                                                                :require => false
+  gem "octokit", '~> 4.0',                                                       :require => false
 end
 
 gem 'puppet', *location_for(ENV['PUPPET_GEM_VERSION'])

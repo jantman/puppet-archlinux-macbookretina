@@ -2,7 +2,7 @@
 
 So you want to contribute to a Puppet module: Great! Below are some instructions to get you started doing
 that very thing while setting expectations around code quality as well as a few tips for making the
-process as easy as possible. 
+process as easy as possible.
 
 ### Table of Contents
 
@@ -14,6 +14,7 @@ process as easy as possible.
     - [Running Tests](#running-tests)
     - [Writing Tests](#writing-tests)
 1. [Get Help](#get-help)
+1. [Release Process](#release-process)
 
 ## Getting Started
 
@@ -27,7 +28,7 @@ process as easy as possible.
 
 - [x] my commit is a single logical unit of work
 
-- [x] I have checked for unnecessary whitespace with "git diff --check" 
+- [x] I have checked for unnecessary whitespace with "git diff --check"
 
 - [x] my commit does not include commented out code or unneeded files
 
@@ -36,15 +37,15 @@ process as easy as possible.
 - [x] my commit includes tests for the bug I fixed or feature I added
 
 - [x] my commit includes appropriate documentation changes if it is introducing a new feature or changing existing functionality
-    
+
 - [x] my code passes existing test suites
 
 ### The Commit Message
 
 - [x] the first line of my commit message includes:
 
-  - [x] an issue number (if applicable), e.g. "(MODULES-xxxx) This is the first line" 
-  
+  - [x] an issue number (if applicable), e.g. "(MODULES-xxxx) This is the first line"
+
   - [x] a short description (50 characters is the soft limit, excluding ticket number(s))
 
 - [x] the body of my commit message:
@@ -57,19 +58,13 @@ process as easy as possible.
 
 ## Submission
 
-### Pre-requisites
-
-- Make sure you have a [GitHub account](https://github.com/join)
-
-- [Create a ticket](https://tickets.puppet.com/secure/CreateIssue!default.jspa), or [watch the ticket](https://tickets.puppet.com/browse/) you are patching for.
-
 ### Push and PR
 
 - Push your changes to your fork
 
 - [Open a Pull Request](https://help.github.com/articles/creating-a-pull-request-from-a-fork/) against the repository in the puppetlabs organization
 
-## More about commits 
+## More about commits
 
   1.  Make separate commits for logically separate changes.
 
@@ -137,7 +132,7 @@ process as easy as possible.
 Our Puppet modules provide [`Gemfile`](./Gemfile)s, which can tell a Ruby package manager such as [bundler](http://bundler.io/) what Ruby packages,
 or Gems, are required to build, develop, and test this software.
 
-Please make sure you have [bundler installed](http://bundler.io/#getting-started) on your system, and then use it to 
+Please make sure you have [bundler installed](http://bundler.io/#getting-started) on your system, and then use it to
 install all dependencies needed for this project in the project root by running
 
 ```shell
@@ -173,9 +168,15 @@ With all dependencies in place and up-to-date, run the tests:
 % bundle exec rake spec
 ```
 
-This executes all the [rspec tests](http://rspec-puppet.com/) in the directories defined [here](https://github.com/puppetlabs/puppetlabs_spec_helper/blob/699d9fbca1d2489bff1736bb254bb7b7edb32c74/lib/puppetlabs_spec_helper/rake_tasks.rb#L17) and so on. 
+This executes all the [rspec tests](http://rspec-puppet.com/) in the directories defined [here](https://github.com/puppetlabs/puppetlabs_spec_helper/blob/699d9fbca1d2489bff1736bb254bb7b7edb32c74/lib/puppetlabs_spec_helper/rake_tasks.rb#L17) and so on.
 rspec tests may have the same kind of dependencies as the module they are testing. Although the module defines these dependencies in its [metadata.json](./metadata.json),
 rspec tests define them in [.fixtures.yml](./fixtures.yml).
+
+Before submitting a pull request, you should run the full pre-release check Rake task:
+
+```shell
+% bundle exec rake release_checks
+```
 
 ### Acceptance Tests
 
@@ -187,7 +188,7 @@ Run the tests by issuing the following command
 
 ```shell
 % bundle exec rake spec_clean
-% bundle exec rspec spec/acceptance
+% bundle exec rake beaker
 ```
 
 This will now download a pre-fabricated image configured in the [default node-set](./spec/acceptance/nodesets/default.yml),
@@ -198,8 +199,8 @@ and then run all the tests under [spec/acceptance](./spec/acceptance).
 
 ### Unit Tests
 
-When writing unit tests for Puppet, [rspec-puppet][] is your best friend. It provides tons of helper methods for testing your manifests against a 
-catalog (e.g. contain_file, contain_package, with_params, etc). It would be ridiculous to try and top rspec-puppet's [documentation][rspec-puppet_docs] 
+When writing unit tests for Puppet, [rspec-puppet][] is your best friend. It provides tons of helper methods for testing your manifests against a
+catalog (e.g. contain_file, contain_package, with_params, etc). It would be ridiculous to try and top rspec-puppet's [documentation][rspec-puppet_docs]
 but here's a tiny sample:
 
 Sample manifest:
@@ -227,15 +228,16 @@ twice to check for idempotency or errors, then run expectations.
 ```ruby
 it 'does an end-to-end thing' do
   pp = <<-EOF
-    file { 'a test file': 
+    file { 'a test file':
       ensure  => present,
       path    => "/etc/sample",
       content => "test string",
     }
-    
+  EOF
+
   apply_manifest(pp, :catch_failures => true)
   apply_manifest(pp, :catch_changes => true)
-  
+
 end
 
 describe file("/etc/sample") do
@@ -244,7 +246,7 @@ end
 
 ```
 
-# If you have commit access to the repository
+### If you have commit access to the repository
 
 Even if you have commit access to the repository, you still need to go through the process above, and have someone else review and merge
 in your changes.  The rule is that **all changes must be reviewed by a project developer that did not write the code to ensure that
@@ -255,15 +257,21 @@ The record of someone performing the merge is the record that they performed the
 # Get Help
 
 ### On the web
+
 * [Puppet help messageboard](http://puppet.com/community/get-help)
 * [Writing tests](https://docs.puppet.com/guides/module_guides/bgtm.html#step-three-module-testing)
 * [General GitHub documentation](http://help.github.com/)
 * [GitHub pull request documentation](http://help.github.com/send-pull-requests/)
 
-### On chat
-* Slack (slack.puppet.com) #forge-modules, #puppet-dev, #windows, #voxpupuli
-* IRC (freenode) #puppet-dev, #voxpupuli
+# Release Process
 
+1. Ensure all changes were merged to master via PRs.
+2. Ensure a [CHANGELOG.md](CHANGELOG.md) entry exists for every change.
+3. Use ``bundle exec rake module:bump`` to bump the module version.
+4. Update ``CHANGELOG.md`` with the new version, and ensure a link exists for the diff from the last release.
+5. Commit those changes (``CHANGELOG.md`` and ``metadata.json``) and push. Wait for the TravisCI build to pass.
+6. Use ``bundle exec rake github_release`` to tag the version, push that tag, and create a GitHub Release.
+7. TravisCI will build the module and push to the forge, and build docs and push them to github pages.
 
 [rspec-puppet]: http://rspec-puppet.com/
 [rspec-puppet_docs]: http://rspec-puppet.com/documentation/

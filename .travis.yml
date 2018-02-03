@@ -3,7 +3,7 @@
 sudo: false
 language: ruby
 cache: bundler
-script: "bundle exec rake release_checks"
+script: "bundle exec rake release_checks_nonparallel"
 #Inserting below due to the following issue: https://github.com/travis-ci/travis-ci/issues/3531#issuecomment-88311203
 before_install:
   - gem update bundler
@@ -12,21 +12,43 @@ matrix:
   include:
   - rvm: 2.3.1
     dist: trusty
-    env: PUPPET_INSTALL_TYPE=agent BEAKER_debug=true BEAKER_set=docker/ubuntu-14.04
-    script: bundle exec rake beaker
-    services: docker
-    sudo: required
-  - rvm: 2.3.1
-    dist: trusty
-    env: PUPPET_INSTALL_TYPE=agent BEAKER_debug=true BEAKER_set=docker/centos-7
+    env: PUPPET_INSTALL_TYPE=foss BEAKER_debug=true BEAKER_set=default
     script: bundle exec rake beaker
     services: docker
     sudo: required
   - rvm: 2.4.1
     bundler_args: --without system_tests
     env: PUPPET_GEM_VERSION="~> 5.0"
+    script: ["bundle exec rake release_checks_nonparallel", "bundle exec rake clean", "bundle exec rake build", "bundle exec rake docs"]
   - rvm: 2.1.9
     bundler_args: --without system_tests
     env: PUPPET_GEM_VERSION="~> 4.0"
+deploy:
+  - provider: pages
+    skip_cleanup: true
+    github_token:
+      secure: ""
+    local_dir: doc
+    on:
+      repo: jantman/puppet-archlinux-macbookretina
+      rvm: 2.4.1
+      # all_branches is required to use tags
+      all_branches: true
+      tags: true
+  - provider: puppetforge
+    user: jantman
+    password:
+      secure: ""
+    on:
+      repo: jantman/puppet-archlinux-macbookretina
+      rvm: 2.4.1
+      # all_branches is required to use tags
+      all_branches: true
+      tags: true
 notifications:
-  email: false
+  email:
+    on_success: change
+    on_failure: change
+branches:
+  except:
+  - "/^noci-.*$/"
