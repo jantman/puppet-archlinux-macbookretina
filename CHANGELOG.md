@@ -23,6 +23,7 @@ This release makes major changes to the module code style, testing and deploymen
 - Reformat changelog
 - Add ``.sync.yml`` for my [modulesync_configs](https://github.com/jantman/modulesync_configs)
 - Update ``.travis.yml``, ``Gemfile`` and some documentation via modulesync.
+- Fix ``metadata.json`` casing of supported operatingsystem name.
 
 ## [0.2.2] Released 2017-07-09
 
