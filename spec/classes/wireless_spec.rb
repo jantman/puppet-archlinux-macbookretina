@@ -36,5 +36,6 @@ describe 'archlinux_macbookretina::wireless' do
                    :dmi             => { 'product' => { 'name' => 'MacBookPro11,4' } },
                  }}
     it { should_not contain_package('broadcom-wl') }
+    it { should contain_notify('using built-in kernel drivers for wireless on MacBookPro11,4') }
   end
 end

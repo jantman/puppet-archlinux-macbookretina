@@ -27,5 +27,6 @@ describe 'archlinux_macbookretina::webcam' do
    it { should compile.with_all_deps }
    it { should_not contain_package('bcwc-pcie-git') }
    it { should_not contain_package('facetimehd-firmware') }
+   it { should contain_notify('archlinux_macbookretina does not know how to configure webcam on: MacBookPro10,1') }
   end
 end
