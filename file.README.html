@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  File: README
+  
+    &mdash; Puppet module jantman/archlinux_macbookretina 0.3.0
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="file_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="puppet_class_list_link"
+        href="puppet_class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><div id='filecontents'>
+<h4 id="label-Table+of+Contents">Table of Contents</h4>
+<ol><li>
+<p><a href="#overview">Overview</a></p>
+</li><li>
+<p><a href="#requirements">Requirements</a></p>
+</li><li>
+<p><a href="#hardware-support-status">Hardware Support Status</a></p>
+</li><li>
+<p><a href="#reference">Reference - An under-the-hood peek at what the module
+is doing and how</a></p>
+</li><li>
+<p><a href="#limitations">Limitations - OS compatibility, etc.</a></p>
+</li><li>
+<p><a href="#development">Development - Guide for contributing to the
+module</a></p>
+</li><li>
+<p><a href="#other-references">Other References - Information on Arch
+Linux</a></p>
+</li></ol>
+
+<h2 id="label-Overview">Overview</h2>
+
+<p><a
+href="https://travis-ci.org/jantman/puppet-archlinux-macbookretina.svg"><img
+src="https://travis-ci.org/jantman/puppet-archlinux-macbookretina.svg"></a>
+<a href="https://forge.puppet.com/jantman/archlinux_macbookretina/"><img
+src="https://img.shields.io/puppetforge/v/jantman/archlinux_macbookretina.svg"></a>
+<a href="http://www.repostatus.org/#active"><img
+src="http://www.repostatus.org/badges/0.1.0/active.svg"></a></p>
+
+<p>Puppet module and accompanying documentation to install/setup Arch linux on
+a MacBook Pro Retina using Puppet (version 4 or 5).</p>
+
+<p>This is the puppet module I use to manage my shiny new MacBook Pro Retina
+(mine is a <code>MacBookPro11,4</code>).</p>
+<ul><li>
+<p><strong>Generated Documentation:</strong> <a
+href="http://jantman.github.io/puppet-archlinux-macbookretina">jantman.github.io/puppet-archlinux-macbookretina</a>/</p>
+</li></ul>
+
+<p><strong>Important Notice:</strong> It is <em>highly</em> recommended that
+you only run this module on a brand new system; it makes some opinionated
+choices that may cause problems on existing systems.</p>
+
+<h2 id="label-Requirements">Requirements</h2>
+<ul><li>
+<p>A MacBook Pro Retina (currently tested with Mid-2015 “11,4” model) with a
+<strong>brand new install</strong> of Arch Linux</p>
+</li><li>
+<p>Whatever version of Puppet ships with Arch Linux</p>
+</li><li>
+<p>A minimal install, ideally following the instructions in my <a
+href="https://github.com/jantman/workstation-bootstrap">workstation-bootstrap</a>
+repository.</p>
+</li><li>
+<p>This module is only tested alongside my <a
+href="https://github.com/jantman/puppet-archlinux-workstation">archlinux_workstation</a>
+module.</p>
+</li><li>
+<p>A pacman repo providing AUR packages: <a
+href="https://aur.archlinux.org/packages/macfanctld">macfanctld</a>, <a
+href="https://aur.archlinux.org/packages/bcwc-pcie-dkms/">bcwc-pcie-dkms</a>
+and <a
+href="https://aur.archlinux.org/packages/bcwc-pcie-firmware/">bcwc-pcie-firmware</a>;
+you can use <a
+href="https://github.com/jantman/puppet-archlinux-workstation/blob/master/manifests/repos/jantman.pp">jantman/archlinux_workstation
+archlinux_workstation::repos::jantman</a> for that.</p>
+</li></ul>
+
+<h2 id="label-Hardware+Support+Status">Hardware Support Status</h2>
+
+<h3 id="label-Mid-2015+MacBookPro11-2C4+as+of+2018-02-02">Mid-2015 MacBookPro11,4 as of 2018-02-02</h3>
+
+<h4 id="label-Working">Working</h4>
+
+<p>Or mostly-working:</p>
+<ul><li>
+<p><strong>Touchpad</strong> using Kernel 4.2+ and <a
+href="https://www.archlinux.org/packages/?name=xf86-input-synaptics">xf86-input-synaptics</a>;
+works for tap-to-click, drag, two-finger scroll, and 2- or 3-finger taps
+(sometimes) for different mouse buttons.</p>
+</li><li>
+<p><strong>Networking</strong> on MacBookPro 11,4</p>
+</li><li>
+<p>USB ethernet adapter A1277 works out-of-the-box</p>
+</li><li>
+<p>BCM43602 AirPort Extreme (14e4:43ba) works with kernel built-in <a
+href="https://wireless.wiki.kernel.org/en/users/drivers/brcm80211">brcmfmac</a>
+driver, autodetected, both 2.4GHz and 5GHz.</p>
+</li><li>
+<p><strong>Sound</strong> - Works. Under KDE/Phonon, needed to unmute/enable
+the “Built-in Audio Analog Stereo” (detected “Built-in Audio Digital Stereo
+(HDMI)” as default).</p>
+</li><li>
+<p><strong>Video</strong> - video works with the proprietary nvidia driver,
+the default in this module.</p>
+</li><li>
+<p><strong>External Displays</strong> - Tested OK using both direct HDMI and
+Thunderbolt to HDMI (1 or 2 external monitors); works seamlessly.</p>
+</li><li>
+<p><strong>Display/Desktop Scaling</strong> - This can be fixed within KDE:</p>
+<ul><li>
+<p>System Settings -&gt; Fonts: check off “Force fonts DIP” and set to 144</p>
+</li><li>
+<p>System Settings -&gt; Icons -&gt; “Advanced” tab: set them all to 48</p>
+</li><li>
+<p>Click the menu button on the far right edge of the Panel, then drag the
+“Height” box up until the scale/size looks good</p>
+</li></ul>
+</li><li>
+<p><strong>Screen Backlight Adjustment</strong> - works using
+<code>/sys/class/backlight/acpi_video0/brightness</code>, the sliders on
+&#39;KDE5 System Settings -&gt; Energy Saving&#39; or the keyboard function
+keys.</p>
+</li><li>
+<p><strong>Hibernate / Suspend to Disk</strong> - doesn&#39;t wake up without
+long hold of power button &amp; then turn back on. Session resumes once
+that&#39;s done.</p>
+</li><li>
+<p><strong>SD Card Reader</strong> - Working out of the box.</p>
+</li><li>
+<p><strong>Fans</strong> - <a
+href="https://aur.archlinux.org/packages/macfanctld">macfanctld (AUR)</a></p>
+</li><li>
+<p><strong>Webcam</strong> - This works properly in Linux using the <a
+href="https://aur.archlinux.org/packages/bcwc-pcie-dkms/">bcwc-pcie-dkms</a>
+and <a
+href="https://aur.archlinux.org/packages/bcwc-pcie-firmware/">bcwc-pcie-firmware</a>
+AUR packages.</p>
+</li><li>
+<p><strong>Bluetooth</strong> - Per <a
+href="https://wiki.archlinux.org/index.php/MacBook#Bluetooth_2">wiki</a>,
+fully supported as of kernel 4.4.0. Works with my bluetooth mouse.</p>
+</li></ul>
+
+<h4 id="label-Broken">Broken</h4>
+<ul><li>
+<p><strong>Suspend to RAM</strong> - <em>(haven&#39;t tested in many months; I
+never use this)</em> doesn&#39;t wake up; long hold of power button &amp;
+then turn back on gives a fresh boot.</p>
+</li><li>
+<p><strong>Lid Close</strong> - suspends to ram and doesn&#39;t wake up, but
+this could be a configuration issue. I never use this functionality.</p>
+</li></ul>
+
+<h4 id="label-Untested+-2F+To+Do">Untested / To Do</h4>
+<ul><li>
+<p><strong>Partially-complete</strong> - <strong>SSD optimizations</strong>
+via sysctl settings, mount /dev/sda* noatime and discard (TRIM), use
+deadline scheduler on non-rotational disks</p>
+</li><li>
+<p><strong>Power Saving</strong> - <a
+href="https://wiki.archlinux.org/index.php/MacBookPro11,x#Powersave">wiki.archlinux.org/index.php/MacBookPro11,x#Powersave</a>
+and <a
+href="https://wiki.archlinux.org/index.php/Laptop_Mode_Tools">wiki.archlinux.org/index.php/Laptop_Mode_Tools</a></p>
+</li><li>
+<p><a href="https://wiki.archlinux.org/index.php/Laptop_Mode_Tools">Laptop
+Mode Tools - ArchWiki</a> and/or <a
+href="https://wiki.archlinux.org/index.php/TLP">TLP - ArchWiki</a>
+<em>(started looking into this, very involved configuration and I don&#39;t
+really need it right now)</em></p>
+</li><li>
+<p>I&#39;m left handed. Use udev/xorg to reverse buttons on USB mice but keep
+trackpad the same. See <a
+href="https://wiki.archlinux.org/index.php/All_Mouse_Buttons_Working">wiki.archlinux.org/index.php/All_Mouse_Buttons_Working</a>
+<a
+href="http://www.smop.co.uk/blog/index.php/2010/02/15/udev-rules-for-logitech-g7-mouse">www.smop.co.uk/blog/index.php/2010/02/15/udev-rules-for-logitech-g7-mouse</a>/
+or might be able to do this with udev triggering “xinput set-button-map”</p>
+</li><li>
+<p>the stuff in <a
+href="https://wiki.archlinux.org/index.php/Maximizing_Performance">Maximizing
+Performance - ArchWiki</a></p>
+</li><li>
+<p>implement the stuff in <a
+href="https://wiki.archlinux.org/index.php/Enhancing_Arch_Linux_Stability">Enhancing
+Arch Linux Stability - ArchWiki</a></p>
+</li><li>
+<p>SMART/other SSD health check, with warnings if problems are found</p>
+</li><li>
+<p>look into replacing macfanctld with mbpfan / fan-control-daemon are two
+options that are less abrupt</p>
+</li></ul>
+
+<h2 id="label-Reference">Reference</h2>
+
+<p>For full automatically-generated documentation see: <a
+href="http://jantman.github.io/puppet-archlinux-workstation/">jantman.github.io/puppet-archlinux-workstation/</a></p>
+
+<h2 id="label-Limitations">Limitations</h2>
+
+<p>This module is only usable with Arch Linux on a MacBook Pro Retina.</p>
+
+<p>It assumes that you have a relatively vanilla base install of Arch, such as
+the one I document in my <a
+href="https://github.com/jantman/workstation-bootstrap#arch-linux">workstation-bootstrap
+module</a>, pretty much the same as the <a
+href="https://wiki.archlinux.org/index.php/Installation_guide">Arch Linux
+Installation Guide</a> documents.</p>
+
+<h2 id="label-Development">Development</h2>
+
+<p>See <a href="CONTRIBUTING.md">CONTRIBUTING.md</a> for information about
+development and contributing.</p>
+
+<h2 id="label-Other+References">Other References</h2>
+<ul><li>
+<p>First, many thanks to <a href="https://twitter.com/elitmeister">eli
+meister</a> for being the office linux-on-MBP retina guinea pig</p>
+</li><li>
+<p><a href="https://wiki.archlinux.org/index.php/MacBookPro_Retina">MacBookPro
+Retina - ArchWiki</a></p>
+</li><li>
+<p><a href="https://wiki.archlinux.org/index.php/MacBook">MacBook -
+ArchWiki</a></p>
+</li><li>
+<p><a
+href="https://wiki.archlinux.org/index.php/Installation_Guide">Installation
+Guide - ArchWiki</a></p>
+</li><li>
+<p><a
+href="https://wiki.archlinux.org/index.php/Beginners%27_Guide">Beginners’
+Guide - ArchWiki</a></p>
+</li><li>
+<p><a href="https://wiki.archlinux.org/index.php/Solid_State_Drives">Solid
+State Drives - ArchWiki</a></p>
+</li><li>
+<p><a href="https://wiki.archlinux.org/index.php/Laptop">Laptop - ArchWiki</a></p>
+</li><li>
+<p><a
+href="https://wiki.archlinux.org/index.php/Enhancing_Arch_Linux_Stability">Enhancing
+Arch Linux Stability - ArchWiki</a></p>
+</li><li>
+<p><a
+href="https://wiki.archlinux.org/index.php/Arch_Linux_System_Maintenance">Arch
+Linux System Maintenance - ArchWiki</a></p>
+</li></ul>
+</div></div>
+
+      <div id="footer">
+     Generated by <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>.
+</div>
+
+    </div>
+  </body>
+</html>
