@@ -1,11 +1,5 @@
-# Class: archlinux_macbookretina::macfanctld
 #
-# Install macfanctld
-#
-# Parameters:
-#
-# Actions:
-#   - Install macfanctld
+# Install macfanctld package and enable the macfanctld service.
 #
 class archlinux_macbookretina::macfanctld {
 

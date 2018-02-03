@@ -1,14 +1,7 @@
 require 'spec_helper'
 
 describe 'archlinux_macbookretina::videodriver' do
-  let(:facts) {{
-    :osfamily        => 'Archlinux',
-    :operatingsystem => 'Archlinux',
-    :productname     => 'MacBookPro11,4',
-    # structured facts
-    :os              => { 'family' => 'Archlinux' },
-    :dmi             => { 'product' => { 'name' => 'MacBookPro11,4' } },
-  }}
+  let(:facts) { spec_facts }
 
   context 'invalid driver param' do
     let(:params) {{ :driver => 'foo' }}

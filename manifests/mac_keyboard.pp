@@ -1,16 +1,9 @@
-# Class: archlinux_macbookretina::mac_keyboard
 #
 # Sets up macbook-specific keyboard stuff
 #
-# Parameters:
-#
-# Actions:
-#   - set modprobe.d/apple.conf with "options hid_apple fnmode=2"
-#   - set /etc/systemd/system/kdm.service.d/kbd_backlight.conf to start upower before SDDM
-#
-# Requires:
-#
-# Sample Usage:
+# - set modprobe.d/apple.conf with "options hid_apple fnmode=2"
+# - set /etc/systemd/system/kdm.service.d/kbd_backlight.conf to start ``upower``
+#  before SDDM
 #
 class archlinux_macbookretina::mac_keyboard {
 

@@ -1,12 +1,8 @@
-# Class: archlinux_macbookretina::wireless
 #
-# Install driver for Broadcom wireless, iw and wpa_supplicant
+# Install wireless drivers, ``iw`` and ``wpa_supplicant``.
 #
-# Parameters:
-#
-# Actions:
-#   - Install broadcom-wl
-#   - Install iw and wpa_supplicant
+# - On MacBookPro10,1 install the ``broadcom-wl`` driver.
+# - On other models, use the build-in kernel drivers.
 #
 class archlinux_macbookretina::wireless {
 

@@ -1,13 +1,8 @@
-# Class: archlinux_macbookretina::webcam
 #
-# Install reverse-engineered driver for FacetimeHD (Broadcom 1570) PCIe webcam,
-# using AUR packages. Driver source: https://github.com/patjak/bcwc_pcie/.
-# MacBookPro11,4 only.
-#
-# Parameters:
-#
-# Actions:
-#   - Install bcwc-pcie-git and facetimehd-firmware on MacBookPro11,4
+# On MacBookPro11,4 install reverse-engineered driver for FacetimeHD (Broadcom
+# 1570) PCIe webcam, using AUR packages (``bcwc-pcie-git`` and
+# ``facetimehd-firmware``). Driver source:
+# https://github.com/patjak/bcwc_pcie/. On other models, do nothing.
 #
 class archlinux_macbookretina::webcam {
 

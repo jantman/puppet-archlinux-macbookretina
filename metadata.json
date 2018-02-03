@@ -1,13 +1,13 @@
 {
   "name": "jantman-archlinux_macbookretina",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "summary": "Configure Arch Linux on a MacBook Retina",
   "author": "jantman",
   "description": "Provides many classes (and a sane default class/init.pp) for configuring Arch Linux on a MacBook Retina.",
   "dependencies": [
     {
       "name": "puppetlabs/stdlib",
-      "version_requirement": ">=4.1.0 <5.0.0"
+      "version_requirement": ">=4.1.0 <4.13.0"
     },
     {
       "name": "puppetlabs/firewall",
@@ -20,13 +20,13 @@
   ],
   "operatingsystem_support": [
     {
-        "operatingsystem": "ArchLinux"
+        "operatingsystem": "Archlinux"
     }
   ],
   "requirements": [
     {
       "name": "puppet",
-      "version_requirement": ">= 4.0.0 < 5.0.0"
+      "version_requirement": ">= 4.0.0 < 6.0.0"
     }
   ],
   "checksums": {},

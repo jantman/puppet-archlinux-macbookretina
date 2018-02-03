@@ -1,11 +1,17 @@
 HOSTS:
-  archlinux-2017.07.01-amd64:
-    roles:
-      - master
-    platform: archlinux-2017.07.01-amd64
-    box: ogarcia/archlinux-x64
-    box_version: 2017.07.01
-    hypervisor: vagrant
+  archlinux-current-x64:
+    platform: archlinux-current-amd64
+    hypervisor: docker
+    image: archimg/base-devel:latest
+    docker_preserve_image: true
+    docker_cmd: '["/sbin/init"]'
+    docker_cap_add: ['SYS_ADMIN']
+    mount_folders:
+      cgroup:
+        host_path: /sys/fs/cgroup
+        container_path: /sys/fs/cgroup
+        opts: ro
+    docker_image_commands:
+      - 'echo "en_US.UTF-8 UTF-8" > /etc/locale.gen'
 CONFIG:
-  log_level: verbose
-  type: aio
+  trace_limit: 200
