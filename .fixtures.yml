@@ -1,8 +1,10 @@
 fixtures:
   repositories:
+    stdlib:
+      repo: "https://github.com/puppetlabs/puppetlabs-stdlib.git"
+      ref: "4.12.0"
     archlinux_workstation:
       repo: "https://github.com/jantman/puppet-archlinux-workstation.git"
-    stdlib: "git://github.com/puppetlabs/puppetlabs-stdlib.git"
     firewall: "https://github.com/puppetlabs/puppetlabs-firewall.git"
     sysctl: "https://github.com/duritong/puppet-sysctl.git"
     inifile: "https://github.com/puppetlabs/puppetlabs-inifile.git"

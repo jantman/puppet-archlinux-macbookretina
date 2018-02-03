@@ -7,7 +7,7 @@
   "dependencies": [
     {
       "name": "puppetlabs/stdlib",
-      "version_requirement": ">=4.1.0 <5.0.0"
+      "version_requirement": ">=4.1.0 <4.13.0"
     },
     {
       "name": "puppetlabs/firewall",
