@@ -16,7 +16,7 @@
 #   - Install /etc/X11/xorg.conf with MBP Retina customization
 #
 class archlinux_macbookretina::videodriver (
-  $driver = 'nvidia'
+  String $driver = 'nvidia'
 ) {
 
   validate_re($driver, '^(nvidia|nouveau)$')

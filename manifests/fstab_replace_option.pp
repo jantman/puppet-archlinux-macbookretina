@@ -19,7 +19,12 @@
 #
 # Sample Usage:
 #
-define archlinux_macbookretina::fstab_replace_option ($option, $old_option, $drive = $title, $only_fstype = '') {
+define archlinux_macbookretina::fstab_replace_option (
+  String $option,
+  String $old_option,
+  String $drive = $title,
+  String $only_fstype = ''
+) {
 
   # let us constrain to one fs type
   if $only_fstype == '' {
@@ -50,4 +55,3 @@ define archlinux_macbookretina::fstab_replace_option ($option, $old_option, $dri
   }
 
 }
-
