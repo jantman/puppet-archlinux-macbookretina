@@ -2,7 +2,7 @@ HOSTS:
   archlinux-current-x64:
     platform: archlinux-current-amd64
     hypervisor: docker
-    image: archimg/base-devel:latest
+    image: archlinux/base:latest
     docker_preserve_image: true
     docker_cmd: '["/sbin/init"]'
     docker_cap_add: ['SYS_ADMIN']
