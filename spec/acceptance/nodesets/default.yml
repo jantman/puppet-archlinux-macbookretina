@@ -13,5 +13,7 @@ HOSTS:
         opts: ro
     docker_image_commands:
       - 'echo "en_US.UTF-8 UTF-8" > /etc/locale.gen'
+      - 'pacman -Sy'
+      - 'pacman -S grep'
 CONFIG:
   trace_limit: 200
