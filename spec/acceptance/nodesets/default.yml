@@ -2,9 +2,9 @@ HOSTS:
   archlinux-current-x64:
     platform: archlinux-current-amd64
     hypervisor: docker
-    image: archimg/base-devel:latest
+    image: archlinux/base:latest
     docker_preserve_image: true
-    docker_cmd: '["/sbin/init"]'
+    docker_cmd: '["/usr/lib/systemd/systemd"]'
     docker_cap_add: ['SYS_ADMIN']
     mount_folders:
       cgroup:
@@ -13,5 +13,6 @@ HOSTS:
         opts: ro
     docker_image_commands:
       - 'echo "en_US.UTF-8 UTF-8" > /etc/locale.gen'
+      - 'pacman -S --noconfirm grep tar'
 CONFIG:
   trace_limit: 200

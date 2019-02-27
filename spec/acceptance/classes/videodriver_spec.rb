@@ -16,7 +16,7 @@ describe 'archlinux_macbookretina::videodriver class' do
       apply_manifest(pp, :catch_changes => true)
     end
 
-    nouveau_packages = ['xf86-video-nouveau',  'nouveau-dri' ]
+    nouveau_packages = ['xf86-video-nouveau' ]
     nvidia_packages = [ 'nvidia' ]
 
     nvidia_packages.each do |pkgname|
