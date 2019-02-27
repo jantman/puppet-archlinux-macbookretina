@@ -4,7 +4,7 @@ HOSTS:
     hypervisor: docker
     image: archlinux/base:latest
     docker_preserve_image: true
-    docker_cmd: '["/sbin/init"]'
+    docker_cmd: '["/usr/lib/systemd/systemd"]'
     docker_cap_add: ['SYS_ADMIN']
     mount_folders:
       cgroup:
