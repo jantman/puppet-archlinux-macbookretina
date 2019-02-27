@@ -13,6 +13,6 @@ HOSTS:
         opts: ro
     docker_image_commands:
       - 'echo "en_US.UTF-8 UTF-8" > /etc/locale.gen'
-      - 'pacman -S --noconfirm grep'
+      - 'pacman -S --noconfirm grep tar'
 CONFIG:
   trace_limit: 200
