@@ -1,3 +1,7 @@
+## UNSUPPORTED / ABANDONED PROJECT - MAINTAINER WANTED
+
+As of March 2019, I no longer have access to any MacBook Pro hardware. As such, this module is now officially unsupported and abandoned. A new maintainer is wanted, if anyone would like to adopt it. Please see [Issue 16](https://github.com/jantman/puppet-archlinux-macbookretina/issues/16) for details and to comment.
+
 #### Table of Contents
 
 1. [Overview](#overview)
@@ -12,7 +16,7 @@
 
 [![TravisCI Build Status Badge](https://travis-ci.org/jantman/puppet-archlinux-macbookretina.svg)](https://travis-ci.org/jantman/puppet-archlinux-macbookretina.svg)
 [![PuppetForge version badge](https://img.shields.io/puppetforge/v/jantman/archlinux_macbookretina.svg)](https://forge.puppet.com/jantman/archlinux_macbookretina/)
-[![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/0.1.0/active.svg)](http://www.repostatus.org/#active)
+[![Project Status: Unsupported – The project has reached a stable, usable state but the author(s) have ceased all work on it. A new maintainer may be desired.](https://www.repostatus.org/badges/latest/unsupported.svg)](https://www.repostatus.org/#unsupported)
 
 Puppet module and accompanying documentation to install/setup Arch linux on a MacBook Pro Retina using Puppet (version 4 or 5).
 
